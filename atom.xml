@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2012-10-07T15:27:59-05:00</updated>
+  <updated>2012-10-07T15:53:43-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Agile Day Twin Cities 2012]]></title>
+    <link href="http://andylind.github.com/blog/2012/11/03/agile-day-twin-cities-2012/"/>
+    <updated>2012-11-03T15:35:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/11/03/agile-day-twin-cities-2012</id>
+    <content type="html"><![CDATA[<p>Last Friday, I attended the <a href="https://sites.google.com/site/twincitiespracticalagility/agile-day-twin-cities-2012">Agile Day Twin Cities</a> conference. The conference was centered around building a discussion about agile software practices and the main theme this year was learning.</p>
+
+<p>I want to share some of the most interesting and thought provoking statements that I heard from the day. Each of these could probably be an entire post on their own, but I think that these anecdotes and insights really give a picture of the discussion at Agile Day and the focus on questioning the status quo.</p>
+
+<p>The first speaker was <a href="https://twitter.com/davidhussman/">David Hussman</a>, who did a great job at getting everyone to question why they are doing things. Here are some of my favorite quotes from his presentations:</p>
+
+<blockquote><p>&#8220;Ask why. Why are you changing the process? Could you be doing something more valuable?&#8221; <br/>&#8220;Minimize output, Maximize impact&#8221;<br/>&#8220;Transition from thinking about how big something is to thinking if something is too big.&#8221; <br/>&#8220;One sign of a maturing agile team is that they stop talking about the code and they start talking about the tests that they need&#8221;</p></blockquote>
+
+
+<p>Stemming from David&#8217;s talk, there was a lot of discussion on why we work in iterations and what life would be like if we moved beyond iterations.</p>
+
+<blockquote><p>&#8220;Why does it matter if you don&#8217;t get done what you committed to in the sprint?&#8221;</p></blockquote>
+
+
+<p>Another session that I attended was focused on pair-programming practices. During that session the speaker made a really good point about testing:</p>
+
+<blockquote><p>&#8220;What is the next test that you should write? The test that tells you the most about the system.&#8221;</p></blockquote>
+
+
+<p>This point really hit home for me. I have been trying to transition to using more Test Driven Development (TDD) practices, and I think this could really help guide me in choosing the next test to write.</p>
+
+<p>Throughout the day, I heard a lot of controversial statements about process and tools such as:</p>
+
+<blockquote><p>&#8220;JIRA is where stories go to die&#8221;, and &#8220;Project Management is a symptom, not a solution&#8221;</p></blockquote>
+
+
+<p>There was a lot of support at the conference for sticky-note driven workflow, and a lot of backlash against project management tools. I think that was one of the things that I most disagreed with. I have really seen a huge benefit when using a tracking tool to share info about stories among a large team.</p>
+
+<p>The last quote that I found really interesting was from one of the open-space sessions. The speakers described a really great technique that runs counter to a lot of teaching for gathering requirements (e.g. 5 whys):</p>
+
+<blockquote><p>People do not respond well to being asked, &#8220;Why?&#8221;. Instead, ask &#8220;If that happened, then what?&#8221; or &#8220;Pretend you had that, then what would you do?&#8221;</p></blockquote>
+
+
+<p>Overall, I thought the conference was really good, and I appreciated the focus on continuous improvement throughout the agile process.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Simple vi Tutorial]]></title>
