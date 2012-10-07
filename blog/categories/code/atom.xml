@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/code/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2012-10-07T15:16:10-05:00</updated>
+  <updated>2012-10-07T15:23:14-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -49,10 +49,10 @@ esc
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[My Linux Survival Guide]]></title>
-    <link href="http://andylind.github.com/blog/2012/10/07/my-linux-survival-guide/"/>
-    <updated>2012-10-07T13:28:00-05:00</updated>
-    <id>http://andylind.github.com/blog/2012/10/07/my-linux-survival-guide</id>
+    <title type="html"><![CDATA[My Most Used Linux Commands]]></title>
+    <link href="http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands/"/>
+    <updated>2012-09-07T13:28:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands</id>
     <content type="html"><![CDATA[<p>The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh'ing into a server, searching through log files, checking on processes, and editing configuration files. Since I am not doing most of my development work directly on a Linux box, I often find myself forgetting how to do certain tasks, or not knowing how to do something on a specific server. I put together the small guide below with commands that are available on almost any Linux system. By learning these few commands, I have been able to navigate around and get what I need done in almost any Linux environment.</p>
 
 <pre>
