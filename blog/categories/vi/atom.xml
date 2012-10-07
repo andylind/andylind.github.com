@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: vi | Andy Lind]]></title>
+  <link href="http://andylind.github.com/blog/categories/vi/atom.xml" rel="self"/>
+  <link href="http://andylind.github.com/"/>
+  <updated>2012-10-07T15:16:10-05:00</updated>
+  <id>http://andylind.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Lind]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Simple vi Tutorial]]></title>
+    <link href="http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial/"/>
+    <updated>2012-10-12T14:27:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial</id>
+    <content type="html"><![CDATA[<p>One thing I have always struggled with is using vi. I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most convenient to use a command window for text editing. I decided recently that I need to make sure that I understand the most basic vi commands, so that I can edit text on any *nix machine.</p>
+
+<p>The first step for me was learning just a few basic vi commands so that I would have enough knowledge to edit files. Below is the most minimal set of commands that you need to know to operate vi.</p>
+
+<p>The key concept you have to learn is that vi has two modes. Insert mode and command mode. When vi is opened, it will start in command mode by default. This mode allows you to do things like run complex editing commands, save the file, and exit. Pressing "i" will take you to inset mode. Insert mode allows you to edit text that is in the file. Pressing esc will return to command mode.</p>
+
+<p>It can be confusing at first to understand which mode you are in. If you want to be safe, you can always press "esc" and guarantee that you are in command mode.</p>
+
+<pre>
+#open vi
+vi filename.txt
+
+#switch to insert mode
+i
+
+#switch to command mode
+esc
+
+#save a file
+:w
+
+#exit vi
+:q
+</pre>
+
+
+<p>If you are looking to learn more, here is a helpful cheatsheet showing many common commands: <a href="http://media.smashingmagazine.com/wp-content/uploads/2010/05/VI-Help-Sheet-01-large2.jpg">vi cheatsheet from smashingmagazine</a></p>
+]]></content>
+  </entry>
+  
+</feed>

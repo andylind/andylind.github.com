@@ -5,14 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Creating an Octopress Site on Github Pages - Andy Lind</title>
+  <title>My Linux Survival Guide - Andy Lind</title>
   <meta name="author" content="Andy Lind">
 
   
-  <meta name="description" content="Here are some of the resources that I used to create this site:
-&nbsp;&nbsp;&nbsp; - Deploying Octopress
-&nbsp;&nbsp;&nbsp; - Github Pages
-&nbsp;& &hellip;">
+  <meta name="description" content="The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh&#8217;ing into a server, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://andylind.github.com/blog/2012/03/12/creating-an-octopress-site-on-github-Pages">
+  <link rel="canonical" href="http://andylind.github.com/blog/2012/10/07/my-linux-survival-guide">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -52,7 +49,7 @@
   
   <header>
     
-      <h1 class="entry-title">Creating an Octopress Site on Github Pages</h1>
+      <h1 class="entry-title">My Linux Survival Guide</h1>
     
     
       <p class="meta">
@@ -68,32 +65,85 @@
   
 
 
-<time datetime="2012-03-12T11:51:00-05:00" pubdate data-updated="true">Mar 12<span>th</span>, 2012</time>
+<time datetime="2012-10-07T13:28:00-05:00" pubdate data-updated="true">Oct 7<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><img src="/images/octopress-logo.png"></p>
+<div class="entry-content"><p>The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh&#8217;ing into a server, searching through log files, checking on processes, and editing configuration files. Since I am not doing most of my development work directly on a Linux box, I often find myself forgetting how to do certain tasks, or not knowing how to do something on a specific server. I put together the small guide below with commands that are available on almost any Linux system. By learning these few commands, I have been able to navigate around and get what I need done in almost any Linux environment.</p>
 
-<p>Here are some of the resources that I used to create this site:<br/>
-&nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/deploying/">Deploying Octopress</a><br/>
-&nbsp;&nbsp;&nbsp; - <a href="http://pages.github.com/">Github Pages</a><br/>
-&nbsp;&nbsp;&nbsp; - <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">Github Pages Setup Guide</a><br/>
-&nbsp;&nbsp;&nbsp; - <a href="http://www.yodi.me/blog/2011/10/24/github-custom-domain-with-octopress-in-ubuntu-oneiric-11-dot-10/">Octopress in Ubuntu Oneiric 11.10</a><br/>
-&nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/setup/rvm/">Installing rvm (make sure you use the correct ruby version)</a><br/>
-&nbsp;&nbsp;&nbsp; - <a href="http://melandri.net/2012/02/14/octopress-theme-customization/">Octopress Theme Customization</a></p>
+<pre>
+#Login to a remote server
+ssh [-p port] [username@hostname]
+</pre>
 
-<p>Simple way to run an HTTP server locally for testing:<br/>
-&nbsp;&nbsp;&nbsp; - Open a command window<br/>
-&nbsp;&nbsp;&nbsp; - Change to the octopress/public directory<br/>
-&nbsp;&nbsp;&nbsp; - Run: python -m SimpleHTTPServer</p>
 
-<p>The Three most important commands when using octopress:<br/>
-&nbsp;&nbsp;&nbsp; - rake new_post[&#8220;title&#8221;]<br/>
-&nbsp;&nbsp;&nbsp; - rake generate<br/>
-&nbsp;&nbsp;&nbsp; - rake deploy</p>
+
+
+<pre>
+#List files in a directory with file information
+ls -l
+</pre>
+
+
+
+
+<pre>
+#See every process running on a system
+ps aux
+</pre>
+
+
+
+
+<pre>
+#Print the last 100 lines of a file
+tail -100 [filename]
+</pre>
+
+
+
+
+<pre>
+#Watch a log file as it grows
+tail -f [filename]
+</pre>
+
+
+
+
+<pre>
+#Look for a pattern in a file
+grep [pattern] [file]
+</pre>
+
+
+
+
+<pre>
+#Run an HTTP GET request to a url
+curl [url]
+</pre>
+
+
+
+
+<pre>
+#Change file permissions to read/write for all
+chmod a+rw [filename]
+</pre>
+
+
+<p>Here are a few example of common uses that I have for chaining commands together:</p>
+
+<pre>
+#Look in the last 1000 lines of a file for lines starting with ERROR
+#and print out the matching lines and the 5 lines above and below
+tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
+</pre>
+
 </div>
 
 
@@ -116,15 +166,21 @@
   
 
 
-<time datetime="2012-03-12T11:51:00-05:00" pubdate data-updated="true">Mar 12<span>th</span>, 2012</time>
+<time datetime="2012-10-07T13:28:00-05:00" pubdate data-updated="true">Oct 7<span>th</span>, 2012</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/" data-via="" data-counturl="http://andylind.github.com/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2012/10/07/my-linux-survival-guide/" data-via="" data-counturl="http://andylind.github.com/blog/2012/10/07/my-linux-survival-guide/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -135,10 +191,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2011/06/15/an-example-cross-domain-ajax-request/" title="Previous Post: An Example Cross Domain AJAX Request">&laquo; An Example Cross Domain AJAX Request</a>
+        <a class="basic-alignment left" href="/blog/2012/09/15/my-setup-for-using-git-on-windows/" title="Previous Post: My Setup for Using Git on Windows">&laquo; My Setup for Using Git on Windows</a>
       
       
-        <a class="basic-alignment right" href="/blog/2012/05/11/Using-Git-With-SVN/" title="Next Post: Using Git with SVN">Using Git with SVN &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2012/10/12/simple-vi-tutorial/" title="Next Post: Simple vi Tutorial">Simple vi Tutorial &raquo;</a>
       
     </p>
   </footer>
@@ -238,8 +294,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://andylind.github.com/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/';
-        var disqus_url = 'http://andylind.github.com/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/';
+        var disqus_identifier = 'http://andylind.github.com/blog/2012/10/07/my-linux-survival-guide/';
+        var disqus_url = 'http://andylind.github.com/blog/2012/10/07/my-linux-survival-guide/';
         var disqus_script = 'embed.js';
       
     (function () {

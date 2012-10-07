@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: linux | Andy Lind]]></title>
+  <link href="http://andylind.github.com/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://andylind.github.com/"/>
+  <updated>2012-10-07T15:16:10-05:00</updated>
+  <id>http://andylind.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Lind]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My Linux Survival Guide]]></title>
+    <link href="http://andylind.github.com/blog/2012/10/07/my-linux-survival-guide/"/>
+    <updated>2012-10-07T13:28:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/10/07/my-linux-survival-guide</id>
+    <content type="html"><![CDATA[<p>The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh'ing into a server, searching through log files, checking on processes, and editing configuration files. Since I am not doing most of my development work directly on a Linux box, I often find myself forgetting how to do certain tasks, or not knowing how to do something on a specific server. I put together the small guide below with commands that are available on almost any Linux system. By learning these few commands, I have been able to navigate around and get what I need done in almost any Linux environment.</p>
+
+<pre>
+#Login to a remote server
+ssh [-p port] [username@hostname]
+</pre>
+
+
+
+
+<pre>
+#List files in a directory with file information
+ls -l
+</pre>
+
+
+
+
+<pre>
+#See every process running on a system
+ps aux
+</pre>
+
+
+
+
+<pre>
+#Print the last 100 lines of a file
+tail -100 [filename]
+</pre>
+
+
+
+
+<pre>
+#Watch a log file as it grows
+tail -f [filename]
+</pre>
+
+
+
+
+<pre>
+#Look for a pattern in a file
+grep [pattern] [file]
+</pre>
+
+
+
+
+<pre>
+#Run an HTTP GET request to a url
+curl [url]
+</pre>
+
+
+
+
+<pre>
+#Change file permissions to read/write for all
+chmod a+rw [filename]
+</pre>
+
+
+<p>Here are a few example of common uses that I have for chaining commands together:</p>
+
+<pre>
+#Look in the last 1000 lines of a file for lines starting with ERROR
+#and print out the matching lines and the 5 lines above and below
+tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
+</pre>
+
+]]></content>
+  </entry>
+  
+</feed>
