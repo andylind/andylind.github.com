@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2012-10-07T12:32:27-05:00</updated>
+  <updated>2012-10-07T12:44:30-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -18,7 +18,7 @@
     <link href="http://andylind.github.com/blog/2012/09/15/my-setup-for-using-git-on-windows/"/>
     <updated>2012-09-15T00:38:00-05:00</updated>
     <id>http://andylind.github.com/blog/2012/09/15/my-setup-for-using-git-on-windows</id>
-    <content type="html"><![CDATA[<p>For developing on Windows with Git, I have settled on using Console2 and MINGW.</p>
+    <content type="html"><![CDATA[<p>For developing on Windows with Git, I have been using Console2 and MINGW.</p>
 
 <p>My settings for Console2 are:</p>
 
