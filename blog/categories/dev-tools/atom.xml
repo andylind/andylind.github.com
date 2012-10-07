@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: dev tools | Andy Lind]]></title>
+  <link href="http://andylind.github.com/blog/categories/dev-tools/atom.xml" rel="self"/>
+  <link href="http://andylind.github.com/"/>
+  <updated>2012-10-07T15:27:59-05:00</updated>
+  <id>http://andylind.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Lind]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[My Setup for Using Git on Windows]]></title>
+    <link href="http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows/"/>
+    <updated>2012-08-28T00:38:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows</id>
+    <content type="html"><![CDATA[<p>For developing on Windows with Git, I have been using Console2 and MINGW.</p>
+
+<p>My settings for Console2 are:</p>
+
+<p><div><script src='https://gist.github.com/2875034.js?file='></script>
+<noscript><pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;settings&gt;
+	&lt;console change_refresh=&quot;10&quot; refresh=&quot;100&quot; rows=&quot;25&quot; columns=&quot;160&quot; buffer_rows=&quot;9000&quot; buffer_columns=&quot;0&quot; shell=&quot;C:\Windows\SysWOW64\cmd.exe /c &amp;quot;&amp;quot;C:\Program Files (x86)\Git\bin\sh.exe&amp;quot; --login -i&amp;quot;&quot; init_dir=&quot;C:\dev&quot; start_hidden=&quot;0&quot; save_size=&quot;0&quot;&gt;
+		&lt;colors&gt;
+			&lt;color id=&quot;0&quot; r=&quot;2&quot; g=&quot;26&quot; b=&quot;46&quot;/&gt;
+			&lt;color id=&quot;1&quot; r=&quot;0&quot; g=&quot;0&quot; b=&quot;128&quot;/&gt;
+			&lt;color id=&quot;2&quot; r=&quot;0&quot; g=&quot;150&quot; b=&quot;0&quot;/&gt;
+			&lt;color id=&quot;3&quot; r=&quot;0&quot; g=&quot;150&quot; b=&quot;150&quot;/&gt;
+			&lt;color id=&quot;4&quot; r=&quot;170&quot; g=&quot;25&quot; b=&quot;25&quot;/&gt;
+			&lt;color id=&quot;5&quot; r=&quot;128&quot; g=&quot;0&quot; b=&quot;128&quot;/&gt;
+			&lt;color id=&quot;6&quot; r=&quot;128&quot; g=&quot;128&quot; b=&quot;0&quot;/&gt;
+			&lt;color id=&quot;7&quot; r=&quot;192&quot; g=&quot;192&quot; b=&quot;192&quot;/&gt;
+			&lt;color id=&quot;8&quot; r=&quot;128&quot; g=&quot;128&quot; b=&quot;128&quot;/&gt;
+			&lt;color id=&quot;9&quot; r=&quot;0&quot; g=&quot;100&quot; b=&quot;255&quot;/&gt;
+			&lt;color id=&quot;10&quot; r=&quot;0&quot; g=&quot;255&quot; b=&quot;0&quot;/&gt;
+			&lt;color id=&quot;11&quot; r=&quot;0&quot; g=&quot;255&quot; b=&quot;255&quot;/&gt;
+			&lt;color id=&quot;12&quot; r=&quot;255&quot; g=&quot;50&quot; b=&quot;50&quot;/&gt;
+			&lt;color id=&quot;13&quot; r=&quot;255&quot; g=&quot;0&quot; b=&quot;255&quot;/&gt;
+			&lt;color id=&quot;14&quot; r=&quot;255&quot; g=&quot;255&quot; b=&quot;0&quot;/&gt;
+			&lt;color id=&quot;15&quot; r=&quot;255&quot; g=&quot;255&quot; b=&quot;255&quot;/&gt;
+		&lt;/colors&gt;
+	&lt;/console&gt;
+	&lt;appearance&gt;
+		&lt;font name=&quot;Consolas&quot; size=&quot;11&quot; bold=&quot;0&quot; italic=&quot;0&quot; smoothing=&quot;2&quot;&gt;
+			&lt;color use=&quot;0&quot; r=&quot;0&quot; g=&quot;0&quot; b=&quot;0&quot;/&gt;
+		&lt;/font&gt;
+		&lt;window title=&quot;Console&quot; icon=&quot;&quot; use_tab_icon=&quot;1&quot; use_console_title=&quot;1&quot; show_cmd=&quot;1&quot; show_cmd_tabs=&quot;1&quot; use_tab_title=&quot;1&quot; trim_tab_titles=&quot;20&quot; trim_tab_titles_right=&quot;0&quot;/&gt;
+		&lt;controls show_menu=&quot;0&quot; show_toolbar=&quot;0&quot; show_statusbar=&quot;0&quot; show_tabs=&quot;1&quot; hide_single_tab=&quot;1&quot; show_scrollbars=&quot;1&quot; flat_scrollbars=&quot;0&quot; tabs_on_bottom=&quot;0&quot;/&gt;
+		&lt;styles caption=&quot;1&quot; resizable=&quot;1&quot; taskbar_button=&quot;1&quot; border=&quot;1&quot; inside_border=&quot;2&quot; tray_icon=&quot;1&quot;&gt;
+			&lt;selection_color r=&quot;255&quot; g=&quot;255&quot; b=&quot;255&quot;/&gt;
+		&lt;/styles&gt;
+		&lt;position x=&quot;-1&quot; y=&quot;-1&quot; dock=&quot;-1&quot; snap=&quot;0&quot; z_order=&quot;0&quot; save_position=&quot;0&quot;/&gt;
+		&lt;transparency type=&quot;1&quot; active_alpha=&quot;238&quot; inactive_alpha=&quot;237&quot; r=&quot;0&quot; g=&quot;0&quot; b=&quot;0&quot;/&gt;
+	&lt;/appearance&gt;
+	&lt;behavior&gt;
+		&lt;copy_paste copy_on_select=&quot;0&quot; clear_on_copy=&quot;1&quot; no_wrap=&quot;1&quot; trim_spaces=&quot;1&quot; copy_newline_char=&quot;0&quot; sensitive_copy=&quot;1&quot;/&gt;
+		&lt;scroll page_scroll_rows=&quot;0&quot;/&gt;
+		&lt;tab_highlight flashes=&quot;3&quot; stay_highligted=&quot;1&quot;/&gt;
+	&lt;/behavior&gt;
+	&lt;hotkeys use_scroll_lock=&quot;1&quot;&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;83&quot; command=&quot;settings&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;112&quot; command=&quot;help&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;1&quot; extended=&quot;0&quot; code=&quot;115&quot; command=&quot;exit&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;112&quot; command=&quot;newtab1&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;113&quot; command=&quot;newtab2&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;114&quot; command=&quot;newtab3&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;115&quot; command=&quot;newtab4&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;116&quot; command=&quot;newtab5&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;117&quot; command=&quot;newtab6&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;118&quot; command=&quot;newtab7&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;119&quot; command=&quot;newtab8&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;120&quot; command=&quot;newtab9&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;121&quot; command=&quot;newtab10&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;49&quot; command=&quot;switchtab1&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;50&quot; command=&quot;switchtab2&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;51&quot; command=&quot;switchtab3&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;52&quot; command=&quot;switchtab4&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;53&quot; command=&quot;switchtab5&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;54&quot; command=&quot;switchtab6&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;55&quot; command=&quot;switchtab7&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;56&quot; command=&quot;switchtab8&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;57&quot; command=&quot;switchtab9&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;48&quot; command=&quot;switchtab10&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;9&quot; command=&quot;nexttab&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;1&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;9&quot; command=&quot;prevtab&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;87&quot; command=&quot;closetab&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;82&quot; command=&quot;renametab&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;1&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;67&quot; command=&quot;copy&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;1&quot; code=&quot;46&quot; command=&quot;clear_selection&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;1&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;86&quot; command=&quot;paste&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;stopscroll&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollrowup&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollrowdown&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollpageup&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollpagedown&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollcolleft&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollcolright&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollpageleft&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollpageright&quot;/&gt;
+		&lt;hotkey ctrl=&quot;1&quot; shift=&quot;1&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;112&quot; command=&quot;dumpbuffer&quot;/&gt;
+		&lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;activate&quot;/&gt;
+	&lt;/hotkeys&gt;
+	&lt;mouse&gt;
+		&lt;actions&gt;
+			&lt;action ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; button=&quot;1&quot; name=&quot;copy&quot;/&gt;
+			&lt;action ctrl=&quot;0&quot; shift=&quot;1&quot; alt=&quot;0&quot; button=&quot;1&quot; name=&quot;select&quot;/&gt;
+			&lt;action ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; button=&quot;3&quot; name=&quot;paste&quot;/&gt;
+			&lt;action ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; button=&quot;1&quot; name=&quot;drag&quot;/&gt;
+			&lt;action ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; button=&quot;2&quot; name=&quot;menu&quot;/&gt;
+		&lt;/actions&gt;
+	&lt;/mouse&gt;
+	&lt;tabs&gt;
+		&lt;tab title=&quot;Console2&quot; use_default_icon=&quot;0&quot;&gt;
+			&lt;console shell=&quot;&quot; init_dir=&quot;&quot; run_as_user=&quot;0&quot; user=&quot;&quot;/&gt;
+			&lt;cursor style=&quot;0&quot; r=&quot;255&quot; g=&quot;255&quot; b=&quot;255&quot;/&gt;
+			&lt;background type=&quot;0&quot; r=&quot;0&quot; g=&quot;0&quot; b=&quot;0&quot;&gt;
+				&lt;image file=&quot;&quot; relative=&quot;0&quot; extend=&quot;0&quot; position=&quot;0&quot;&gt;
+					&lt;tint opacity=&quot;0&quot; r=&quot;0&quot; g=&quot;0&quot; b=&quot;0&quot;/&gt;
+				&lt;/image&gt;
+			&lt;/background&gt;
+		&lt;/tab&gt;
+	&lt;/tabs&gt;
+&lt;/settings&gt;
+</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Git with SVN]]></title>
+    <link href="http://andylind.github.com/blog/2012/05/11/Using-Git-With-SVN/"/>
+    <updated>2012-05-11T11:38:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/05/11/Using-Git-With-SVN</id>
+    <content type="html"><![CDATA[<p>Here is my workflow for using Git with SVN:</p>
+
+<p><div><script src='https://gist.github.com/2655799.js?file='></script>
+<noscript><pre><code>//create local repo
+git svn init -s http://url-of-repo
+git svn fetch
+git svn rebase
+
+//work on a local branch or branches
+git checkout -b myfeature
+
+//make some changes and commit
+git commit -a -m &quot;made some changes&quot;
+
+//switch to master and rebase changes 
+git checkout master
+git rebase myfeature
+git svn rebase
+
+//see differences between local and svn trunk
+git diff remotes/trunk
+
+//commit changes to svn
+git svn dcommit</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

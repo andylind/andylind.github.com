@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: blogging | Andy Lind]]></title>
+  <link href="http://andylind.github.com/blog/categories/blogging/atom.xml" rel="self"/>
+  <link href="http://andylind.github.com/"/>
+  <updated>2012-10-07T15:27:59-05:00</updated>
+  <id>http://andylind.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Lind]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Creating an Octopress Site on Github Pages]]></title>
+    <link href="http://andylind.github.com/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/"/>
+    <updated>2012-03-12T11:51:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/03/12/creating-an-octopress-site-on-github-Pages</id>
+    <content type="html"><![CDATA[<p><img src="/images/octopress-logo.png"></p>
+
+<p>Here are some of the resources that I used to create this site:<br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/deploying/">Deploying Octopress</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://pages.github.com/">Github Pages</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">Github Pages Setup Guide</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://www.yodi.me/blog/2011/10/24/github-custom-domain-with-octopress-in-ubuntu-oneiric-11-dot-10/">Octopress in Ubuntu Oneiric 11.10</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/setup/rvm/">Installing rvm (make sure you use the correct ruby version)</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://melandri.net/2012/02/14/octopress-theme-customization/">Octopress Theme Customization</a></p>
+
+<p>Simple way to run an HTTP server locally for testing:<br/>
+&nbsp;&nbsp;&nbsp; - Open a command window<br/>
+&nbsp;&nbsp;&nbsp; - Change to the octopress/public directory<br/>
+&nbsp;&nbsp;&nbsp; - Run: python -m SimpleHTTPServer</p>
+
+<p>The Three most important commands when using octopress:<br/>
+&nbsp;&nbsp;&nbsp; - rake new_post["title"]<br/>
+&nbsp;&nbsp;&nbsp; - rake generate<br/>
+&nbsp;&nbsp;&nbsp; - rake deploy</p>
+]]></content>
+  </entry>
+  
+</feed>

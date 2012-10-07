@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: code | Andy Lind]]></title>
-  <link href="http://andylind.github.com/blog/categories/code/atom.xml" rel="self"/>
+  <title><![CDATA[Category: code sample | Andy Lind]]></title>
+  <link href="http://andylind.github.com/blog/categories/code-sample/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2012-10-07T15:23:14-05:00</updated>
+  <updated>2012-10-07T15:27:59-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -117,7 +117,7 @@ chmod a+rw [filename]
 </pre>
 
 
-<p>Here are a few example of common uses that I have for chaining commands together:</p>
+<p>Here is an example of a common way that I might chain commands together:</p>
 
 <pre>
 #Look in the last 1000 lines of a file for lines starting with ERROR
@@ -125,6 +125,76 @@ chmod a+rw [filename]
 tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
 </pre>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Git with SVN]]></title>
+    <link href="http://andylind.github.com/blog/2012/05/11/Using-Git-With-SVN/"/>
+    <updated>2012-05-11T11:38:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/05/11/Using-Git-With-SVN</id>
+    <content type="html"><![CDATA[<p>Here is my workflow for using Git with SVN:</p>
+
+<p><div><script src='https://gist.github.com/2655799.js?file='></script>
+<noscript><pre><code>//create local repo
+git svn init -s http://url-of-repo
+git svn fetch
+git svn rebase
+
+//work on a local branch or branches
+git checkout -b myfeature
+
+//make some changes and commit
+git commit -a -m &quot;made some changes&quot;
+
+//switch to master and rebase changes 
+git checkout master
+git rebase myfeature
+git svn rebase
+
+//see differences between local and svn trunk
+git diff remotes/trunk
+
+//commit changes to svn
+git svn dcommit</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[An Example Cross Domain AJAX Request]]></title>
+    <link href="http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request/"/>
+    <updated>2011-06-15T00:44:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request</id>
+    <content type="html"><![CDATA[<p>Cross Domain AJAX calls can be made by using JSONP.</p>
+
+<p>Here is an example using the Twitter api:</p>
+
+<p><div><script src='https://gist.github.com/965715.js?file='></script>
+<noscript><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
+    &lt;title&gt;jQuery cross domain ajax example&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; 
+            src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js&quot;&gt;
+    &lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+	    $(document).ready(function() {
+                $.getJSON('http://api.twitter.com/1/trends/1.json?callback=?',
+                    function(json){      
+                        $('#mydiv').text(json[0].trends[0].name); 
+                    }
+                );
+            });
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h3&gt;Top Twitter Trend:&lt;/h3&gt;
+    &lt;div id=&quot;mydiv&quot;&gt;Loading...&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></noscript></div>
+</p>
 ]]></content>
   </entry>
   

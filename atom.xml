@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2012-10-07T15:23:14-05:00</updated>
+  <updated>2012-10-07T15:27:59-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -117,7 +117,7 @@ chmod a+rw [filename]
 </pre>
 
 
-<p>Here are a few example of common uses that I have for chaining commands together:</p>
+<p>Here is an example of a common way that I might chain commands together:</p>
 
 <pre>
 #Look in the last 1000 lines of a file for lines starting with ERROR
