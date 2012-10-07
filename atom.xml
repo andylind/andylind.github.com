@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2012-10-07T11:50:48-05:00</updated>
+  <updated>2012-10-07T12:19:01-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -178,8 +178,9 @@ git svn dcommit</code></pre></noscript></div>
 <p>Here are some of the resources that I used to create this site:<br/>
 &nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/deploying/">Deploying Octopress</a><br/>
 &nbsp;&nbsp;&nbsp; - <a href="http://pages.github.com/">Github Pages</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">Github Pages Setup Guide</a><br/>
 &nbsp;&nbsp;&nbsp; - <a href="http://www.yodi.me/blog/2011/10/24/github-custom-domain-with-octopress-in-ubuntu-oneiric-11-dot-10/">Octopress in Ubuntu Oneiric 11.10</a><br/>
-&nbsp;&nbsp;&nbsp; - [Installing rvm (make sure you use the correct ruby version)] (http://octopress.org/docs/setup/rvm/)
+&nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/setup/rvm/">Installing rvm (make sure you use the correct ruby version)</a><br/>
 &nbsp;&nbsp;&nbsp; - <a href="http://melandri.net/2012/02/14/octopress-theme-customization/">Octopress Theme Customization</a></p>
 
 <p>Simple way to run an HTTP server locally for testing:<br/>
