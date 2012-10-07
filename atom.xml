@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2012-10-07T15:53:43-05:00</updated>
+  <updated>2012-10-07T16:05:19-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -12,6 +12,18 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Intro to Git]]></title>
+    <link href="http://andylind.github.com/blog/2012/11/07/intro-to-git/"/>
+    <updated>2012-11-07T16:00:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2012/11/07/intro-to-git</id>
+    <content type="html"><![CDATA[<p>This is a presentation that I recently gave on the distributed version control system <a href="http://www.git-scm.com">Git</a>. In the presentation, I introduce the concepts behind Git and some of the main Git commands. Then I walkthrough how Git can change your workflow as a developer.</p>
+
+<script async class="speakerdeck-embed" data-id="5099d54eecc0de0002015138" data-ratio="1.3333333333333333" src="http://andylind.github.com//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Agile Day Twin Cities 2012]]></title>
