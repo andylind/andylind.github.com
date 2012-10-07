@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Andy Lind</title>
+  <title>My Setup for Using Git on Windows - Andy Lind</title>
   <meta name="author" content="Andy Lind">
 
   
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://andylind.github.com">
+  <link rel="canonical" href="http://andylind.github.com/blog/2012/09/15/my-setup-for-using-git-on-windows">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -45,15 +45,12 @@
 
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/09/15/my-setup-for-using-git-on-windows/">My Setup for Using Git on Windows</a></h1>
+      <h1 class="entry-title">My Setup for Using Git on Windows</h1>
     
     
       <p class="meta">
@@ -76,7 +73,7 @@
   </header>
 
 
-  <div class="entry-content"><p>For developing on Windows with Git, I have settled on using Console2 and MINGW.</p>
+<div class="entry-content"><p>For developing on Windows with Git, I have settled on using Console2 and MINGW.</p>
 
 <p>My settings for Console2 are:</p>
 
@@ -189,84 +186,16 @@
 
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/11/Using-Git-With-SVN/">Using Git With SVN</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Andy Lind</span></span>
 
-<time datetime="2012-05-11T11:38:00-05:00" pubdate data-updated="true">May 11<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here is my workflow for using Git with SVN:</p>
-
-<div><script src='https://gist.github.com/2655799.js?file='></script>
-<noscript><pre><code>//create local repo
-git svn init -s http://url-of-repo
-git svn fetch
-git svn rebase
-
-//work on a local branch or branches
-git checkout -b myfeature
-
-//make some changes and commit
-git commit -a -m &quot;made some changes&quot;
-
-//switch to master and rebase changes 
-git checkout master
-git rebase myfeature
-git svn rebase
-
-//see differences between local and svn trunk
-git diff remotes/trunk
-
-//commit changes to svn
-git svn dcommit</code></pre></noscript></div>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/">Creating an Octopress Site on Github Pages</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -278,110 +207,40 @@ git svn dcommit</code></pre></noscript></div>
   
 
 
-<time datetime="2012-03-12T11:51:00-05:00" pubdate data-updated="true">Mar 12<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/octopress-logo.png"></p>
-
-<p>Here are some of the resources that I used to create this site:<br/>
-&nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/deploying/">Deploying Octopress</a><br/>
-&nbsp;&nbsp;&nbsp; - <a href="http://pages.github.com/">Github Pages</a><br/>
-&nbsp;&nbsp;&nbsp; - <a href="http://www.yodi.me/blog/2011/10/24/github-custom-domain-with-octopress-in-ubuntu-oneiric-11-dot-10/">Octopress in Ubuntu Oneiric 11.10</a><br/>
-&nbsp;&nbsp;&nbsp; - [Installing rvm (make sure you use the correct ruby version)] (http://octopress.org/docs/setup/rvm/)
-&nbsp;&nbsp;&nbsp; - <a href="http://melandri.net/2012/02/14/octopress-theme-customization/">Octopress Theme Customization</a></p>
-
-<p>Simple way to run an HTTP server locally for testing:<br/>
-&nbsp;&nbsp;&nbsp; - Open a command window<br/>
-&nbsp;&nbsp;&nbsp; - Change to the octopress/public directory<br/>
-&nbsp;&nbsp;&nbsp; - Run: python -m SimpleHTTPServer</p>
-
-<p>The Three most important commands when using octopress:<br/>
-&nbsp;&nbsp;&nbsp; - rake new_post[&#8220;title&#8221;]<br/>
-&nbsp;&nbsp;&nbsp; - rake generate<br/>
-&nbsp;&nbsp;&nbsp; - rake deploy</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2012-09-15T00:38:00-05:00" pubdate data-updated="true">Sep 15<span>th</span>, 2012</time>
       
-  <header>
+
+
+    </p>
     
-      <h1 class="entry-title"><a href="/blog/2011/06/15/an-example-cross-domain-ajax-request/">An Example Cross Domain AJAX Request</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
+      <div class="sharing">
   
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2012/09/15/my-setup-for-using-git-on-windows/" data-via="" data-counturl="http://andylind.github.com/blog/2012/09/15/my-setup-for-using-git-on-windows/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
 
-
-<time datetime="2011-06-15T00:44:00-05:00" pubdate data-updated="true">Jun 15<span>th</span>, 2011</time>
-        
-      </p>
     
-  </header>
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/05/11/Using-Git-With-SVN/" title="Previous Post: Using Git with SVN">&laquo; Using Git with SVN</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-
-  <div class="entry-content"><p>Cross Domain AJAX calls can be made by using JSONP.</p>
-
-<p>Here is an example using the Twitter api:</p>
-
-<div><script src='https://gist.github.com/965715.js?file='></script>
-<noscript><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
-    &lt;title&gt;jQuery cross domain ajax example&lt;/title&gt;
-    &lt;script type=&quot;text/javascript&quot; 
-            src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js&quot;&gt;
-    &lt;/script&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-        $(document).ready(function() {
-                $.getJSON('http://api.twitter.com/1/trends/1.json?callback=?',
-                    function(json){      
-                        $('#mydiv').text(json[0].trends[0].name); 
-                    }
-                );
-            });
-    &lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h3&gt;Top Twitter Trend:&lt;/h3&gt;
-    &lt;div id=&quot;mydiv&quot;&gt;Loading...&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre></noscript></div>
-
-
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -417,7 +276,7 @@ git svn dcommit</code></pre></noscript></div>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/andylind">@andylind</a> on GitHub
@@ -452,6 +311,7 @@ git svn dcommit</code></pre></noscript></div>
   
 </aside>
 
+
     </div>
   </div>
 
@@ -461,7 +321,10 @@ git svn dcommit</code></pre></noscript></div>
       var disqus_shortname = 'andylind';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://andylind.github.com/blog/2012/09/15/my-setup-for-using-git-on-windows/';
+        var disqus_url = 'http://andylind.github.com/blog/2012/09/15/my-setup-for-using-git-on-windows/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
