@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code sample | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/code-sample/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-02-18T20:27:08-06:00</updated>
+  <updated>2013-02-18T20:42:04-06:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -152,8 +152,6 @@ git commit --amend -m "New commit message"
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;:q
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>If you are looking to learn more, here is a helpful cheatsheet showing many common commands: <a href="http://media.smashingmagazine.com/wp-content/uploads/2010/05/VI-Help-Sheet-01-large2.jpg">vi cheatsheet from smashingmagazine</a></p>
 ]]></content>
   </entry>
   
