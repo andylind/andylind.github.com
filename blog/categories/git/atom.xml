@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Git | Andy Lind]]></title>
+  <title><![CDATA[Category: git | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-02-18T21:41:17-06:00</updated>
+  <updated>2013-02-18T22:14:58-06:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -14,118 +14,14 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Git Stash Workflow]]></title>
-    <link href="http://andylind.github.com/blog/2013/02/18/git-stash-workflow/"/>
-    <updated>2013-02-18T20:14:00-06:00</updated>
-    <id>http://andylind.github.com/blog/2013/02/18/git-stash-workflow</id>
-    <content type="html"><![CDATA[<p>I often find that while I am coding I need to have more than one stream of work going on. One scenario that often occurs for me is that I am working on a feature and then a bug reports comes in that needs to be fixed right away. If the change becomes large, I will create a local branch for the bug fix, but most of the time I just want to save my unfinished feature changes somewhere while I quickly fix the bug. Git stash allows me to save my current workspace without having to commit unfinished work.</p>
+    <title type="html"><![CDATA[Intro to Git]]></title>
+    <link href="http://andylind.github.com/blog/2012/11/07/intro-to-git/"/>
+    <updated>2012-11-07T16:00:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2012/11/07/intro-to-git</id>
+    <content type="html"><![CDATA[<p>This is a presentation that I recently gave on the distributed version control system <a href="http://www.git-scm.com">Git</a>. In the presentation, I introduce the concepts behind Git and some of the main Git commands. Then I walkthrough how Git can change your workflow as a developer.</p>
 
-<p>Here is how I use git stash most of the time:
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;save changes in the workspace to the stash&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;git stash save <span class="s1">&#39;some name for what is saved&#39;</span>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;do some work&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;then decide to go back to what is in the stash&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;apply the top stash’s changes to the workspace&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;git stash pop
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<script async class="speakerdeck-embed" data-id="5099d54eecc0de0002015138" data-ratio="1.3333333333333333" src="http://andylind.github.com//speakerdeck.com/assets/embed.js"></script>
 
-<p>Commands I use when I need to know more about what is in the stash:
-<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;check to see what stashes exist&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;git stash list&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;see what files are changed in the top stash&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;git stash show&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;h1&gt;clear all items from the stash&lt;/h1&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;git stash clear
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Changing a Git Commit Message]]></title>
-    <link href="http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message/"/>
-    <updated>2013-02-09T20:10:00-06:00</updated>
-    <id>http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message</id>
-    <content type="html"><![CDATA[<p>If you accidentally write the wrong thing in a Git commit message or think of something you forgot to comment on, it is possible to re-write your git commit message. Just make sure you have not already pushed the commit to others, or it may cause problems.</p>
-
-<p>This command will let you change the commit message of your last Git commit:</p>
-
-<pre>
-git commit --amend -m "New commit message"
-</pre>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Using Git with SVN]]></title>
-    <link href="http://andylind.github.com/blog/2012/05/11/Using-Git-With-SVN/"/>
-    <updated>2012-05-11T11:38:00-05:00</updated>
-    <id>http://andylind.github.com/blog/2012/05/11/Using-Git-With-SVN</id>
-    <content type="html"><![CDATA[<p>Here is my workflow for using Git with SVN:</p>
-
-<p><div><script src='https://gist.github.com/2655799.js?file='></script>
-<noscript><pre><code>//create local repo
-git svn init -s http://url-of-repo
-git svn fetch
-git svn rebase
-
-//work on a local branch or branches
-git checkout -b myfeature
-
-//make some changes and commit
-git commit -a -m &quot;made some changes&quot;
-
-//switch to master and rebase changes 
-git checkout master
-git rebase myfeature
-git svn rebase
-
-//see differences between local and svn trunk
-git diff remotes/trunk
-
-//commit changes to svn
-git svn dcommit</code></pre></noscript></div>
-</p>
 ]]></content>
   </entry>
   

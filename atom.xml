@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-02-18T21:41:17-06:00</updated>
+  <updated>2013-02-18T22:14:58-06:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -18,9 +18,11 @@
     <link href="http://andylind.github.com/blog/2013/02/18/git-stash-workflow/"/>
     <updated>2013-02-18T20:14:00-06:00</updated>
     <id>http://andylind.github.com/blog/2013/02/18/git-stash-workflow</id>
-    <content type="html"><![CDATA[<p>I often find that while I am coding I need to have more than one stream of work going on. One scenario that often occurs for me is that I am working on a feature and then a bug reports comes in that needs to be fixed right away. If the change becomes large, I will create a local branch for the bug fix, but most of the time I just want to save my unfinished feature changes somewhere while I quickly fix the bug. Git stash allows me to save my current workspace without having to commit unfinished work.</p>
+    <content type="html"><![CDATA[<p>I often find that while I am coding I need to have more than one stream of work going on. One scenario that often occurs for me is that I am working on a feature and then a bug reports comes in that needs to be fixed right away. If the change becomes large, I will create a local branch for the bug fix, but most of the time I just want to save my unfinished feature changes somewhere while I quickly fix the bug.</p>
 
-<p>Here is how I use git stash most of the time:</p>
+<p>Git stash allows me to save my current workspace without having to commit unfinished work. The stash command takes all uncommitted changes in the workspace and saves them on a stack so that you can change branches or pull in commit. This is a great way to save a set of changes that you are not quite finished with so that you can switch to working on something else. The changes can be saved with a description so that you can see what you saved later.</p>
+
+<p>Here is the simple workflow that I use git stash most of the time:</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -41,7 +43,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Commands I use when I need to know more about what is in the stash:</p>
+<p>When I need to know more about what is in the stash:</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -282,7 +284,7 @@ tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
     <link href="http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows/"/>
     <updated>2012-08-28T00:38:00-05:00</updated>
     <id>http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows</id>
-    <content type="html"><![CDATA[<p>For developing on Windows with Git, I have been using Console2 and MINGW.</p>
+    <content type="html"><![CDATA[<p>For developing on Windows with Git, I have been using Console2 and MINGW. MINGW (which ships with the Git installer for Windows) is a minial dev environment with many common unix tool re-written for windows. Console2 provides an improved console ui to make things like font/color customization and copy/paste easier.</p>
 
 <p>Here are <a href="https://gist.github.com/andylind/2875034/">my settings for Console2</a></p>
 ]]></content>
