@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vi | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/vi/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-01-23T00:05:26-06:00</updated>
+  <updated>2013-02-18T20:27:08-06:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -18,31 +18,57 @@
     <link href="http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial/"/>
     <updated>2012-10-12T14:27:00-05:00</updated>
     <id>http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial</id>
-    <content type="html"><![CDATA[<p>One thing I have always struggled with is using vi. I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most convenient to use a command window for text editing. I decided recently that I need to make sure that I understand the most basic vi commands, so that I can edit text on any *nix machine.</p>
+    <content type="html"><![CDATA[<p>I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most convenient to use a command window for text editing. Understanding the most basic vi commands can be really helpful when you need to edit text from the terminal.</p>
 
-<p>The first step for me was learning just a few basic vi commands so that I would have enough knowledge to edit files. Below is the most minimal set of commands that you need to know to operate vi.</p>
+<p>The first step for me to learn vi was to master just a few basic commands so that I would have enough knowledge to edit files. Below is the most minimal set of commands that you need to know to operate vi.</p>
 
 <p>The key concept you have to learn is that vi has two modes. Insert mode and command mode. When vi is opened, it will start in command mode by default. This mode allows you to do things like run complex editing commands, save the file, and exit. Pressing "i" will take you to inset mode. Insert mode allows you to edit text that is in the file. Pressing esc will return to command mode.</p>
 
 <p>It can be confusing at first to understand which mode you are in. If you want to be safe, you can always press "esc" and guarantee that you are in command mode.</p>
 
-<pre>
-#open vi
-vi filename.txt
-
-#switch to insert mode
-i
-
-#switch to command mode
-esc
-
-#save a file
-:w
-
-#exit vi
-:q
-</pre>
-
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;open vi&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;vi filename.txt&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;switch to insert mode&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;i&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;switch to <span class="nb">command </span>mode&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;esc&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;save a file&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;:w&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;exit vi&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;:q
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>If you are looking to learn more, here is a helpful cheatsheet showing many common commands: <a href="http://media.smashingmagazine.com/wp-content/uploads/2010/05/VI-Help-Sheet-01-large2.jpg">vi cheatsheet from smashingmagazine</a></p>
 ]]></content>

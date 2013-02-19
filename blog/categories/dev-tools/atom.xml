@@ -4,7 +4,7 @@
   <title><![CDATA[Category: dev tools | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/dev-tools/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-01-23T00:05:26-06:00</updated>
+  <updated>2013-02-18T20:27:08-06:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -12,6 +12,89 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Git Stash Workflow]]></title>
+    <link href="http://andylind.github.com/blog/2013/02/18/git-stash-workflow/"/>
+    <updated>2013-02-18T20:14:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/02/18/git-stash-workflow</id>
+    <content type="html"><![CDATA[<p>I often find that while I am coding I need to have more than one stream of work going on. One scenario that often occurs for me is that I am working on a feature and then a bug reports comes in that needs to be fixed right away. If the change becomes large, I will create a local branch for the bug fix, but most of the time I just want to save my unfinished feature changes somewhere while I quickly fix the bug. Git stash allows me to save my current workspace without having to commit unfinished work.</p>
+
+<p>Here is how I use git stash most of the time:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;save changes in the workspace to the stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash save <span class="s1">&#39;some name for what is saved&#39;</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;do some work&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;then decide to go back to what is in the stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;apply the top stash’s changes to the workspace&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash pop
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Commands I use when I need to know more about what is in the stash:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;check to see what stashes exist&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash list&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;see what files are changed in the top stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash show&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;clear all items from the stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash clear
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Changing a Git Commit Message]]></title>
+    <link href="http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message/"/>
+    <updated>2013-02-09T20:10:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message</id>
+    <content type="html"><![CDATA[<p>If you accidently write the wrong thing in a Git commit message or think of something you forgot to comment on, it is possible to re-write your git commit message. Just make sure you have not already pushed the commit to others, or it may cause problems.</p>
+
+<p>This command will let you change the commit message of your last Git commit:</p>
+
+<pre>
+git commit --amend -m "New commit message"
+</pre>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My Setup for Using Git on Windows]]></title>

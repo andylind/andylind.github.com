@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Simple vi Tutorial - Andy Lind</title>
+  <title>Changing a Git Commit Message - Andy Lind</title>
   <meta name="author" content="Andy Lind">
 
   
-  <meta name="description" content="I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most &hellip;">
+  <meta name="description" content="If you accidently write the wrong thing in a Git commit message or think of something you forgot to comment on, it is possible to re-write your git &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial">
+  <link rel="canonical" href="http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -66,7 +66,7 @@
   
   <header>
     
-      <h1 class="entry-title">Simple Vi Tutorial</h1>
+      <h1 class="entry-title">Changing a Git Commit Message</h1>
     
     
       <p class="meta">
@@ -82,53 +82,21 @@
   
 
 
-<time datetime="2012-10-12T14:27:00-05:00" pubdate data-updated="true">Oct 12<span>th</span>, 2012</time>
+<time datetime="2013-02-09T20:10:00-06:00" pubdate data-updated="true">Feb 9<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most convenient to use a command window for text editing. Understanding the most basic vi commands can be really helpful when you need to edit text from the terminal.</p>
+<div class="entry-content"><p>If you accidently write the wrong thing in a Git commit message or think of something you forgot to comment on, it is possible to re-write your git commit message. Just make sure you have not already pushed the commit to others, or it may cause problems.</p>
 
-<p>The first step for me to learn vi was to master just a few basic commands so that I would have enough knowledge to edit files. Below is the most minimal set of commands that you need to know to operate vi.</p>
+<p>This command will let you change the commit message of your last Git commit:</p>
 
-<p>The key concept you have to learn is that vi has two modes. Insert mode and command mode. When vi is opened, it will start in command mode by default. This mode allows you to do things like run complex editing commands, save the file, and exit. Pressing &#8220;i&#8221; will take you to inset mode. Insert mode allows you to edit text that is in the file. Pressing esc will return to command mode.</p>
+<pre>
+git commit --amend -m "New commit message"
+</pre>
 
-<p>It can be confusing at first to understand which mode you are in. If you want to be safe, you can always press &#8220;esc&#8221; and guarantee that you are in command mode.</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># open vi</span>
-</span><span class='line'>vi filename.txt
-</span><span class='line'>
-</span><span class='line'><span class="c"># switch to insert mode</span>
-</span><span class='line'>i
-</span><span class='line'>
-</span><span class='line'><span class="c"># switch to command mode</span>
-</span><span class='line'>esc
-</span><span class='line'>
-</span><span class='line'><span class="c"># save a file</span>
-</span><span class='line'>:w
-</span><span class='line'>
-</span><span class='line'><span class="c"># exit vi</span>
-</span><span class='line'>:q
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>If you are looking to learn more, here is a helpful cheatsheet showing many common commands: <a href="http://media.smashingmagazine.com/wp-content/uploads/2010/05/VI-Help-Sheet-01-large2.jpg">vi cheatsheet from smashingmagazine</a></p>
 </div>
 
 
@@ -151,12 +119,12 @@
   
 
 
-<time datetime="2012-10-12T14:27:00-05:00" pubdate data-updated="true">Oct 12<span>th</span>, 2012</time>
+<time datetime="2013-02-09T20:10:00-06:00" pubdate data-updated="true">Feb 9<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/code-sample/'>code sample</a>, <a class='category' href='/blog/categories/vi/'>vi</a>
+    <a class='category' href='/blog/categories/git/'>Git</a>, <a class='category' href='/blog/categories/code-sample/'>code sample</a>, <a class='category' href='/blog/categories/dev-tools/'>dev tools</a>
   
 </span>
 
@@ -165,7 +133,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial/" data-via="" data-counturl="http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message/" data-via="" data-counturl="http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -176,10 +144,10 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/09/07/my-most-used-linux-commands/" title="Previous Post: My Most Used Linux Commands">&laquo; My Most Used Linux Commands</a>
+        <a class="basic-alignment left" href="/blog/2013/01/22/learning-to-code/" title="Previous Post: Learning to Code">&laquo; Learning to Code</a>
       
       
-        <a class="basic-alignment right" href="/blog/2012/11/03/agile-day-twin-cities-2012/" title="Next Post: Agile Day Twin Cities 2012">Agile Day Twin Cities 2012 &raquo;</a>
+        <a class="basic-alignment right" href="/blog/2013/02/18/git-stash-workflow/" title="Next Post: Git Stash Workflow">Git Stash Workflow &raquo;</a>
       
     </p>
   </footer>
