@@ -49,11 +49,17 @@
         <lastmod>2013-02-18T22:17:29-06:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/
+        </loc>
+        <lastmod>2013-03-06T22:04:40-06:00</lastmod>
+    </url>
+    <url>
         <loc>http://andylind.github.com/</loc>
-        <lastmod>2013-02-18T22:18:36-06:00</lastmod>
+        <lastmod>2013-03-06T22:04:40-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/archives/</loc>
-        <lastmod>2013-02-18T22:18:36-06:00</lastmod>
+        <lastmod>2013-03-06T22:04:40-06:00</lastmod>
     </url>
 </urlset>

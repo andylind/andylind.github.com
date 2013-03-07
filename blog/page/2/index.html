@@ -9,7 +9,7 @@
   <meta name="author" content="Andy Lind">
 
   
-  <meta name="description" content="The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh&#8217;ing into a server, &hellip;">
+  <meta name="description" content="I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -63,6 +63,81 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/10/12/simple-vi-tutorial/">Simple Vi Tutorial</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-12T14:27:00-05:00" pubdate data-updated="true">Oct 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most convenient to use a command window for text editing. Understanding the most basic vi commands can be really helpful when you need to edit text from the terminal.</p>
+
+<p>The first step for me to learn vi was to master just a few basic commands so that I would have enough knowledge to edit files. Below is the most minimal set of commands that you need to know to operate vi.</p>
+
+<p>The key concept you have to learn is that vi has two modes. Insert mode and command mode. When vi is opened, it will start in command mode by default. This mode allows you to do things like run complex editing commands, save the file, and exit. Pressing &#8220;i&#8221; will take you to inset mode. Insert mode allows you to edit text that is in the file. Pressing esc will return to command mode.</p>
+
+<p>It can be confusing at first to understand which mode you are in. If you want to be safe, you can always press &#8220;esc&#8221; and guarantee that you are in command mode.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># open vi</span>
+</span><span class='line'>vi filename.txt
+</span><span class='line'>
+</span><span class='line'><span class="c"># switch to insert mode</span>
+</span><span class='line'>i
+</span><span class='line'>
+</span><span class='line'><span class="c"># switch to command mode</span>
+</span><span class='line'>esc
+</span><span class='line'>
+</span><span class='line'><span class="c"># save a file</span>
+</span><span class='line'>:w
+</span><span class='line'>
+</span><span class='line'><span class="c"># exit vi</span>
+</span><span class='line'>:q
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -434,6 +509,10 @@ git svn dcommit</code></pre></noscript></div>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/">Viewing Jenkins Status from the Command Line via the Jenkins API</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/02/18/git-stash-workflow/">Git Stash Workflow</a>
       </li>
     
@@ -447,10 +526,6 @@ git svn dcommit</code></pre></noscript></div>
     
       <li class="post">
         <a href="/blog/2012/11/07/intro-to-git/">Intro to Git</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/11/03/agile-day-twin-cities-2012/">Agile Day Twin Cities 2012</a>
       </li>
     
   </ul>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: code-sample | Andy Lind]]></title>
-  <link href="http://andylind.github.com/blog/categories/code-sample/atom.xml" rel="self"/>
+  <title><![CDATA[Category: jenkins | Andy Lind]]></title>
+  <link href="http://andylind.github.com/blog/categories/jenkins/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
   <updated>2013-03-06T22:04:44-06:00</updated>
   <id>http://andylind.github.com/</id>

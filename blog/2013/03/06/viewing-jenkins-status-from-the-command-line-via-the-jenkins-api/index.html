@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Andy Lind</title>
+  <title>Viewing Jenkins Status from the Command Line via the Jenkins API - Andy Lind</title>
   <meta name="author" content="Andy Lind">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://andylind.github.com">
+  <link rel="canonical" href="http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -61,15 +61,12 @@
 
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/">Viewing Jenkins Status From the Command Line via the Jenkins API</a></h1>
+      <h1 class="entry-title">Viewing Jenkins Status From the Command Line via the Jenkins API</h1>
     
     
       <p class="meta">
@@ -92,7 +89,7 @@
   </header>
 
 
-  <div class="entry-content"><p>This is a python script that I created to print out the status of a set of Jenkins jobs in color on the command line. Right now the coloring for this script works on windows only.</p>
+<div class="entry-content"><p>This is a python script that I created to print out the status of a set of Jenkins jobs in color on the command line. Right now the coloring for this script works on windows only.</p>
 
 <p>github gist: <a href="https://gist.github.com/andylind/5057436">build_status.py</a></p>
 
@@ -182,104 +179,16 @@
 
 <p>Normally I use this script with an alias so that I can just type something like &#8220;jobs&#8221; and see a list of the Jenkins jobs that I care about. You can replace &#8220;http://your-jenkins-url/api/json&#8221; with any Jenkins api resource that lists Jenkins Jobs. For example, I have two custom views, one for projects being built and one for test jobs that I am interested in. I use this script so that I can quickly see from the command line the status of those Jenkins jobs without switching context to a web browser.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/18/git-stash-workflow/">Git Stash Workflow</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Andy Lind</span></span>
 
-<time datetime="2013-02-18T20:14:00-06:00" pubdate data-updated="true">Feb 18<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I often find that while I am coding I need to have more than one stream of work going on. One scenario that often occurs for me is that I am working on a feature and then a bug reports comes in that needs to be fixed right away. If the change becomes large, I will create a local branch for the bug fix, but most of the time I just want to save my unfinished feature changes somewhere while I quickly fix the bug.</p>
-
-<p><a href="http://git-scm.com/book/en/Git-Tools-Stashing">Git stash</a> allows me to save my current workspace without having to commit unfinished work. The stash command takes all uncommitted changes in the workspace and saves them on a stack so that you can change branches or pull in commits. This is a great way to save a set of changes that you are not quite finished with so that you can switch to working on something else. The changes can be saved with a description so that you can see what you saved later.</p>
-
-<p>Simple git stash workflow that I use most of the time:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># save changes in the workspace to the stash</span>
-</span><span class='line'>git stash save <span class="s1">&#39;some name for what is saved&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># do some work </span>
-</span><span class='line'><span class="c"># then decide to go back to what is in the stash</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># apply the top stash’s changes to the workspace</span>
-</span><span class='line'>git stash pop
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>When I need to know more about what is in the stash:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># check to see what stashes exist</span>
-</span><span class='line'>git stash list
-</span><span class='line'>
-</span><span class='line'><span class="c"># see what files are changed in the top stash</span>
-</span><span class='line'>git stash show
-</span><span class='line'>
-</span><span class='line'><span class="c"># clear all items from the stash</span>
-</span><span class='line'>git stash clear
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/02/09/changing-a-git-commit-message/">Changing a Git Commit Message</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -291,184 +200,40 @@
   
 
 
-<time datetime="2013-02-09T20:10:00-06:00" pubdate data-updated="true">Feb 9<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>If you accidentally write the wrong thing in a Git commit message or think of something you forgot to comment on, it is possible to re-write your git commit message. Just make sure you have not already pushed the commit to others, or it may cause problems.</p>
-
-<p>This command will let you change the commit message of your last Git commit:</p>
-
-<pre>
-git commit --amend -m "New commit message"
-</pre>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-03-06T21:57:00-06:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/22/learning-to-code/">Learning to Code</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/code-sample/'>code-sample</a>, <a class='category' href='/blog/categories/jenkins/'>jenkins</a>, <a class='category' href='/blog/categories/python/'>python</a>, <a class='category' href='/blog/categories/rest-api/'>rest-api</a>
+  
+</span>
 
 
-<time datetime="2013-01-22T20:44:00-06:00" pubdate data-updated="true">Jan 22<span>nd</span>, 2013</time>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>I have been asked recently by a few different people, “What would you do if you wanted to learn to code”.</p>
-
-<p>My answer has been to learn JavaScript, Python, or Ruby. It is easier than ever to get started learning one of those languages because of the large number of amazingly user friendly tutorials online. One of the most pain-free ways to get started with JavaScript, Python, or Ruby is by following the interactive tutorials offered by <a href="http://www.codecademy.com/learn">Code Academy</a>. Code Academy lets you write code and do tutorials right inside your web browser. This is awesome for beginners because they do not have to struggle through hours of local setup on their machine to get a runtime environment installed.</p>
-
-<p>I think the next step after learning a little bit from tutorials is to read a programming book. One of the best ones to get started with would be <a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> (free online).</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/" data-via="andrewrlind" data-counturl="http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/07/intro-to-git/">Intro to Git</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-07T16:00:00-06:00" pubdate data-updated="true">Nov 7<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is a presentation that I recently gave on the distributed version control system <a href="http://www.git-scm.com">Git</a>. In the presentation, I introduce the concepts behind Git and some of the main Git commands. Then I walkthrough how Git can change your workflow as a developer.</p>
-
-<script async class="speakerdeck-embed" data-id="5099d54eecc0de0002015138" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+        <a class="basic-alignment left" href="/blog/2013/02/18/git-stash-workflow/" title="Previous Post: Git Stash Workflow">&laquo; Git Stash Workflow</a>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/03/agile-day-twin-cities-2012/">Agile Day Twin Cities 2012</a></h1>
-    
-    
-      <p class="meta">
-        
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-03T15:35:00-05:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Last Friday, I attended the <a href="https://sites.google.com/site/twincitiespracticalagility/agile-day-twin-cities-2012">Agile Day Twin Cities</a> conference. The conference was centered around building a discussion about agile software practices and the main theme this year was learning.</p>
-
-<p>I want to share some of the most interesting and thought provoking statements that I heard from the day. Each of these could probably be an entire post on their own, but I think that these anecdotes and insights really give a picture of the discussion at Agile Day and the focus on questioning the status quo.</p>
-
-<p>The first speaker was <a href="https://twitter.com/davidhussman/">David Hussman</a>, who did a great job at getting everyone to question why they are doing things. Here are some of my favorite quotes from his presentations:</p>
-
-<blockquote><p>&#8220;Ask why. Why are you changing the process? Could you be doing something more valuable?&#8221; <br/>&#8220;Minimize output, Maximize impact&#8221;<br/>&#8220;Transition from thinking about how big something is to thinking if something is too big.&#8221; <br/>&#8220;One sign of a maturing agile team is that they stop talking about the code and they start talking about the tests that they need&#8221;</p></blockquote>
-
-
-<p>Stemming from David&#8217;s talk, there was a lot of discussion on why we work in iterations and what life would be like if we moved beyond iterations.</p>
-
-<blockquote><p>&#8220;Why does it matter if you don&#8217;t get done what you committed to in the sprint?&#8221;</p></blockquote>
-
-
-<p>Another session that I attended was focused on pair-programming practices. During that session the speaker made a really good point about testing:</p>
-
-<blockquote><p>&#8220;What is the next test that you should write? The test that tells you the most about the system.&#8221;</p></blockquote>
-
-
-<p>This point really hit home for me. I have been trying to transition to using more Test Driven Development (TDD) practices, and I think this could really help guide me in choosing the next test to write.</p>
-
-<p>Throughout the day, I heard a lot of controversial statements about process and tools such as:</p>
-
-<blockquote><p>&#8220;JIRA is where stories go to die&#8221;, and &#8220;Project Management is a symptom, not a solution&#8221;</p></blockquote>
-
-
-<p>There was a lot of support at the conference for sticky-note driven workflow, and a lot of backlash against project management tools. I think that was one of the things that I most disagreed with. I have really seen a huge benefit when using a tracking tool to share info about stories among a large team.</p>
-
-<p>The last quote that I found really interesting was from one of the open-space sessions. The speakers described a really great technique that runs counter to a lot of teaching for gathering requirements (e.g. 5 whys):</p>
-
-<blockquote><p>People do not respond well to being asked, &#8220;Why?&#8221;. Instead, ask &#8220;If that happened, then what?&#8221; or &#8220;Pretend you had that, then what would you do?&#8221;</p></blockquote>
-
-
-<p>Overall, I thought the conference was really good, and I appreciated the focus on continuous improvement throughout the agile process.</p>
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -477,7 +242,7 @@ git commit --amend -m "New commit message"
     <img src="/images/andrew-lind.jpg" width="170px" style="margin-top:7px">
   </p>
   <p>
-      I&#8217;m a software engineer writing code in many different languages. These are my thoughts on programming and agile software development.
+      I'm a software engineer writing code in many different languages. These are my thoughts on programming and agile software development.
   </p>
   <a title="Subscribe via RSS" rel="subscribe-rss" href="atom.xml">Subscribe via RSS</a>
 </section>
@@ -486,7 +251,7 @@ git commit --amend -m "New commit message"
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -529,7 +294,7 @@ git commit --amend -m "New commit message"
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/andylind">@andylind</a> on GitHub
@@ -562,6 +327,7 @@ git commit --amend -m "New commit message"
 
   
 </aside>
+
 
     </div>
   </div>
