@@ -4,7 +4,7 @@
   <title><![CDATA[Category: python | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/python/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-03-07T00:01:59-06:00</updated>
+  <updated>2013-04-19T14:41:35-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -60,8 +60,6 @@
 <span class='line-number'>37</span>
 <span class='line-number'>38</span>
 <span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
 </pre></td><td class='code'><pre><code class='py'><span class='line'><span class="k">def</span> <span class="nf">set_text_color</span><span class="p">(</span><span class="n">color</span><span class="p">):</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="c">#This method works on windows only</span>
@@ -80,25 +78,23 @@
 </span><span class='line'><span class="n">encoding</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get_content_charset</span><span class="p">()</span>
 </span><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="p">))</span>
 </span><span class='line'><span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;jobs&#39;</span><span class="p">]:</span>
-</span><span class='line'>    <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;* &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span>
-</span><span class='line'>    <span class="k">if</span> <span class="s">&#39;animate&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>    <span class="k">if</span> <span class="s">&#39;anime&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
 </span><span class='line'>         <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39; Running...&#39;</span>
-</span><span class='line'>
 </span><span class='line'>    <span class="k">if</span> <span class="s">&#39;blue&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
 </span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;GREEN&quot;</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;+ &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
 </span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;yellow&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
 </span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;YELLOW&quot;</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
 </span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;red&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
 </span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;RED&quot;</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
 </span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;aborted&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
 </span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;GRAY&quot;</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
 </span><span class='line'>    <span class="k">else</span><span class="p">:</span>
 </span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;MAGENTA&quot;</span><span class="p">)</span>
-</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
 </span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">sys</span>
