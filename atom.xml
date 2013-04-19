@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-04-19T15:44:27-05:00</updated>
+  <updated>2013-04-19T15:45:03-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -48,7 +48,7 @@
 </span><span class='line'><span class="c"># Commands:</span>
 </span><span class='line'><span class="c">#  p, pick = use commit</span>
 </span><span class='line'><span class="c">#  e, edit = use commit, but stop for amending</span>
-</span><span class='line'><span class="c">#  s, squash = u</span>
+</span><span class='line'><span class="c">#  s, squash = use commit, but meld into previous commit</span>
 </span></code></pre></td></tr></table></div></figure>
 
 

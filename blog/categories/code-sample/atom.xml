@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code sample | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/code-sample/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-04-19T15:44:27-05:00</updated>
+  <updated>2013-04-19T15:45:03-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -59,7 +59,7 @@
 </span><span class='line'>
 </span><span class='line'>&lt;h1&gt;e, <span class="nv">edit</span> <span class="o">=</span> use commit, but stop <span class="k">for </span>amending&lt;/h1&gt;
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;s, <span class="nv">squash</span> <span class="o">=</span> u&lt;/h1&gt;
+</span><span class='line'>&lt;h1&gt;s, <span class="nv">squash</span> <span class="o">=</span> use commit, but meld into previous commit&lt;/h1&gt;
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
