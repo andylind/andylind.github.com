@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code sample | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/code-sample/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-04-19T15:03:28-05:00</updated>
+  <updated>2013-04-19T15:41:11-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -12,6 +12,133 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Combining Multiple Git Commits]]></title>
+    <link href="http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits/"/>
+    <updated>2013-04-18T18:35:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits</id>
+    <content type="html"><![CDATA[<p>Using Git, it is possible to combine multiple commits into a single commit with interactive rebasing.</p>
+
+<p>The first step is to select the commits that you want to combine. Here is an example of selecting the last 3 commits:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git rebase -i HEAD~3
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This will open your text editor and display:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pick e520ab4 example commit message
+</span><span class='line'>pick 937b3bb another example commit message
+</span><span class='line'>pick 2ab71fc and another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Rebase e520ab4 ..2ab71fc onto 19ac48b&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Commands:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;p, <span class="nv">pick</span> <span class="o">=</span> use commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;e, <span class="nv">edit</span> <span class="o">=</span> use commit, but stop <span class="k">for </span>amending&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;s, <span class="nv">squash</span> <span class="o">=</span> u&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Changing all of the items to squash will combine the commits:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>squash e520ab4 example commit message
+</span><span class='line'>squash 937b3bb another example commit message
+</span><span class='line'>squash 2ab71fc and another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Rebase e520ab4 ..2ab71fc onto 19ac48b&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Commands:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;p, <span class="nv">pick</span> <span class="o">=</span> use commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;e, <span class="nv">edit</span> <span class="o">=</span> use commit, but stop <span class="k">for </span>amending&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;s, <span class="nv">squash</span> <span class="o">=</span> use commit, but meld into previous commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>After you save and close that text editor, another text editor will open. This will allow you to re-write the commit message:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is a combination of 3 commits.&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;The first commit<span class="err">&#39;</span>s message is:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is the 2nd commit message:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is the 3rd commit message:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;and another example commit message
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Write your new commit message, save, and close. Your three commits are now combined into one single commit.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Viewing Jenkins Status from the Command Line via the Jenkins API]]></title>
@@ -251,86 +378,6 @@ git commit --amend -m "New commit message"
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;:q
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My Most Used Linux Commands]]></title>
-    <link href="http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands/"/>
-    <updated>2012-09-07T13:28:00-05:00</updated>
-    <id>http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands</id>
-    <content type="html"><![CDATA[<p>The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh'ing into a server, searching through log files, checking on processes, and editing configuration files. Since I am not doing most of my development work directly on a Linux box, I often find myself forgetting how to do certain tasks, or not knowing how to do something on a specific server. I put together the small guide below with commands that are available on almost any Linux system. By learning these few commands, I have been able to navigate around and get what I need done in almost any Linux environment.</p>
-
-<pre>
-#Login to a remote server
-ssh [-p port] [username@hostname]
-</pre>
-
-
-
-
-<pre>
-#List files in a directory with file information
-ls -l
-</pre>
-
-
-
-
-<pre>
-#See every process running on a system
-ps aux
-</pre>
-
-
-
-
-<pre>
-#Print the last 100 lines of a file
-tail -100 [filename]
-</pre>
-
-
-
-
-<pre>
-#Watch a log file as it grows
-tail -f [filename]
-</pre>
-
-
-
-
-<pre>
-#Look for a pattern in a file
-grep [pattern] [file]
-</pre>
-
-
-
-
-<pre>
-#Run an HTTP GET request to a url
-curl [url]
-</pre>
-
-
-
-
-<pre>
-#Change file permissions to read/write for all
-chmod a+rw [filename]
-</pre>
-
-
-<p>Here is an example of a common way that I might chain commands together:</p>
-
-<pre>
-#Look in the last 1000 lines of a file for lines starting with ERROR
-#and print out the matching lines and the 5 lines above and below
-tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
-</pre>
-
 ]]></content>
   </entry>
   

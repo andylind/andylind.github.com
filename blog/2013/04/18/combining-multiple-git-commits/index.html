@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>An Example Cross Domain AJAX Request - Andy Lind</title>
+  <title>Combining Multiple Git Commits - Andy Lind</title>
   <meta name="author" content="Andy Lind">
 
   
-  <meta name="description" content="Cross Domain AJAX calls can be made by using JSONP. Here is an example using the Twitter api: &lt;!DOCTYPE html&gt;
-&lt;html&gt; &lt;head&gt; &lt; &hellip;">
+  <meta name="description" content="Using Git, it is possible to combine multiple commits into a single commit with interactive rebasing. The first step is to select the commits that &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request">
+  <link rel="canonical" href="http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -66,7 +65,7 @@
   
   <header>
     
-      <h1 class="entry-title">An Example Cross Domain AJAX Request</h1>
+      <h1 class="entry-title">Combining Multiple Git Commits</h1>
     
     
       <p class="meta">
@@ -82,44 +81,96 @@
   
 
 
-<time datetime="2011-06-15T00:44:00-05:00" pubdate data-updated="true">Jun 15<span>th</span>, 2011</time>
+<time datetime="2013-04-18T18:35:00-05:00" pubdate data-updated="true">Apr 18<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Cross Domain AJAX calls can be made by using JSONP.</p>
+<div class="entry-content"><p>Using Git, it is possible to combine multiple commits into a single commit with interactive rebasing.</p>
 
-<p>Here is an example using the Twitter api:</p>
+<p>The first step is to select the commits that you want to combine. Here is an example of selecting the last 3 commits:</p>
 
-<div><script src='https://gist.github.com/965715.js?file='></script>
-<noscript><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
-    &lt;title&gt;jQuery cross domain ajax example&lt;/title&gt;
-    &lt;script type=&quot;text/javascript&quot; 
-            src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js&quot;&gt;
-    &lt;/script&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-        $(document).ready(function() {
-                $.getJSON('http://api.twitter.com/1/trends/1.json?callback=?',
-                    function(json){      
-                        $('#mydiv').text(json[0].trends[0].name); 
-                    }
-                );
-            });
-    &lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h3&gt;Top Twitter Trend:&lt;/h3&gt;
-    &lt;div id=&quot;mydiv&quot;&gt;Loading...&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre></noscript></div>
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git rebase -i HEAD~3
+</span></code></pre></td></tr></table></div></figure>
 
 
+<p>This will open your text editor and display:</p>
 
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pick e520ab4 example commit message
+</span><span class='line'>pick 937b3bb another example commit message
+</span><span class='line'>pick 2ab71fc and another example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># Rebase e520ab4 ..2ab71fc onto 19ac48b</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c"># Commands:</span>
+</span><span class='line'><span class="c">#  p, pick = use commit</span>
+</span><span class='line'><span class="c">#  e, edit = use commit, but stop for amending</span>
+</span><span class='line'><span class="c">#  s, squash = u</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Changing all of the items to squash will combine the commits:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>squash e520ab4 example commit message
+</span><span class='line'>squash 937b3bb another example commit message
+</span><span class='line'>squash 2ab71fc and another example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># Rebase e520ab4 ..2ab71fc onto 19ac48b</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c"># Commands:</span>
+</span><span class='line'><span class="c">#  p, pick = use commit</span>
+</span><span class='line'><span class="c">#  e, edit = use commit, but stop for amending</span>
+</span><span class='line'><span class="c">#  s, squash = use commit, but meld into previous commit</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After you save and close that text editor, another text editor will open. This will allow you to re-write the commit message:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># This is a combination of 3 commits.</span>
+</span><span class='line'><span class="c"># The first commit&#39;s message is:</span>
+</span><span class='line'>example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># This is the 2nd commit message:</span>
+</span><span class='line'>another example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># This is the 3rd commit message:</span>
+</span><span class='line'>and another example commit message
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Write your new commit message, save, and close. Your three commits are now combined into one single commit.</p>
 </div>
 
 
@@ -142,12 +193,12 @@
   
 
 
-<time datetime="2011-06-15T00:44:00-05:00" pubdate data-updated="true">Jun 15<span>th</span>, 2011</time>
+<time datetime="2013-04-18T18:35:00-05:00" pubdate data-updated="true">Apr 18<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/code-sample/'>code sample</a>
+    <a class='category' href='/blog/categories/git/'>Git</a>, <a class='category' href='/blog/categories/code-sample/'>code sample</a>, <a class='category' href='/blog/categories/dev-tools/'>dev tools</a>
   
 </span>
 
@@ -156,7 +207,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request/" data-via="andrewrlind" data-counturl="http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits/" data-via="andrewrlind" data-counturl="http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -167,8 +218,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/" title="Previous Post: Viewing Jenkins Status from the Command Line via the Jenkins API">&laquo; Viewing Jenkins Status from the Command Line via the Jenkins API</a>
       
-        <a class="basic-alignment right" href="/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/" title="Next Post: Creating an Octopress Site on Github Pages">Creating an Octopress Site on Github Pages &raquo;</a>
       
     </p>
   </footer>

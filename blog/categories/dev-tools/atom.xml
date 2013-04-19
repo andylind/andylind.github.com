@@ -4,7 +4,7 @@
   <title><![CDATA[Category: dev tools | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/dev-tools/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-04-19T15:03:28-05:00</updated>
+  <updated>2013-04-19T15:41:11-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -12,6 +12,133 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Combining Multiple Git Commits]]></title>
+    <link href="http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits/"/>
+    <updated>2013-04-18T18:35:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits</id>
+    <content type="html"><![CDATA[<p>Using Git, it is possible to combine multiple commits into a single commit with interactive rebasing.</p>
+
+<p>The first step is to select the commits that you want to combine. Here is an example of selecting the last 3 commits:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git rebase -i HEAD~3
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This will open your text editor and display:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pick e520ab4 example commit message
+</span><span class='line'>pick 937b3bb another example commit message
+</span><span class='line'>pick 2ab71fc and another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Rebase e520ab4 ..2ab71fc onto 19ac48b&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Commands:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;p, <span class="nv">pick</span> <span class="o">=</span> use commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;e, <span class="nv">edit</span> <span class="o">=</span> use commit, but stop <span class="k">for </span>amending&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;s, <span class="nv">squash</span> <span class="o">=</span> u&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Changing all of the items to squash will combine the commits:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>squash e520ab4 example commit message
+</span><span class='line'>squash 937b3bb another example commit message
+</span><span class='line'>squash 2ab71fc and another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Rebase e520ab4 ..2ab71fc onto 19ac48b&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Commands:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;p, <span class="nv">pick</span> <span class="o">=</span> use commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;e, <span class="nv">edit</span> <span class="o">=</span> use commit, but stop <span class="k">for </span>amending&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;s, <span class="nv">squash</span> <span class="o">=</span> use commit, but meld into previous commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>After you save and close that text editor, another text editor will open. This will allow you to re-write the commit message:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is a combination of 3 commits.&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;The first commit<span class="err">&#39;</span>s message is:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is the 2nd commit message:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is the 3rd commit message:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;and another example commit message
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Write your new commit message, save, and close. Your three commits are now combined into one single commit.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Git Stash Workflow]]></title>

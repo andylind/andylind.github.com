@@ -9,7 +9,7 @@
   <meta name="author" content="Andy Lind">
 
   
-  <meta name="description" content="This is a python script that I created to print out the status of a set of Jenkins jobs in color on the command line. Right now the coloring for this &hellip;">
+  <meta name="description" content="Using Git, it is possible to combine multiple commits into a single commit with interactive rebasing. The first step is to select the commits that &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -62,6 +62,124 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/04/18/combining-multiple-git-commits/">Combining Multiple Git Commits</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-18T18:35:00-05:00" pubdate data-updated="true">Apr 18<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Using Git, it is possible to combine multiple commits into a single commit with interactive rebasing.</p>
+
+<p>The first step is to select the commits that you want to combine. Here is an example of selecting the last 3 commits:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git rebase -i HEAD~3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will open your text editor and display:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pick e520ab4 example commit message
+</span><span class='line'>pick 937b3bb another example commit message
+</span><span class='line'>pick 2ab71fc and another example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># Rebase e520ab4 ..2ab71fc onto 19ac48b</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c"># Commands:</span>
+</span><span class='line'><span class="c">#  p, pick = use commit</span>
+</span><span class='line'><span class="c">#  e, edit = use commit, but stop for amending</span>
+</span><span class='line'><span class="c">#  s, squash = u</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Changing all of the items to squash will combine the commits:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>squash e520ab4 example commit message
+</span><span class='line'>squash 937b3bb another example commit message
+</span><span class='line'>squash 2ab71fc and another example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># Rebase e520ab4 ..2ab71fc onto 19ac48b</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c"># Commands:</span>
+</span><span class='line'><span class="c">#  p, pick = use commit</span>
+</span><span class='line'><span class="c">#  e, edit = use commit, but stop for amending</span>
+</span><span class='line'><span class="c">#  s, squash = use commit, but meld into previous commit</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After you save and close that text editor, another text editor will open. This will allow you to re-write the commit message:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># This is a combination of 3 commits.</span>
+</span><span class='line'><span class="c"># The first commit&#39;s message is:</span>
+</span><span class='line'>example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># This is the 2nd commit message:</span>
+</span><span class='line'>another example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># This is the 3rd commit message:</span>
+</span><span class='line'>and another example commit message
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Write your new commit message, save, and close. Your three commits are now combined into one single commit.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -385,75 +503,6 @@ git commit --amend -m "New commit message"
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/11/03/agile-day-twin-cities-2012/">Agile Day Twin Cities 2012</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-11-03T15:35:00-05:00" pubdate data-updated="true">Nov 3<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Last Friday, I attended the <a href="https://sites.google.com/site/twincitiespracticalagility/agile-day-twin-cities-2012">Agile Day Twin Cities</a> conference. The conference was centered around building a discussion about agile software practices and the main theme this year was learning.</p>
-
-<p>I want to share some of the most interesting and thought provoking statements that I heard from the day. Each of these could probably be an entire post on their own, but I think that these anecdotes and insights really give a picture of the discussion at Agile Day and the focus on questioning the status quo.</p>
-
-<p>The first speaker was <a href="https://twitter.com/davidhussman/">David Hussman</a>, who did a great job at getting everyone to question why they are doing things. Here are some of my favorite quotes from his presentations:</p>
-
-<blockquote><p>&#8220;Ask why. Why are you changing the process? Could you be doing something more valuable?&#8221; <br/>&#8220;Minimize output, Maximize impact&#8221;<br/>&#8220;Transition from thinking about how big something is to thinking if something is too big.&#8221; <br/>&#8220;One sign of a maturing agile team is that they stop talking about the code and they start talking about the tests that they need&#8221;</p></blockquote>
-
-
-<p>Stemming from David&#8217;s talk, there was a lot of discussion on why we work in iterations and what life would be like if we moved beyond iterations.</p>
-
-<blockquote><p>&#8220;Why does it matter if you don&#8217;t get done what you committed to in the sprint?&#8221;</p></blockquote>
-
-
-<p>Another session that I attended was focused on pair-programming practices. During that session the speaker made a really good point about testing:</p>
-
-<blockquote><p>&#8220;What is the next test that you should write? The test that tells you the most about the system.&#8221;</p></blockquote>
-
-
-<p>This point really hit home for me. I have been trying to transition to using more Test Driven Development (TDD) practices, and I think this could really help guide me in choosing the next test to write.</p>
-
-<p>Throughout the day, I heard a lot of controversial statements about process and tools such as:</p>
-
-<blockquote><p>&#8220;JIRA is where stories go to die&#8221;, and &#8220;Project Management is a symptom, not a solution&#8221;</p></blockquote>
-
-
-<p>There was a lot of support at the conference for sticky-note driven workflow, and a lot of backlash against project management tools. I think that was one of the things that I most disagreed with. I have really seen a huge benefit when using a tracking tool to share info about stories among a large team.</p>
-
-<p>The last quote that I found really interesting was from one of the open-space sessions. The speakers described a really great technique that runs counter to a lot of teaching for gathering requirements (e.g. 5 whys):</p>
-
-<blockquote><p>People do not respond well to being asked, &#8220;Why?&#8221;. Instead, ask &#8220;If that happened, then what?&#8221; or &#8220;Pretend you had that, then what would you do?&#8221;</p></blockquote>
-
-
-<p>Overall, I thought the conference was really good, and I appreciated the focus on continuous improvement throughout the agile process.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -483,6 +532,10 @@ git commit --amend -m "New commit message"
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/18/combining-multiple-git-commits/">Combining Multiple Git Commits</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/">Viewing Jenkins Status from the Command Line via the Jenkins API</a>
@@ -526,10 +579,6 @@ git commit --amend -m "New commit message"
     
       <li class="post">
         <a href="/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/">Creating an Octopress Site on Github Pages</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/06/15/an-example-cross-domain-ajax-request/">An Example Cross Domain AJAX Request</a>
       </li>
     
   </ul>
