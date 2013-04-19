@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Git | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-04-19T16:16:18-05:00</updated>
+  <updated>2013-04-19T16:22:44-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -53,7 +53,7 @@
 </span><span class='line'>
 </span><span class='line'>&lt;p&gt;#&lt;/p&gt;
 </span><span class='line'>
-</span><span class='line'>&lt;h1&gt;Commands:&lt;/h1&gt;
+</span><span class='line'>&lt;h1&gt;Commands:c&lt;/h1&gt;
 </span><span class='line'>
 </span><span class='line'>&lt;h1&gt;p, <span class="nv">pick</span> <span class="o">=</span> use commit&lt;/h1&gt;
 </span><span class='line'>
@@ -64,7 +64,7 @@
 </span><span class='line'>&lt;p&gt;
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>Changing all of the items below the top one to squash will combine the commits:</p>
+<p>Changing all of the items below the top one to "squash" will combine the commits:</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

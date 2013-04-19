@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-04-19T16:16:18-05:00</updated>
+  <updated>2013-04-19T16:22:44-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -45,14 +45,14 @@
 </span><span class='line'>
 </span><span class='line'><span class="c"># Rebase e520ab4 ..2ab71fc onto 19ac48b</span>
 </span><span class='line'><span class="c">#</span>
-</span><span class='line'><span class="c"># Commands:</span>
+</span><span class='line'><span class="c"># Commands:c</span>
 </span><span class='line'><span class="c">#  p, pick = use commit</span>
 </span><span class='line'><span class="c">#  e, edit = use commit, but stop for amending</span>
 </span><span class='line'><span class="c">#  s, squash = use commit, but meld into previous commit</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Changing all of the items below the top one to squash will combine the commits:</p>
+<p>Changing all of the items below the top one to &#8220;squash&#8221; will combine the commits:</p>
 
 <figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
