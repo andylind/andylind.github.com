@@ -9,10 +9,10 @@
   <meta name="author" content="Andy Lind">
 
   
-  <meta name="description" content="Here are some of the resources that I used to create this site:
-&nbsp;&nbsp;&nbsp; - Deploying Octopress
-&nbsp;&nbsp;&nbsp; - Github Pages
-&nbsp;& &hellip;">
+  <meta name="description" content="Here is my workflow for using Git with SVN: //create local repo
+git svn init -s http://url-of-repo
+git svn fetch
+git svn rebase //work on a local &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -59,6 +59,69 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/05/11/Using-Git-With-SVN/">Using Git With SVN</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2012-05-11T11:38:00-05:00" pubdate data-updated="true">May 11<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here is my workflow for using Git with SVN:</p>
+
+<div><script src='https://gist.github.com/2655799.js?file='></script>
+<noscript><pre><code>//create local repo
+git svn init -s http://url-of-repo
+git svn fetch
+git svn rebase
+
+//work on a local branch or branches
+git checkout -b myfeature
+
+//make some changes and commit
+git commit -a -m &quot;made some changes&quot;
+
+//switch to master and rebase changes 
+git checkout master
+git rebase myfeature
+git svn rebase
+
+//see differences between local and svn trunk
+git diff remotes/trunk
+
+//commit changes to svn
+git svn dcommit</code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -213,6 +276,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/08/26/using-git-with-svn/">Using Git with SVN</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/08/26/focusing-retrospectives-on-actionable-results/">Focusing Retrospectives on Actionable Results</a>
       </li>
     
@@ -254,10 +321,6 @@
     
       <li class="post">
         <a href="/blog/2012/08/28/my-setup-for-using-git-on-windows/">My Setup for Using Git on Windows</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/11/Using-Git-With-SVN/">Using Git with SVN</a>
       </li>
     
   </ul>

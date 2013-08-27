@@ -9,7 +9,7 @@
   <meta name="author" content="Andy Lind">
 
   
-  <meta name="description" content="This is a presentation that I recently gave on the distributed version control system Git. In the presentation, I introduce the concepts behind Git &hellip;">
+  <meta name="description" content="I have been asked recently by a few different people, “What would you do if you wanted to learn to code”. My answer has been to learn JavaScript, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -56,6 +56,47 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/01/22/learning-to-code/">Learning to Code</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2013-01-22T20:44:00-06:00" pubdate data-updated="true">Jan 22<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have been asked recently by a few different people, “What would you do if you wanted to learn to code”.</p>
+
+<p>My answer has been to learn JavaScript, Python, or Ruby. It is easier than ever to get started learning one of those languages because of the large number of amazingly user friendly tutorials online. One of the most pain-free ways to get started with JavaScript, Python, or Ruby is by following the interactive tutorials offered by <a href="http://www.codecademy.com/learn">Code Academy</a>. Code Academy lets you write code and do tutorials right inside your web browser. This is awesome for beginners because they do not have to struggle through hours of local setup on their machine to get a runtime environment installed.</p>
+
+<p>I think the next step after learning a little bit from tutorials is to read a programming book. One of the best ones to get started with would be <a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> (free online).</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -390,69 +431,6 @@ tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/11/Using-Git-With-SVN/">Using Git With SVN</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-
-<time datetime="2012-05-11T11:38:00-05:00" pubdate data-updated="true">May 11<span>th</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here is my workflow for using Git with SVN:</p>
-
-<div><script src='https://gist.github.com/2655799.js?file='></script>
-<noscript><pre><code>//create local repo
-git svn init -s http://url-of-repo
-git svn fetch
-git svn rebase
-
-//work on a local branch or branches
-git checkout -b myfeature
-
-//make some changes and commit
-git commit -a -m &quot;made some changes&quot;
-
-//switch to master and rebase changes 
-git checkout master
-git rebase myfeature
-git svn rebase
-
-//see differences between local and svn trunk
-git diff remotes/trunk
-
-//commit changes to svn
-git svn dcommit</code></pre></noscript></div>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -484,6 +462,10 @@ git svn dcommit</code></pre></noscript></div>
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/08/26/using-git-with-svn/">Using Git with SVN</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/08/26/focusing-retrospectives-on-actionable-results/">Focusing Retrospectives on Actionable Results</a>
@@ -527,10 +509,6 @@ git svn dcommit</code></pre></noscript></div>
     
       <li class="post">
         <a href="/blog/2012/08/28/my-setup-for-using-git-on-windows/">My Setup for Using Git on Windows</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/11/Using-Git-With-SVN/">Using Git with SVN</a>
       </li>
     
   </ul>

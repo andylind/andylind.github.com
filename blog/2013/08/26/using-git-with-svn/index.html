@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Most Used Linux Commands - Andy Lind</title>
+  <title>Using Git with SVN - Andy Lind</title>
   <meta name="author" content="Andy Lind">
 
   
-  <meta name="description" content="The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh&#8217;ing into a server, &hellip;">
+  <meta name="description" content="This is a presentation that I recently gave on the distributed version control system Git and how it can be used with SVN. In the presentation, I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands">
+  <link rel="canonical" href="http://andylind.github.com/blog/2013/08/26/using-git-with-svn">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -59,7 +59,7 @@
   
   <header>
     
-      <h1 class="entry-title">My Most Used Linux Commands</h1>
+      <h1 class="entry-title">Using Git With SVN</h1>
     
     
       <p class="meta">
@@ -76,84 +76,20 @@
 
 
 
-<time datetime="2012-09-07T13:28:00-05:00" pubdate data-updated="true">Sep 7<span>th</span>, 2012</time>
+<time datetime="2013-08-26T22:40:00-05:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh&#8217;ing into a server, searching through log files, checking on processes, and editing configuration files. Since I am not doing most of my development work directly on a Linux box, I often find myself forgetting how to do certain tasks, or not knowing how to do something on a specific server. I put together the small guide below with commands that are available on almost any Linux system. By learning these few commands, I have been able to navigate around and get what I need done in almost any Linux environment.</p>
+<div class="entry-content"><p>This is a presentation that I recently gave on the distributed version control system <a href="http://www.git-scm.com">Git</a> and how it can be used with SVN. In the presentation, I introduce the concepts behind Git, some of the main Git commands, and how to use git-svn.</p>
 
-<pre>
-#Login to a remote server
-ssh [-p port] [username@hostname]
-</pre>
+<p><a href="https://www.kernel.org/pub/software/scm/git/docs/git-svn.html">Git-svn</a> is a feature that ships with Git that allows Git to connect to a subversion repository and share changes. Using git-svn is one way to learn how to use Git while still maintaining a Subversion repository.</p>
 
+<p>You can see more of my git-svn work flow in <a href="http://andylind.github.io/blog/2012/05/11/Using-Git-With-SVN/">this post</a></p>
 
-
-
-<pre>
-#List files in a directory with file information
-ls -l
-</pre>
-
-
-
-
-<pre>
-#See every process running on a system
-ps aux
-</pre>
-
-
-
-
-<pre>
-#Print the last 100 lines of a file
-tail -100 [filename]
-</pre>
-
-
-
-
-<pre>
-#Watch a log file as it grows
-tail -f [filename]
-</pre>
-
-
-
-
-<pre>
-#Look for a pattern in a file
-grep [pattern] [file]
-</pre>
-
-
-
-
-<pre>
-#Run an HTTP GET request to a url
-curl [url]
-</pre>
-
-
-
-
-<pre>
-#Change file permissions to read/write for all
-chmod a+rw [filename]
-</pre>
-
-
-<p>Here is an example of a common way that I might chain commands together:</p>
-
-<pre>
-#Look in the last 1000 lines of a file for lines starting with ERROR
-#and print out the matching lines and the 5 lines above and below
-tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
-</pre>
+<script async class="speakerdeck-embed" data-id="0576e7c0f92c0130bb2576ac50ee3936" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 </div>
 
@@ -178,12 +114,12 @@ tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
 
 
 
-<time datetime="2012-09-07T13:28:00-05:00" pubdate data-updated="true">Sep 7<span>th</span>, 2012</time>
+<time datetime="2013-08-26T22:40:00-05:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/code-sample/'>code sample</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
+    <a class='category' href='/blog/categories/git/'>git</a>
   
 </span>
 
@@ -192,7 +128,7 @@ tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands/" data-via="andrewrlind" data-counturl="http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2013/08/26/using-git-with-svn/" data-via="andrewrlind" data-counturl="http://andylind.github.com/blog/2013/08/26/using-git-with-svn/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -203,10 +139,8 @@ tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/08/28/my-setup-for-using-git-on-windows/" title="Previous Post: My Setup for Using Git on Windows">&laquo; My Setup for Using Git on Windows</a>
+        <a class="basic-alignment left" href="/blog/2013/08/26/focusing-retrospectives-on-actionable-results/" title="Previous Post: Focusing Retrospectives on Actionable Results">&laquo; Focusing Retrospectives on Actionable Results</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/10/12/simple-vi-tutorial/" title="Next Post: Simple vi Tutorial">Simple vi Tutorial &raquo;</a>
       
     </p>
   </footer>
