@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html class="js video no-maskImage placeholder" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Andy Lind</title>
+  <meta name="author" content="Andy Lind">
+
+  
+  <meta name="description" content="One thing that I have always struggled with is using vi. I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. …">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+
+  
+  <link rel="canonical" href="http://andylind.github.com/">
+  <link href="http://localhost:8000/favicon.png" rel="icon">
+  <link href="index_files/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script async="" src="index_files/cbgapi.loaded_0"></script><script src="index_files/jXHR.js" type="text/javascript"></script><script gapi_processed="true" src="index_files/plusone.js" async="" type="text/javascript"></script><script src="index_files/modernizr-2.js"></script>
+  <script src="index_files/ender.js"></script>
+  <script src="index_files/octopress.js" type="text/javascript"></script>
+  <link href="http://localhost:8000/atom.xml" rel="alternate" title="Andy Lind" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="index_files/css.css" rel="stylesheet" type="text/css">
+<link href="index_files/css_002.css" rel="stylesheet" type="text/css">
+
+
+  
+
+<script src="index_files/count.js" async="" type="text/javascript"></script><script src="index_files/widgets.js" async="" type="text/javascript"></script></head>
+
+<body class="" data-twttr-rendered="true">
+  <header role="banner"><hgroup>
+  <h1><a href="http://localhost:8000/">Andy Lind</a></h1>
+  
+</hgroup>
+
+</header>
+
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="http://localhost:8000/blog/2012/10/12/simple-vi-tutorial/">Simple Vi Tutorial</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-12T14:27:00-05:00" pubdate="" data-updated="true">Oct 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One thing that I have always struggled 
+with is using vi. I spend most of my time programming in an IDE or in a 
+text editor like notepad++ or gedit. When I ssh into a machine though, 
+it is usually most convenient to use a command window for text editing. I
+ decided recently that I need to make sure that I understand the most 
+basic vi commands, so that I can edit text on any *nix machine.</p>
+
+<p>The first step for me was learning just a few basic vi commands so 
+that I would have enough knowledge to edit files. Below is the most 
+minimal set of commands that you need to know to operate vi.</p>
+
+<p>The key concept you have to learn is that vi has two modes. Insert 
+mode and command mode. When vi is opened, it will start in command mode 
+by default. This mode allows you to do things like run complex editing 
+commands, save the file, and exit. Pressing “i” will take you to inset 
+mode. Insert mode allows you to edit text that is in the file. Pressing 
+esc will return to command mode.</p>
+
+<p>It can be confusing at first to understand which mode you are in. If 
+you want to be safe, you can always press “esc” and guarantee that you 
+are in command mode.</p>
+
+<pre>#open vi
+vi filename.txt
+
+#switch to insert mode
+i
+
+#switch to command mode
+esc
+
+#save a file
+:w
+
+#exit vi
+:q
+</pre>
+
+
+<p>If you are looking to learn more, here is a helpful cheatsheet showing many common commands: <a href="http://media.smashingmagazine.com/wp-content/uploads/2010/05/VI-Help-Sheet-01-large2.jpg">vi cheatsheet from smashingmagazine</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="http://localhost:8000/blog/2012/10/07/my-linux-survival-guide/">My Linux Survival Guide</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-07T13:28:00-05:00" pubdate="" data-updated="true">Oct 7<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>These commands below make up about 90% 
+of what I do on a Linux system. Most of what I do from the command line 
+involves ssh’ing into a server, searching through log files, checking on
+ processes, and editing configuration files. Since I am not doing most 
+of my development work directly on a Linux box, I often find myself 
+forgetting how to do certain tasks, or not knowing how to do something 
+on a specific server. I put together the small guide below with commands
+ that are available on almost any Linux system. By learning these few 
+commands, I have been able to navigate around and get what I need done 
+in almost any Linux environment.</p>
+
+<pre>#Login to a remote server
+ssh [-p port] [username@hostname]
+</pre>
+
+
+
+
+<pre>#List files in a directory with file information
+ls -l
+</pre>
+
+
+
+
+<pre>#See every process running on a system
+ps aux
+</pre>
+
+
+
+
+<pre>#Print the last 100 lines of a file
+tail -100 [filename]
+</pre>
+
+
+
+
+<pre>#Watch a log file as it grows
+tail -f [filename]
+</pre>
+
+
+
+
+<pre>#Look for a pattern in a file
+grep [pattern] [file]
+</pre>
+
+
+
+
+<pre>#Run an HTTP GET request to a url
+curl [url]
+</pre>
+
+
+
+
+<pre>#Change file permissions to read/write for all
+chmod a+rw [filename]
+</pre>
+
+
+<p>Here are a few example of common uses that I have for chaining commands together:</p>
+
+<pre>#Look in the last 1000 lines of a file for lines starting with ERROR
+#and print out the matching lines and the 5 lines above and below
+tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
+</pre>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="http://localhost:8000/blog/2012/09/15/my-setup-for-using-git-on-windows/">My Setup for Using Git on Windows</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-15T00:38:00-05:00" pubdate="" data-updated="true">Sep 15<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For developing on Windows with Git, I have been using Console2 and MINGW.</p>
+
+<p>My settings for Console2 are:</p>
+
+<div><script src="index_files/2875034.js"></script><link rel="stylesheet" href="index_files/embed.css"><div id="gist-2875034" class="gist">
+    
+
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+              <div class="gist-highlight"><table><tbody><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+<span class="line-number">51</span>
+<span class="line-number">52</span>
+<span class="line-number">53</span>
+<span class="line-number">54</span>
+<span class="line-number">55</span>
+<span class="line-number">56</span>
+<span class="line-number">57</span>
+<span class="line-number">58</span>
+<span class="line-number">59</span>
+<span class="line-number">60</span>
+<span class="line-number">61</span>
+<span class="line-number">62</span>
+<span class="line-number">63</span>
+<span class="line-number">64</span>
+<span class="line-number">65</span>
+<span class="line-number">66</span>
+<span class="line-number">67</span>
+<span class="line-number">68</span>
+<span class="line-number">69</span>
+<span class="line-number">70</span>
+<span class="line-number">71</span>
+<span class="line-number">72</span>
+<span class="line-number">73</span>
+<span class="line-number">74</span>
+<span class="line-number">75</span>
+<span class="line-number">76</span>
+<span class="line-number">77</span>
+<span class="line-number">78</span>
+<span class="line-number">79</span>
+<span class="line-number">80</span>
+<span class="line-number">81</span>
+<span class="line-number">82</span>
+<span class="line-number">83</span>
+<span class="line-number">84</span>
+<span class="line-number">85</span>
+<span class="line-number">86</span>
+<span class="line-number">87</span>
+<span class="line-number">88</span>
+<span class="line-number">89</span>
+<span class="line-number">90</span>
+<span class="line-number">91</span>
+<span class="line-number">92</span>
+<span class="line-number">93</span>
+<span class="line-number">94</span>
+<span class="line-number">95</span>
+<span class="line-number">96</span>
+<span class="line-number">97</span>
+<span class="line-number">98</span>
+<span class="line-number">99</span>
+<span class="line-number">100</span>
+<span class="line-number">101</span>
+<span class="line-number">102</span>
+<span class="line-number">103</span>
+<span class="line-number">104</span>
+</pre></td><td class="code"><pre><div class="line" id="LC1"><span class="cp">&lt;?xml version="1.0"?&gt;</span></div><div class="line" id="LC2"><span class="nt">&lt;settings&gt;</span></div><div class="line" id="LC3">	<span class="nt">&lt;console</span> <span class="na">change_refresh=</span><span class="s">"10"</span> <span class="na">refresh=</span><span class="s">"100"</span> <span class="na">rows=</span><span class="s">"25"</span> <span class="na">columns=</span><span class="s">"160"</span> <span class="na">buffer_rows=</span><span class="s">"9000"</span> <span class="na">buffer_columns=</span><span class="s">"0"</span> <span class="na">shell=</span><span class="s">"C:\Windows\SysWOW64\cmd.exe /c &amp;quot;&amp;quot;C:\Program Files (x86)\Git\bin\sh.exe&amp;quot; --login -i&amp;quot;"</span> <span class="na">init_dir=</span><span class="s">"C:\dev"</span> <span class="na">start_hidden=</span><span class="s">"0"</span> <span class="na">save_size=</span><span class="s">"0"</span><span class="nt">&gt;</span></div><div class="line" id="LC4">		<span class="nt">&lt;colors&gt;</span></div><div class="line" id="LC5">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"0"</span> <span class="na">r=</span><span class="s">"2"</span> <span class="na">g=</span><span class="s">"26"</span> <span class="na">b=</span><span class="s">"46"</span><span class="nt">/&gt;</span></div><div class="line" id="LC6">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"1"</span> <span class="na">r=</span><span class="s">"0"</span> <span class="na">g=</span><span class="s">"0"</span> <span class="na">b=</span><span class="s">"128"</span><span class="nt">/&gt;</span></div><div class="line" id="LC7">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"2"</span> <span class="na">r=</span><span class="s">"0"</span> <span class="na">g=</span><span class="s">"150"</span> <span class="na">b=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC8">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"3"</span> <span class="na">r=</span><span class="s">"0"</span> <span class="na">g=</span><span class="s">"150"</span> <span class="na">b=</span><span class="s">"150"</span><span class="nt">/&gt;</span></div><div class="line" id="LC9">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"4"</span> <span class="na">r=</span><span class="s">"170"</span> <span class="na">g=</span><span class="s">"25"</span> <span class="na">b=</span><span class="s">"25"</span><span class="nt">/&gt;</span></div><div class="line" id="LC10">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"5"</span> <span class="na">r=</span><span class="s">"128"</span> <span class="na">g=</span><span class="s">"0"</span> <span class="na">b=</span><span class="s">"128"</span><span class="nt">/&gt;</span></div><div class="line" id="LC11">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"6"</span> <span class="na">r=</span><span class="s">"128"</span> <span class="na">g=</span><span class="s">"128"</span> <span class="na">b=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC12">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"7"</span> <span class="na">r=</span><span class="s">"192"</span> <span class="na">g=</span><span class="s">"192"</span> <span class="na">b=</span><span class="s">"192"</span><span class="nt">/&gt;</span></div><div class="line" id="LC13">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"8"</span> <span class="na">r=</span><span class="s">"128"</span> <span class="na">g=</span><span class="s">"128"</span> <span class="na">b=</span><span class="s">"128"</span><span class="nt">/&gt;</span></div><div class="line" id="LC14">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"9"</span> <span class="na">r=</span><span class="s">"0"</span> <span class="na">g=</span><span class="s">"100"</span> <span class="na">b=</span><span class="s">"255"</span><span class="nt">/&gt;</span></div><div class="line" id="LC15">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"10"</span> <span class="na">r=</span><span class="s">"0"</span> <span class="na">g=</span><span class="s">"255"</span> <span class="na">b=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC16">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"11"</span> <span class="na">r=</span><span class="s">"0"</span> <span class="na">g=</span><span class="s">"255"</span> <span class="na">b=</span><span class="s">"255"</span><span class="nt">/&gt;</span></div><div class="line" id="LC17">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"12"</span> <span class="na">r=</span><span class="s">"255"</span> <span class="na">g=</span><span class="s">"50"</span> <span class="na">b=</span><span class="s">"50"</span><span class="nt">/&gt;</span></div><div class="line" id="LC18">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"13"</span> <span class="na">r=</span><span class="s">"255"</span> <span class="na">g=</span><span class="s">"0"</span> <span class="na">b=</span><span class="s">"255"</span><span class="nt">/&gt;</span></div><div class="line" id="LC19">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"14"</span> <span class="na">r=</span><span class="s">"255"</span> <span class="na">g=</span><span class="s">"255"</span> <span class="na">b=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC20">			<span class="nt">&lt;color</span> <span class="na">id=</span><span class="s">"15"</span> <span class="na">r=</span><span class="s">"255"</span> <span class="na">g=</span><span class="s">"255"</span> <span class="na">b=</span><span class="s">"255"</span><span class="nt">/&gt;</span></div><div class="line" id="LC21">		<span class="nt">&lt;/colors&gt;</span></div><div class="line" id="LC22">	<span class="nt">&lt;/console&gt;</span></div><div class="line" id="LC23">	<span class="nt">&lt;appearance&gt;</span></div><div class="line" id="LC24">		<span class="nt">&lt;font</span> <span class="na">name=</span><span class="s">"Consolas"</span> <span class="na">size=</span><span class="s">"11"</span> <span class="na">bold=</span><span class="s">"0"</span> <span class="na">italic=</span><span class="s">"0"</span> <span class="na">smoothing=</span><span class="s">"2"</span><span class="nt">&gt;</span></div><div class="line" id="LC25">			<span class="nt">&lt;color</span> <span class="na">use=</span><span class="s">"0"</span> <span class="na">r=</span><span class="s">"0"</span> <span class="na">g=</span><span class="s">"0"</span> <span class="na">b=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC26">		<span class="nt">&lt;/font&gt;</span></div><div class="line" id="LC27">		<span class="nt">&lt;window</span> <span class="na">title=</span><span class="s">"Console"</span> <span class="na">icon=</span><span class="s">""</span> <span class="na">use_tab_icon=</span><span class="s">"1"</span> <span class="na">use_console_title=</span><span class="s">"1"</span> <span class="na">show_cmd=</span><span class="s">"1"</span> <span class="na">show_cmd_tabs=</span><span class="s">"1"</span> <span class="na">use_tab_title=</span><span class="s">"1"</span> <span class="na">trim_tab_titles=</span><span class="s">"20"</span> <span class="na">trim_tab_titles_right=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC28">		<span class="nt">&lt;controls</span> <span class="na">show_menu=</span><span class="s">"0"</span> <span class="na">show_toolbar=</span><span class="s">"0"</span> <span class="na">show_statusbar=</span><span class="s">"0"</span> <span class="na">show_tabs=</span><span class="s">"1"</span> <span class="na">hide_single_tab=</span><span class="s">"1"</span> <span class="na">show_scrollbars=</span><span class="s">"1"</span> <span class="na">flat_scrollbars=</span><span class="s">"0"</span> <span class="na">tabs_on_bottom=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC29">		<span class="nt">&lt;styles</span> <span class="na">caption=</span><span class="s">"1"</span> <span class="na">resizable=</span><span class="s">"1"</span> <span class="na">taskbar_button=</span><span class="s">"1"</span> <span class="na">border=</span><span class="s">"1"</span> <span class="na">inside_border=</span><span class="s">"2"</span> <span class="na">tray_icon=</span><span class="s">"1"</span><span class="nt">&gt;</span></div><div class="line" id="LC30">			<span class="nt">&lt;selection_color</span> <span class="na">r=</span><span class="s">"255"</span> <span class="na">g=</span><span class="s">"255"</span> <span class="na">b=</span><span class="s">"255"</span><span class="nt">/&gt;</span></div><div class="line" id="LC31">		<span class="nt">&lt;/styles&gt;</span></div><div class="line" id="LC32">		<span class="nt">&lt;position</span> <span class="na">x=</span><span class="s">"-1"</span> <span class="na">y=</span><span class="s">"-1"</span> <span class="na">dock=</span><span class="s">"-1"</span> <span class="na">snap=</span><span class="s">"0"</span> <span class="na">z_order=</span><span class="s">"0"</span> <span class="na">save_position=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC33">		<span class="nt">&lt;transparency</span> <span class="na">type=</span><span class="s">"1"</span> <span class="na">active_alpha=</span><span class="s">"238"</span> <span class="na">inactive_alpha=</span><span class="s">"237"</span> <span class="na">r=</span><span class="s">"0"</span> <span class="na">g=</span><span class="s">"0"</span> <span class="na">b=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC34">	<span class="nt">&lt;/appearance&gt;</span></div><div class="line" id="LC35">	<span class="nt">&lt;behavior&gt;</span></div><div class="line" id="LC36">		<span class="nt">&lt;copy_paste</span> <span class="na">copy_on_select=</span><span class="s">"0"</span> <span class="na">clear_on_copy=</span><span class="s">"1"</span> <span class="na">no_wrap=</span><span class="s">"1"</span> <span class="na">trim_spaces=</span><span class="s">"1"</span> <span class="na">copy_newline_char=</span><span class="s">"0"</span> <span class="na">sensitive_copy=</span><span class="s">"1"</span><span class="nt">/&gt;</span></div><div class="line" id="LC37">		<span class="nt">&lt;scroll</span> <span class="na">page_scroll_rows=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC38">		<span class="nt">&lt;tab_highlight</span> <span class="na">flashes=</span><span class="s">"3"</span> <span class="na">stay_highligted=</span><span class="s">"1"</span><span class="nt">/&gt;</span></div><div class="line" id="LC39">	<span class="nt">&lt;/behavior&gt;</span></div><div class="line" id="LC40">	<span class="nt">&lt;hotkeys</span> <span class="na">use_scroll_lock=</span><span class="s">"1"</span><span class="nt">&gt;</span></div><div class="line" id="LC41">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"83"</span> <span class="na">command=</span><span class="s">"settings"</span><span class="nt">/&gt;</span></div><div class="line" id="LC42">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"112"</span> <span class="na">command=</span><span class="s">"help"</span><span class="nt">/&gt;</span></div><div class="line" id="LC43">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"1"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"115"</span> <span class="na">command=</span><span class="s">"exit"</span><span class="nt">/&gt;</span></div><div class="line" id="LC44">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"112"</span> <span class="na">command=</span><span class="s">"newtab1"</span><span class="nt">/&gt;</span></div><div class="line" id="LC45">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"113"</span> <span class="na">command=</span><span class="s">"newtab2"</span><span class="nt">/&gt;</span></div><div class="line" id="LC46">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"114"</span> <span class="na">command=</span><span class="s">"newtab3"</span><span class="nt">/&gt;</span></div><div class="line" id="LC47">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"115"</span> <span class="na">command=</span><span class="s">"newtab4"</span><span class="nt">/&gt;</span></div><div class="line" id="LC48">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"116"</span> <span class="na">command=</span><span class="s">"newtab5"</span><span class="nt">/&gt;</span></div><div class="line" id="LC49">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"117"</span> <span class="na">command=</span><span class="s">"newtab6"</span><span class="nt">/&gt;</span></div><div class="line" id="LC50">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"118"</span> <span class="na">command=</span><span class="s">"newtab7"</span><span class="nt">/&gt;</span></div><div class="line" id="LC51">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"119"</span> <span class="na">command=</span><span class="s">"newtab8"</span><span class="nt">/&gt;</span></div><div class="line" id="LC52">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"120"</span> <span class="na">command=</span><span class="s">"newtab9"</span><span class="nt">/&gt;</span></div><div class="line" id="LC53">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"121"</span> <span class="na">command=</span><span class="s">"newtab10"</span><span class="nt">/&gt;</span></div><div class="line" id="LC54">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"49"</span> <span class="na">command=</span><span class="s">"switchtab1"</span><span class="nt">/&gt;</span></div><div class="line" id="LC55">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"50"</span> <span class="na">command=</span><span class="s">"switchtab2"</span><span class="nt">/&gt;</span></div><div class="line" id="LC56">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"51"</span> <span class="na">command=</span><span class="s">"switchtab3"</span><span class="nt">/&gt;</span></div><div class="line" id="LC57">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"52"</span> <span class="na">command=</span><span class="s">"switchtab4"</span><span class="nt">/&gt;</span></div><div class="line" id="LC58">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"53"</span> <span class="na">command=</span><span class="s">"switchtab5"</span><span class="nt">/&gt;</span></div><div class="line" id="LC59">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"54"</span> <span class="na">command=</span><span class="s">"switchtab6"</span><span class="nt">/&gt;</span></div><div class="line" id="LC60">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"55"</span> <span class="na">command=</span><span class="s">"switchtab7"</span><span class="nt">/&gt;</span></div><div class="line" id="LC61">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"56"</span> <span class="na">command=</span><span class="s">"switchtab8"</span><span class="nt">/&gt;</span></div><div class="line" id="LC62">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"57"</span> <span class="na">command=</span><span class="s">"switchtab9"</span><span class="nt">/&gt;</span></div><div class="line" id="LC63">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"48"</span> <span class="na">command=</span><span class="s">"switchtab10"</span><span class="nt">/&gt;</span></div><div class="line" id="LC64">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"9"</span> <span class="na">command=</span><span class="s">"nexttab"</span><span class="nt">/&gt;</span></div><div class="line" id="LC65">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"1"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"9"</span> <span class="na">command=</span><span class="s">"prevtab"</span><span class="nt">/&gt;</span></div><div class="line" id="LC66">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"87"</span> <span class="na">command=</span><span class="s">"closetab"</span><span class="nt">/&gt;</span></div><div class="line" id="LC67">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"82"</span> <span class="na">command=</span><span class="s">"renametab"</span><span class="nt">/&gt;</span></div><div class="line" id="LC68">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"1"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"67"</span> <span class="na">command=</span><span class="s">"copy"</span><span class="nt">/&gt;</span></div><div class="line" id="LC69">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"1"</span> <span class="na">code=</span><span class="s">"46"</span> <span class="na">command=</span><span class="s">"clear_selection"</span><span class="nt">/&gt;</span></div><div class="line" id="LC70">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"1"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"86"</span> <span class="na">command=</span><span class="s">"paste"</span><span class="nt">/&gt;</span></div><div class="line" id="LC71">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"0"</span> <span class="na">command=</span><span class="s">"stopscroll"</span><span class="nt">/&gt;</span></div><div class="line" id="LC72">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"0"</span> <span class="na">command=</span><span class="s">"scrollrowup"</span><span class="nt">/&gt;</span></div><div class="line" id="LC73">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"0"</span> <span class="na">command=</span><span class="s">"scrollrowdown"</span><span class="nt">/&gt;</span></div><div class="line" id="LC74">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"0"</span> <span class="na">command=</span><span class="s">"scrollpageup"</span><span class="nt">/&gt;</span></div><div class="line" id="LC75">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"0"</span> <span class="na">command=</span><span class="s">"scrollpagedown"</span><span class="nt">/&gt;</span></div><div class="line" id="LC76">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"0"</span> <span class="na">command=</span><span class="s">"scrollcolleft"</span><span class="nt">/&gt;</span></div><div class="line" id="LC77">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"0"</span> <span class="na">command=</span><span class="s">"scrollcolright"</span><span class="nt">/&gt;</span></div><div class="line" id="LC78">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"0"</span> <span class="na">command=</span><span class="s">"scrollpageleft"</span><span class="nt">/&gt;</span></div><div class="line" id="LC79">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"0"</span> <span class="na">command=</span><span class="s">"scrollpageright"</span><span class="nt">/&gt;</span></div><div class="line" id="LC80">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"1"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"112"</span> <span class="na">command=</span><span class="s">"dumpbuffer"</span><span class="nt">/&gt;</span></div><div class="line" id="LC81">		<span class="nt">&lt;hotkey</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">extended=</span><span class="s">"0"</span> <span class="na">code=</span><span class="s">"0"</span> <span class="na">command=</span><span class="s">"activate"</span><span class="nt">/&gt;</span></div><div class="line" id="LC82">	<span class="nt">&lt;/hotkeys&gt;</span></div><div class="line" id="LC83">	<span class="nt">&lt;mouse&gt;</span></div><div class="line" id="LC84">		<span class="nt">&lt;actions&gt;</span></div><div class="line" id="LC85">			<span class="nt">&lt;action</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">button=</span><span class="s">"1"</span> <span class="na">name=</span><span class="s">"copy"</span><span class="nt">/&gt;</span></div><div class="line" id="LC86">			<span class="nt">&lt;action</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"1"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">button=</span><span class="s">"1"</span> <span class="na">name=</span><span class="s">"select"</span><span class="nt">/&gt;</span></div><div class="line" id="LC87">			<span class="nt">&lt;action</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">button=</span><span class="s">"3"</span> <span class="na">name=</span><span class="s">"paste"</span><span class="nt">/&gt;</span></div><div class="line" id="LC88">			<span class="nt">&lt;action</span> <span class="na">ctrl=</span><span class="s">"1"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">button=</span><span class="s">"1"</span> <span class="na">name=</span><span class="s">"drag"</span><span class="nt">/&gt;</span></div><div class="line" id="LC89">			<span class="nt">&lt;action</span> <span class="na">ctrl=</span><span class="s">"0"</span> <span class="na">shift=</span><span class="s">"0"</span> <span class="na">alt=</span><span class="s">"0"</span> <span class="na">button=</span><span class="s">"2"</span> <span class="na">name=</span><span class="s">"menu"</span><span class="nt">/&gt;</span></div><div class="line" id="LC90">		<span class="nt">&lt;/actions&gt;</span></div><div class="line" id="LC91">	<span class="nt">&lt;/mouse&gt;</span></div><div class="line" id="LC92">	<span class="nt">&lt;tabs&gt;</span></div><div class="line" id="LC93">		<span class="nt">&lt;tab</span> <span class="na">title=</span><span class="s">"Console2"</span> <span class="na">use_default_icon=</span><span class="s">"0"</span><span class="nt">&gt;</span></div><div class="line" id="LC94">			<span class="nt">&lt;console</span> <span class="na">shell=</span><span class="s">""</span> <span class="na">init_dir=</span><span class="s">""</span> <span class="na">run_as_user=</span><span class="s">"0"</span> <span class="na">user=</span><span class="s">""</span><span class="nt">/&gt;</span></div><div class="line" id="LC95">			<span class="nt">&lt;cursor</span> <span class="na">style=</span><span class="s">"0"</span> <span class="na">r=</span><span class="s">"255"</span> <span class="na">g=</span><span class="s">"255"</span> <span class="na">b=</span><span class="s">"255"</span><span class="nt">/&gt;</span></div><div class="line" id="LC96">			<span class="nt">&lt;background</span> <span class="na">type=</span><span class="s">"0"</span> <span class="na">r=</span><span class="s">"0"</span> <span class="na">g=</span><span class="s">"0"</span> <span class="na">b=</span><span class="s">"0"</span><span class="nt">&gt;</span></div><div class="line" id="LC97">				<span class="nt">&lt;image</span> <span class="na">file=</span><span class="s">""</span> <span class="na">relative=</span><span class="s">"0"</span> <span class="na">extend=</span><span class="s">"0"</span> <span class="na">position=</span><span class="s">"0"</span><span class="nt">&gt;</span></div><div class="line" id="LC98">					<span class="nt">&lt;tint</span> <span class="na">opacity=</span><span class="s">"0"</span> <span class="na">r=</span><span class="s">"0"</span> <span class="na">g=</span><span class="s">"0"</span> <span class="na">b=</span><span class="s">"0"</span><span class="nt">/&gt;</span></div><div class="line" id="LC99">				<span class="nt">&lt;/image&gt;</span></div><div class="line" id="LC100">			<span class="nt">&lt;/background&gt;</span></div><div class="line" id="LC101">		<span class="nt">&lt;/tab&gt;</span></div><div class="line" id="LC102">	<span class="nt">&lt;/tabs&gt;</span></div><div class="line" id="LC103"><span class="nt">&lt;/settings&gt;</span></div><div class="line" id="LC104"><br></div></pre></td></tr></tbody></table></div>
+          </div>
+
+          <div class="gist-meta">
+            <a href="https://gist.github.com/raw/2875034/e5c07217e0418e1834de5472c3bb8a3712d98ffa/console.xml" style="float:right;">view raw</a>
+            <a href="https://gist.github.com/2875034#file_console.xml" style="float:right;margin-right:10px;color:#666">console.xml</a>
+            <a href="https://gist.github.com/2875034">This Gist</a> brought to you by <a href="http://github.com/">GitHub</a>.
+          </div>
+        </div>
+</div>
+
+<noscript><pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;settings&gt;
+    &lt;console change_refresh=&quot;10&quot; refresh=&quot;100&quot; rows=&quot;25&quot; columns=&quot;160&quot; buffer_rows=&quot;9000&quot; buffer_columns=&quot;0&quot; shell=&quot;C:\Windows\SysWOW64\cmd.exe /c &amp;quot;&amp;quot;C:\Program Files (x86)\Git\bin\sh.exe&amp;quot; --login -i&amp;quot;&quot; init_dir=&quot;C:\dev&quot; start_hidden=&quot;0&quot; save_size=&quot;0&quot;&gt;
+        &lt;colors&gt;
+            &lt;color id=&quot;0&quot; r=&quot;2&quot; g=&quot;26&quot; b=&quot;46&quot;/&gt;
+            &lt;color id=&quot;1&quot; r=&quot;0&quot; g=&quot;0&quot; b=&quot;128&quot;/&gt;
+            &lt;color id=&quot;2&quot; r=&quot;0&quot; g=&quot;150&quot; b=&quot;0&quot;/&gt;
+            &lt;color id=&quot;3&quot; r=&quot;0&quot; g=&quot;150&quot; b=&quot;150&quot;/&gt;
+            &lt;color id=&quot;4&quot; r=&quot;170&quot; g=&quot;25&quot; b=&quot;25&quot;/&gt;
+            &lt;color id=&quot;5&quot; r=&quot;128&quot; g=&quot;0&quot; b=&quot;128&quot;/&gt;
+            &lt;color id=&quot;6&quot; r=&quot;128&quot; g=&quot;128&quot; b=&quot;0&quot;/&gt;
+            &lt;color id=&quot;7&quot; r=&quot;192&quot; g=&quot;192&quot; b=&quot;192&quot;/&gt;
+            &lt;color id=&quot;8&quot; r=&quot;128&quot; g=&quot;128&quot; b=&quot;128&quot;/&gt;
+            &lt;color id=&quot;9&quot; r=&quot;0&quot; g=&quot;100&quot; b=&quot;255&quot;/&gt;
+            &lt;color id=&quot;10&quot; r=&quot;0&quot; g=&quot;255&quot; b=&quot;0&quot;/&gt;
+            &lt;color id=&quot;11&quot; r=&quot;0&quot; g=&quot;255&quot; b=&quot;255&quot;/&gt;
+            &lt;color id=&quot;12&quot; r=&quot;255&quot; g=&quot;50&quot; b=&quot;50&quot;/&gt;
+            &lt;color id=&quot;13&quot; r=&quot;255&quot; g=&quot;0&quot; b=&quot;255&quot;/&gt;
+            &lt;color id=&quot;14&quot; r=&quot;255&quot; g=&quot;255&quot; b=&quot;0&quot;/&gt;
+            &lt;color id=&quot;15&quot; r=&quot;255&quot; g=&quot;255&quot; b=&quot;255&quot;/&gt;
+        &lt;/colors&gt;
+    &lt;/console&gt;
+    &lt;appearance&gt;
+        &lt;font name=&quot;Consolas&quot; size=&quot;11&quot; bold=&quot;0&quot; italic=&quot;0&quot; smoothing=&quot;2&quot;&gt;
+            &lt;color use=&quot;0&quot; r=&quot;0&quot; g=&quot;0&quot; b=&quot;0&quot;/&gt;
+        &lt;/font&gt;
+        &lt;window title=&quot;Console&quot; icon=&quot;&quot; use_tab_icon=&quot;1&quot; use_console_title=&quot;1&quot; show_cmd=&quot;1&quot; show_cmd_tabs=&quot;1&quot; use_tab_title=&quot;1&quot; trim_tab_titles=&quot;20&quot; trim_tab_titles_right=&quot;0&quot;/&gt;
+        &lt;controls show_menu=&quot;0&quot; show_toolbar=&quot;0&quot; show_statusbar=&quot;0&quot; show_tabs=&quot;1&quot; hide_single_tab=&quot;1&quot; show_scrollbars=&quot;1&quot; flat_scrollbars=&quot;0&quot; tabs_on_bottom=&quot;0&quot;/&gt;
+        &lt;styles caption=&quot;1&quot; resizable=&quot;1&quot; taskbar_button=&quot;1&quot; border=&quot;1&quot; inside_border=&quot;2&quot; tray_icon=&quot;1&quot;&gt;
+            &lt;selection_color r=&quot;255&quot; g=&quot;255&quot; b=&quot;255&quot;/&gt;
+        &lt;/styles&gt;
+        &lt;position x=&quot;-1&quot; y=&quot;-1&quot; dock=&quot;-1&quot; snap=&quot;0&quot; z_order=&quot;0&quot; save_position=&quot;0&quot;/&gt;
+        &lt;transparency type=&quot;1&quot; active_alpha=&quot;238&quot; inactive_alpha=&quot;237&quot; r=&quot;0&quot; g=&quot;0&quot; b=&quot;0&quot;/&gt;
+    &lt;/appearance&gt;
+    &lt;behavior&gt;
+        &lt;copy_paste copy_on_select=&quot;0&quot; clear_on_copy=&quot;1&quot; no_wrap=&quot;1&quot; trim_spaces=&quot;1&quot; copy_newline_char=&quot;0&quot; sensitive_copy=&quot;1&quot;/&gt;
+        &lt;scroll page_scroll_rows=&quot;0&quot;/&gt;
+        &lt;tab_highlight flashes=&quot;3&quot; stay_highligted=&quot;1&quot;/&gt;
+    &lt;/behavior&gt;
+    &lt;hotkeys use_scroll_lock=&quot;1&quot;&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;83&quot; command=&quot;settings&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;112&quot; command=&quot;help&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;1&quot; extended=&quot;0&quot; code=&quot;115&quot; command=&quot;exit&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;112&quot; command=&quot;newtab1&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;113&quot; command=&quot;newtab2&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;114&quot; command=&quot;newtab3&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;115&quot; command=&quot;newtab4&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;116&quot; command=&quot;newtab5&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;117&quot; command=&quot;newtab6&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;118&quot; command=&quot;newtab7&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;119&quot; command=&quot;newtab8&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;120&quot; command=&quot;newtab9&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;121&quot; command=&quot;newtab10&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;49&quot; command=&quot;switchtab1&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;50&quot; command=&quot;switchtab2&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;51&quot; command=&quot;switchtab3&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;52&quot; command=&quot;switchtab4&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;53&quot; command=&quot;switchtab5&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;54&quot; command=&quot;switchtab6&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;55&quot; command=&quot;switchtab7&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;56&quot; command=&quot;switchtab8&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;57&quot; command=&quot;switchtab9&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;48&quot; command=&quot;switchtab10&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;9&quot; command=&quot;nexttab&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;1&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;9&quot; command=&quot;prevtab&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;87&quot; command=&quot;closetab&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;82&quot; command=&quot;renametab&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;1&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;67&quot; command=&quot;copy&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;1&quot; code=&quot;46&quot; command=&quot;clear_selection&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;1&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;86&quot; command=&quot;paste&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;stopscroll&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollrowup&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollrowdown&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollpageup&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollpagedown&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollcolleft&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollcolright&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollpageleft&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;scrollpageright&quot;/&gt;
+        &lt;hotkey ctrl=&quot;1&quot; shift=&quot;1&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;112&quot; command=&quot;dumpbuffer&quot;/&gt;
+        &lt;hotkey ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; extended=&quot;0&quot; code=&quot;0&quot; command=&quot;activate&quot;/&gt;
+    &lt;/hotkeys&gt;
+    &lt;mouse&gt;
+        &lt;actions&gt;
+            &lt;action ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; button=&quot;1&quot; name=&quot;copy&quot;/&gt;
+            &lt;action ctrl=&quot;0&quot; shift=&quot;1&quot; alt=&quot;0&quot; button=&quot;1&quot; name=&quot;select&quot;/&gt;
+            &lt;action ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; button=&quot;3&quot; name=&quot;paste&quot;/&gt;
+            &lt;action ctrl=&quot;1&quot; shift=&quot;0&quot; alt=&quot;0&quot; button=&quot;1&quot; name=&quot;drag&quot;/&gt;
+            &lt;action ctrl=&quot;0&quot; shift=&quot;0&quot; alt=&quot;0&quot; button=&quot;2&quot; name=&quot;menu&quot;/&gt;
+        &lt;/actions&gt;
+    &lt;/mouse&gt;
+    &lt;tabs&gt;
+        &lt;tab title=&quot;Console2&quot; use_default_icon=&quot;0&quot;&gt;
+            &lt;console shell=&quot;&quot; init_dir=&quot;&quot; run_as_user=&quot;0&quot; user=&quot;&quot;/&gt;
+            &lt;cursor style=&quot;0&quot; r=&quot;255&quot; g=&quot;255&quot; b=&quot;255&quot;/&gt;
+            &lt;background type=&quot;0&quot; r=&quot;0&quot; g=&quot;0&quot; b=&quot;0&quot;&gt;
+                &lt;image file=&quot;&quot; relative=&quot;0&quot; extend=&quot;0&quot; position=&quot;0&quot;&gt;
+                    &lt;tint opacity=&quot;0&quot; r=&quot;0&quot; g=&quot;0&quot; b=&quot;0&quot;/&gt;
+                &lt;/image&gt;
+            &lt;/background&gt;
+        &lt;/tab&gt;
+    &lt;/tabs&gt;
+&lt;/settings&gt;
+</code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="http://localhost:8000/blog/2012/05/11/Using-Git-With-SVN/">Using Git With SVN</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-11T11:38:00-05:00" pubdate="" data-updated="true">May 11<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Here is my workflow for using Git with SVN:</p>
+
+<div><script src="index_files/2655799.js"></script><link rel="stylesheet" href="index_files/embed.css"><div id="gist-2655799" class="gist">
+    
+
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+              <div class="gist-highlight"><table><tbody><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+<span class="line-number">51</span>
+<span class="line-number">52</span>
+<span class="line-number">53</span>
+<span class="line-number">54</span>
+<span class="line-number">55</span>
+<span class="line-number">56</span>
+<span class="line-number">57</span>
+<span class="line-number">58</span>
+<span class="line-number">59</span>
+<span class="line-number">60</span>
+<span class="line-number">61</span>
+</pre></td><td class="code"><pre><div class="line" id="LC1"><span class="c">##############################</span></div><div class="line" id="LC2"><span class="c"># Setup</span></div><div class="line" id="LC3"><span class="c">##############################</span></div><div class="line" id="LC4"><br></div><div class="line" id="LC5"><span class="c">#create local repo</span></div><div class="line" id="LC6">git svn init -s http://url-of-repo</div><div class="line" id="LC7">git svn fetch</div><div class="line" id="LC8">git svn rebase</div><div class="line" id="LC9"><br></div><div class="line" id="LC10"><br></div><div class="line" id="LC11"><span class="c">##############################</span></div><div class="line" id="LC12"><span class="c"># Normal workflow</span></div><div class="line" id="LC13"><span class="c">##############################</span></div><div class="line" id="LC14"><br></div><div class="line" id="LC15"><span class="c">#work on a local branch or branches</span></div><div class="line" id="LC16">git checkout -b myfeature</div><div class="line" id="LC17"><br></div><div class="line" id="LC18"><span class="c">#make some changes and commit</span></div><div class="line" id="LC19">git commit -a -m <span class="s2">"made some changes"</span></div><div class="line" id="LC20"><br></div><div class="line" id="LC21"><span class="c">#switch to master and rebase changes </span></div><div class="line" id="LC22">git checkout master</div><div class="line" id="LC23">git rebase myfeature</div><div class="line" id="LC24">git svn rebase</div><div class="line" id="LC25"><br></div><div class="line" id="LC26"><span class="c">#see changed files between local and svn trunk</span></div><div class="line" id="LC27">git diff --name-only remotes/trunk</div><div class="line" id="LC28"><br></div><div class="line" id="LC29"><span class="c">#commit changes to svn</span></div><div class="line" id="LC30">git svn dcommit</div><div class="line" id="LC31"><br></div><div class="line" id="LC32"><br></div><div class="line" id="LC33"><span class="c">##############################</span></div><div class="line" id="LC34"><span class="c"># Stash Changes</span></div><div class="line" id="LC35"><span class="c">##############################</span></div><div class="line" id="LC36"><br></div><div class="line" id="LC37"><span class="c">#stash all changes</span></div><div class="line" id="LC38">git stash</div><div class="line" id="LC39"><br></div><div class="line" id="LC40"><span class="c">#list all stashes</span></div><div class="line" id="LC41">git stash list</div><div class="line" id="LC42"><br></div><div class="line" id="LC43"><span class="c">#get most recent stash off the stack</span></div><div class="line" id="LC44">git stash pop</div><div class="line" id="LC45"><br></div><div class="line" id="LC46"><br></div><div class="line" id="LC47"><span class="c">##############################</span></div><div class="line" id="LC48"><span class="c"># Dealing with problems</span></div><div class="line" id="LC49"><span class="c">##############################</span></div><div class="line" id="LC50"><br></div><div class="line" id="LC51"><span class="c">#see all changes between local and svn trunk</span></div><div class="line" id="LC52">git diff remotes/trunk</div><div class="line" id="LC53"><br></div><div class="line" id="LC54"><span class="c">#reset to a specific revision</span></div><div class="line" id="LC55">git reset --hard HEAD</div><div class="line" id="LC56"><br></div><div class="line" id="LC57"><span class="c">#delete a local branch</span></div><div class="line" id="LC58">git branch -d mylocalbranch</div><div class="line" id="LC59"><br></div><div class="line" id="LC60"><span class="c">#view decorated log</span></div><div class="line" id="LC61">git log --decorate --graph --oneline</div></pre></td></tr></tbody></table></div>
+          </div>
+
+          <div class="gist-meta">
+            <a href="https://gist.github.com/raw/2655799/64e10d54d7f1586d3f552691565c6411a8128386/git%20svn%20workflow.sh" style="float:right;">view raw</a>
+            <a href="https://gist.github.com/2655799#file_git%20svn%20workflow.sh" style="float:right;margin-right:10px;color:#666">git svn workflow.sh</a>
+            <a href="https://gist.github.com/2655799">This Gist</a> brought to you by <a href="http://github.com/">GitHub</a>.
+          </div>
+        </div>
+</div>
+
+<noscript><pre><code>//create local repo
+git svn init -s http://url-of-repo
+git svn fetch
+git svn rebase
+
+//work on a local branch or branches
+git checkout -b myfeature
+
+//make some changes and commit
+git commit -a -m &quot;made some changes&quot;
+
+//switch to master and rebase changes 
+git checkout master
+git rebase myfeature
+git svn rebase
+
+//see differences between local and svn trunk
+git diff remotes/trunk
+
+//commit changes to svn
+git svn dcommit</code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="http://localhost:8000/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/">Creating an Octopress Site on Github Pages</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-12T11:51:00-05:00" pubdate="" data-updated="true">Mar 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img src="index_files/octopress-logo.png"></p>
+
+<p>Here are some of the resources that I used to create this site:<br>
+&nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/deploying/">Deploying Octopress</a><br>
+&nbsp;&nbsp;&nbsp; - <a href="http://pages.github.com/">Github Pages</a><br>
+&nbsp;&nbsp;&nbsp; - <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">Github Pages Setup Guide</a><br>
+&nbsp;&nbsp;&nbsp; - <a href="http://www.yodi.me/blog/2011/10/24/github-custom-domain-with-octopress-in-ubuntu-oneiric-11-dot-10/">Octopress in Ubuntu Oneiric 11.10</a><br>
+&nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/setup/rvm/">Installing rvm (make sure you use the correct ruby version)</a><br>
+&nbsp;&nbsp;&nbsp; - <a href="http://melandri.net/2012/02/14/octopress-theme-customization/">Octopress Theme Customization</a></p>
+
+<p>Simple way to run an HTTP server locally for testing:<br>
+&nbsp;&nbsp;&nbsp; - Open a command window<br>
+&nbsp;&nbsp;&nbsp; - Change to the octopress/public directory<br>
+&nbsp;&nbsp;&nbsp; - Run: python -m SimpleHTTPServer</p>
+
+<p>The Three most important commands when using octopress:<br>
+&nbsp;&nbsp;&nbsp; - rake new_post[“title”]<br>
+&nbsp;&nbsp;&nbsp; - rake generate<br>
+&nbsp;&nbsp;&nbsp; - rake deploy</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="http://localhost:8000/blog/2011/06/15/an-example-cross-domain-ajax-request/">An Example Cross Domain AJAX Request</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-15T00:44:00-05:00" pubdate="" data-updated="true">Jun 15<span>th</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Cross Domain AJAX calls can be made by using JSONP.</p>
+
+<p>Here is an example using the Twitter api:</p>
+
+<div><script src="index_files/965715.js"></script><link rel="stylesheet" href="index_files/embed.css"><div id="gist-965715" class="gist">
+    
+
+        <div class="gist-file">
+          <div class="gist-data gist-syntax">
+              <div class="gist-highlight"><table><tbody><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+</pre></td><td class="code"><pre><div class="line" id="LC1"><span class="cp">&lt;!DOCTYPE html&gt;</span></div><div class="line" id="LC2"><span class="nt">&lt;html&gt;</span></div><div class="line" id="LC3">&nbsp;&nbsp;<span class="nt">&lt;head&gt;</span></div><div class="line" id="LC4">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Content-Type"</span> <span class="na">content=</span><span class="s">"text/html; charset=iso-8859-1"</span> <span class="nt">/&gt;</span></div><div class="line" id="LC5">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;title&gt;</span>jQuery cross domain ajax example<span class="nt">&lt;/title&gt;</span></div><div class="line" id="LC6">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> </div><div class="line" id="LC7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"</span><span class="nt">&gt;</span></div><div class="line" id="LC8">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/script&gt;</span></div><div class="line" id="LC9">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span></div><div class="line" id="LC10">	    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span></div><div class="line" id="LC11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">.</span><span class="nx">getJSON</span><span class="p">(</span><span class="s1">'http://api.twitter.com/1/trends/1.json?callback=?'</span><span class="p">,</span></div><div class="line" id="LC12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="kd">function</span><span class="p">(</span><span class="nx">json</span><span class="p">){</span>      </div><div class="line" id="LC13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="nx">$</span><span class="p">(</span><span class="s1">'#mydiv'</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">json</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">trends</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">name</span><span class="p">);</span> </div><div class="line" id="LC14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">}</span></div><div class="line" id="LC15">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">);</span></div><div class="line" id="LC16">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="p">});</span></div><div class="line" id="LC17">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;/script&gt;</span></div><div class="line" id="LC18">&nbsp;&nbsp;<span class="nt">&lt;/head&gt;</span></div><div class="line" id="LC19">&nbsp;&nbsp;<span class="nt">&lt;body&gt;</span></div><div class="line" id="LC20">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;h3&gt;</span>Top Twitter Trend:<span class="nt">&lt;/h3&gt;</span></div><div class="line" id="LC21">&nbsp;&nbsp;&nbsp;&nbsp;<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"mydiv"</span><span class="nt">&gt;</span>Loading...<span class="nt">&lt;/div&gt;</span></div><div class="line" id="LC22">&nbsp;&nbsp;<span class="nt">&lt;/body&gt;</span></div><div class="line" id="LC23"><span class="nt">&lt;/html&gt;</span></div></pre></td></tr></tbody></table></div>
+          </div>
+
+          <div class="gist-meta">
+            <a href="https://gist.github.com/raw/965715/8be2c578725a76652d55bbd2820d741df0c24362/jQuerycrossdomainajaxexample.html" style="float:right;">view raw</a>
+            <a href="https://gist.github.com/965715#file_j_querycrossdomainajaxexample.html" style="float:right;margin-right:10px;color:#666">jQuerycrossdomainajaxexample.html</a>
+            <a href="https://gist.github.com/965715">This Gist</a> brought to you by <a href="http://github.com/">GitHub</a>.
+          </div>
+        </div>
+</div>
+
+<noscript><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
+    &lt;title&gt;jQuery cross domain ajax example&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; 
+            src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js&quot;&gt;
+    &lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        $(document).ready(function() {
+                $.getJSON('http://api.twitter.com/1/trends/1.json?callback=?',
+                    function(json){      
+                        $('#mydiv').text(json[0].trends[0].name); 
+                    }
+                );
+            });
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h3&gt;Top Twitter Trend:&lt;/h3&gt;
+    &lt;div id=&quot;mydiv&quot;&gt;Loading...&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+    <a href="http://localhost:8000/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar thirds">
+  
+    <section class="first odd">
+  <h1>Andy Lind</h1>
+  <p>
+    <img src="index_files/andrew-lind.jpg" height="150px" width="150px">
+  </p>
+  <a title="subscribe via RSS" rel="subscribe-rss" href="http://localhost:8000/atom.xml">subscribe via RSS</a>
+</section>
+
+<section class="even">
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="http://localhost:8000/blog/2012/10/12/simple-vi-tutorial/">Simple vi Tutorial</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://localhost:8000/blog/2012/10/07/my-linux-survival-guide/">My Linux Survival Guide</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://localhost:8000/blog/2012/09/15/my-setup-for-using-git-on-windows/">My Setup for Using Git on Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://localhost:8000/blog/2012/05/11/Using-Git-With-SVN/">Using Git with SVN</a>
+      </li>
+    
+      <li class="post">
+        <a href="http://localhost:8000/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/">Creating an Octopress Site on Github Pages</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section class="odd">
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos"><li><a href="https://github.com/andylind/andylind.github.com">andylind.github.com</a><p></p></li><li><a href="https://github.com/andylind/mileagedemo">mileagedemo</a><p>Demo application using Google App Engine and jQuery mobile</p></li><li><a href="https://github.com/andylind/skillstracker">skillstracker</a><p>Demo application showing a UI tracking skills</p></li><li><a href="https://github.com/andylind/arl-py">arl-py</a><p>Python tools</p></li><li><a href="https://github.com/andylind/measure-bookmarklet">measure-bookmarklet</a><p>A JavaScript bookmarklet to measure pixels on a page</p></li><li><a href="https://github.com/andylind/worldevents17thcentury">worldevents17thcentury</a><p>Uses google charts API to generate a map with hover text</p></li></ul>
+  
+  <a href="https://github.com/andylind">@andylind</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'andylind',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="index_files/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+
+
+
+  
+</aside>
+
+    <span class="toggle-sidebar"></span></div>
+  </div>
+
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'andylind';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+
+
+</body></html>

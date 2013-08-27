@@ -1,0 +1,15 @@
+---
+layout: post
+title: "Creating an Octopress Site on Github Pages"
+date: 2012-01-12 11:51
+comments: true
+categories: 
+---
+
+Here are some of the resources that I used to create this site:  
+&nbsp&nbsp&nbsp - [Deploying Octopress](http://octopress.org/docs/deploying/)  
+&nbsp&nbsp&nbsp - [Github Pages](http://pages.github.com/)  
+&nbsp&nbsp&nbsp - [Octopress in Ubuntu Oneiric 11.10](http://www.yodi.me/blog/2011/10/24/github-custom-domain-with-octopress-in-ubuntu-oneiric-11-dot-10/)  
+&nbsp&nbsp&nbsp - [Octopress Theme Customization](http://melandri.net/2012/02/14/octopress-theme-customization/)  
+
+

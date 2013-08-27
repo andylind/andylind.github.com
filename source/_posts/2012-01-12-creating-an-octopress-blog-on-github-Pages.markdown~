@@ -1,0 +1,19 @@
+---
+layout: post
+title: "Creating an Octopress Blog on Github Pages"
+date: 2012-01-12 11:51
+comments: true
+categories: 
+---
+
+Here are some of the rescorces that I used to create this blog:
+  
+  - [Deploying Octopress](http://octopress.org/docs/deploying/)
+  
+  - [Github Pages](http://pages.github.com/)
+  
+  - [Octopress in Ubuntu Oneiric 11.10](http://www.yodi.me/blog/2011/10/24/github-custom-domain-with-octopress-in-ubuntu-oneiric-11-dot-10/)
+  
+  - [Octopress Theme Customization](http://melandri.net/2012/02/14/octopress-theme-customization/)
+
+

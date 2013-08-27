@@ -1,0 +1,13 @@
+---
+layout: post
+title: "My Setup for Using Git on Windows"
+date: 2012-08-28 00:38
+comments: true
+categories: 
+---
+
+For developing on Windows with Git, I have been using Console2 and MINGW.
+
+My settings for Console2 are:
+
+{% gist 2875034 %}

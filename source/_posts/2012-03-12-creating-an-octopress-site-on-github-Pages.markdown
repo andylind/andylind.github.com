@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Creating an Octopress Site on Github Pages"
+date: 2012-03-12 11:51
+comments: true
+categories: [blogging]
+---
+
+{% img /images/octopress-logo.png %}
+
+Here are some of the resources that I used to create this site:  
+&nbsp;&nbsp;&nbsp; - [Deploying Octopress](http://octopress.org/docs/deploying/)  
+&nbsp;&nbsp;&nbsp; - [Github Pages](http://pages.github.com/)  
+&nbsp;&nbsp;&nbsp; - [Github Pages Setup Guide](http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one)  
+&nbsp;&nbsp;&nbsp; - [Octopress in Ubuntu Oneiric 11.10](http://www.yodi.me/blog/2011/10/24/github-custom-domain-with-octopress-in-ubuntu-oneiric-11-dot-10/)  
+&nbsp;&nbsp;&nbsp; - [Installing rvm (make sure you use the correct ruby version)](http://octopress.org/docs/setup/rvm/)  
+&nbsp;&nbsp;&nbsp; - [Octopress Theme Customization](http://melandri.net/2012/02/14/octopress-theme-customization/)  
+
+Simple way to run an HTTP server locally for testing:  
+&nbsp;&nbsp;&nbsp; - Open a command window  
+&nbsp;&nbsp;&nbsp; - Change to the octopress/public directory  
+&nbsp;&nbsp;&nbsp; - Run: python -m SimpleHTTPServer  
+
+The Three most important commands when using octopress:  
+&nbsp;&nbsp;&nbsp; - rake new_post["title"]  
+&nbsp;&nbsp;&nbsp; - rake generate  
+&nbsp;&nbsp;&nbsp; - rake deploy  
+

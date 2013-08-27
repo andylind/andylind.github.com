@@ -1,0 +1,103 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+
+html { background: #f2f2f2; }
+
+body { font-size: 1em; }
+
+
+/* ----- header ----- */
+
+
+body > header{
+  background: none;
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  z-index: 1000;
+}
+
+
+body > header a:visited,
+body > header a:hover,
+body > header a{
+  color: #AAAAAA;
+  text-decoration: none;
+  font-size: 0.7em;
+  font-style: italic;
+}
+
+body > header a:hover{
+  color: #AAAAAA;
+  text-decoration: underline;
+  font-size: 0.7em;
+  font-style: italic;
+}
+
+body > header h1{
+  font-weight: bold;
+}
+
+#title-img{
+  float: left;
+}
+
+#title-text{
+  margin-left: 110px;
+  margin-top: 10px;
+  font-size: 1.1em;
+}
+
+
+body > header h1 a, body > header h1 a:visited, body > header h1 a:hover {
+    color: #333333;
+    text-decoration: none;
+    height: 100px;
+}
+
+body > header h1 a:hover {
+    color: #666666;
+    text-decoration: none;
+    height: 100px;
+}
+
+body > header h2{
+  font-size: 1.0em;
+  letter-spacing: 1px;
+  margin-top: -1.4em;
+  color: #333333;
+  padding-left: 120px;
+}
+
+#content > div, body > div > div, body.sidebar-footer aside.sidebar {
+    background: #FEFEFE;
+}
+
+.entry-title a {
+  color: #333333;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+h1.entry-title {
+  color: #333333;
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.name-link {
+  color: #AAAAAA;
+  text-decoration:none;
+}
+
+.name-link:hover {
+  color: #AAAAAA;
+    text-decoration:underline;
+}
+
+.name-link:visited {
+  color: #AAAAAA;
+}
+

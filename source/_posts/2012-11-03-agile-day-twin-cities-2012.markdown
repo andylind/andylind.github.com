@@ -1,0 +1,42 @@
+---
+layout: post
+title: "Agile Day Twin Cities 2012"
+date: 2012-11-03 15:35
+comments: true
+categories: [agile]
+---
+
+Last Friday, I attended the [Agile Day Twin Cities](https://sites.google.com/site/twincitiespracticalagility/agile-day-twin-cities-2012) conference. The conference was centered around building a discussion about agile software practices and the main theme this year was learning.
+
+I want to share some of the most interesting and thought provoking statements that I heard from the day. Each of these could probably be an entire post on their own, but I think that these anecdotes and insights really give a picture of the discussion at Agile Day and the focus on questioning the status quo.
+
+The first speaker was [David Hussman](https://twitter.com/davidhussman/), who did a great job at getting everyone to question why they are doing things. Here are some of my favorite quotes from his presentations:
+{% blockquote %}
+"Ask why. Why are you changing the process? Could you be doing something more valuable?" 
+"Minimize output, Maximize impact"
+"Transition from thinking about how big something is to thinking if something is too big." 
+"One sign of a maturing agile team is that they stop talking about the code and they start talking about the tests that they need"
+{% endblockquote %}
+
+Stemming from David's talk, there was a lot of discussion on why we work in iterations and what life would be like if we moved beyond iterations.
+{% blockquote %}
+"Why does it matter if you don't get done what you committed to in the sprint?" 
+{% endblockquote %}
+
+Another session that I attended was focused on pair-programming practices. During that session the speaker made a really good point about testing:
+{% blockquote %} "What is the next test that you should write? The test that tells you the most about the system." 
+{% endblockquote %}
+This point really hit home for me. I have been trying to transition to using more Test Driven Development (TDD) practices, and I think this could really help guide me in choosing the next test to write.
+
+Throughout the day, I heard a lot of controversial statements about process and tools such as: 
+{% blockquote %}
+"JIRA is where stories go to die", and "Project Management is a symptom, not a solution" 
+{% endblockquote %}
+There was a lot of support at the conference for sticky-note driven workflow, and a lot of backlash against project management tools. I think that was one of the things that I most disagreed with. I have really seen a huge benefit when using a tracking tool to share info about stories among a large team.
+
+The last quote that I found really interesting was from one of the open-space sessions. The speakers described a really great technique that runs counter to a lot of teaching for gathering requirements (e.g. 5 whys):
+{% blockquote %} 
+People do not respond well to being asked, "Why?". Instead, ask "If that happened, then what?" or "Pretend you had that, then what would you do?"
+{% endblockquote %}
+
+Overall, I thought the conference was really good, and I appreciated the focus on continuous improvement throughout the agile process. 

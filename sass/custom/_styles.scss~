@@ -1,0 +1,55 @@
+// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+
+html { background: #EAEAEA; }
+
+body { font-size: 1em; }
+
+
+/* ----- header ----- */
+
+
+body > header{
+  background: none;
+  padding: 1.6em 0 1em 0
+}
+
+body > header h1{
+  font-size: 2.8em;
+  padding-left: 20px;
+}
+
+body > header h1 a, body > header h1 a:visited, body > header h1 a:hover {
+    color: #222222;
+    text-decoration: none;
+}
+
+body > header h2{
+  font-size: 0.5em;
+  letter-spacing: 1px;
+  margin-top: -1.4em;
+  padding-left: 20px;
+}
+
+body > nav {
+  -moz-border-radius-topright: 0.4em;
+  -moz-border-radius-topleft: 0.4em;
+  -webkit-border-top-right-radius: 0.4em;
+  -webkit-border-top-left-radius: 0.4em;
+  border-top-right-radius:0.4em;
+  border-top-left-radius:0.4em;
+  padding-top: .15em;
+}
+
+
+body > nav a{
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+body > nav form .search{
+  padding: .2em .3em;
+}
+
+
