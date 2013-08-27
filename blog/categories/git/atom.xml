@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: git | Andy Lind]]></title>
+  <title><![CDATA[Category: Git | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-08-26T23:09:24-05:00</updated>
+  <updated>2013-08-26T23:12:41-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -14,18 +14,237 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Intro to git-svn]]></title>
-    <link href="http://andylind.github.com/blog/2013/08/26/intro-to-git-svn/"/>
-    <updated>2013-08-26T22:40:00-05:00</updated>
-    <id>http://andylind.github.com/blog/2013/08/26/intro-to-git-svn</id>
-    <content type="html"><![CDATA[<p>This is a presentation that I recently gave on the distributed version control system <a href="http://www.git-scm.com">Git</a> and how it can be used with SVN. In the presentation, I introduce the concepts behind Git, some of the main Git commands, and how to use git-svn.</p>
+    <title type="html"><![CDATA[Combining Multiple Git Commits]]></title>
+    <link href="http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits/"/>
+    <updated>2013-04-18T18:35:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits</id>
+    <content type="html"><![CDATA[<p>Using Git, it is possible to combine multiple commits into a single commit with interactive rebasing.</p>
 
-<p><a href="https://www.kernel.org/pub/software/scm/git/docs/git-svn.html">Git-svn</a> is a feature that ships with Git that allows Git to connect to a subversion repository and share changes. Using git-svn is one way to learn how to use Git while still maintaining a Subversion repository.</p>
+<p>The first step is to select the commits that you want to combine. Here is an example of selecting the last 3 commits:</p>
 
-<p>You can see more of my git-svn workflow in <a href="http://andylind.github.io/blog/2012/05/11/Using-Git-With-SVN/">this post</a></p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git rebase -i HEAD~3
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<script async class="speakerdeck-embed" data-id="0576e7c0f92c0130bb2576ac50ee3936" data-ratio="1.33333333333333" src="http://andylind.github.com//speakerdeck.com/assets/embed.js"></script>
+<p>This will open your text editor and display:</p>
 
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pick e520ab4 example commit message
+</span><span class='line'>pick 937b3bb another example commit message
+</span><span class='line'>pick 2ab71fc and another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Rebase e520ab4 ..2ab71fc onto 19ac48b&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Commands:c&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;p, <span class="nv">pick</span> <span class="o">=</span> use commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;e, <span class="nv">edit</span> <span class="o">=</span> use commit, but stop <span class="k">for </span>amending&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;s, <span class="nv">squash</span> <span class="o">=</span> use commit, but meld into previous commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Changing all of the items below the top one to "squash" will combine the commits:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pick e520ab4 example commit message
+</span><span class='line'>squash 937b3bb another example commit message
+</span><span class='line'>squash 2ab71fc and another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Rebase e520ab4 ..2ab71fc onto 19ac48b&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Commands:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;p, <span class="nv">pick</span> <span class="o">=</span> use commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;e, <span class="nv">edit</span> <span class="o">=</span> use commit, but stop <span class="k">for </span>amending&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;s, <span class="nv">squash</span> <span class="o">=</span> use commit, but meld into previous commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>After you save and close that text editor, another text editor will open. This will allow you to re-write the commit message:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is a combination of 3 commits.&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;The first commit<span class="err">&#39;</span>s message is:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is the 2nd commit message:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is the 3rd commit message:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;and another example commit message
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Write your new commit message, save, and close. Your three commits are now combined into one single commit.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Stash Workflow]]></title>
+    <link href="http://andylind.github.com/blog/2013/02/18/git-stash-workflow/"/>
+    <updated>2013-02-18T20:14:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/02/18/git-stash-workflow</id>
+    <content type="html"><![CDATA[<p>I often find that while I am coding I need to have more than one stream of work going on. One scenario that often occurs is that I am working on a feature and then a bug report comes in that needs to be fixed right away. If the change becomes large, I will create a local branch for the bug fix, but most of the time I just want to save my unfinished feature changes somewhere while I quickly fix the bug.</p>
+
+<p><a href="http://git-scm.com/book/en/Git-Tools-Stashing">Git stash</a> allows me to save my current workspace without having to commit unfinished work. The stash command takes all uncommitted changes in the workspace and saves them on a stack so that you can change branches or pull in commits. This is a great way to save a set of changes that you are not quite finished with so that you can switch to working on something else. The changes can be saved with a description so that you can see what you saved later.</p>
+
+<p>Simple git stash workflow that I use most of the time:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;save changes in the workspace to the stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash save <span class="s1">&#39;some name for what is saved&#39;</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;do some work&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;then decide to go back to what is in the stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;apply the top stash’s changes to the workspace&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash pop
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>When I need to know more about what is in the stash:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;check to see what stashes exist&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash list&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;see what files are changed in the top stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash show&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;clear all items from the stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash clear
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Changing a Git Commit Message]]></title>
+    <link href="http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message/"/>
+    <updated>2013-02-09T20:10:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message</id>
+    <content type="html"><![CDATA[<p>If you accidentally write the wrong thing in a Git commit message or think of something you forgot to comment on, it is possible to re-write your git commit message. Just make sure you have not already pushed the commit to others, or it may cause problems.</p>
+
+<p>This command will let you change the commit message of your last Git commit:</p>
+
+<pre>
+git commit --amend -m "New commit message"
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Intro to Git]]></title>
+    <link href="http://andylind.github.com/blog/2012/11/07/intro-to-git/"/>
+    <updated>2012-11-07T16:00:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2012/11/07/intro-to-git</id>
+    <content type="html"><![CDATA[<p>This is a presentation that I recently gave on the distributed version control system <a href="http://www.git-scm.com">Git</a>. In the presentation, I introduce the concepts behind Git and some of the main Git commands. Then I walkthrough how Git can change your workflow as a developer.</p>
+
+<script async class="speakerdeck-embed" data-id="5099d54eecc0de0002015138" data-ratio="1.3333333333333333" src="http://andylind.github.com//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My Setup for Using Git on Windows]]></title>
+    <link href="http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows/"/>
+    <updated>2012-08-28T00:38:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows</id>
+    <content type="html"><![CDATA[<p>For developing on Windows with Git, I have been using Console2 and MINGW. MINGW (which ships with the Git installer for Windows) is a minial dev environment with many common unix tool re-written for windows. Console2 provides an improved console ui to make things like font/color customization and copy/paste easier.</p>
+
+<p>Here are <a href="https://gist.github.com/andylind/2875034/">my settings for Console2</a></p>
 ]]></content>
   </entry>
   
