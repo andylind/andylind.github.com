@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>An Example Cross Domain AJAX Request - Andy Lind</title>
+  <title>Focusing Retrospectives on Actionable Results - Andy Lind</title>
   <meta name="author" content="Andy Lind">
 
   
-  <meta name="description" content="Cross Domain AJAX calls can be made by using JSONP. Here is an example using the Twitter api: &lt;!DOCTYPE html&gt;
-&lt;html&gt; &lt;head&gt; &lt; &hellip;">
+  <meta name="description" content="Retrospectives are hard. It can be difficult to generate actionable feedback. Often times retrospective meetings can seem like directionless &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request">
+  <link rel="canonical" href="http://andylind.github.com/blog/2013/08/26/focusing-retrospectives-on-actionable-results">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -67,7 +66,7 @@
   
   <header>
     
-      <h1 class="entry-title">An Example Cross Domain AJAX Request</h1>
+      <h1 class="entry-title">Focusing Retrospectives on Actionable Results</h1>
     
     
       <p class="meta">
@@ -83,44 +82,44 @@
   
 
 
-<time datetime="2011-06-15T00:44:00-05:00" pubdate data-updated="true">Jun 15<span>th</span>, 2011</time>
+<time datetime="2013-08-26T21:05:00-05:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Cross Domain AJAX calls can be made by using JSONP.</p>
+<div class="entry-content"><p>Retrospectives are hard. It can be difficult to generate actionable feedback. Often times retrospective meetings can seem like directionless complaints about things that are outside of the team&#8217;s control. When you leave your retrospectives without knowing what your team can do to improve, it might be time to consider changing things up.</p>
 
-<p>Here is an example using the Twitter api:</p>
+<p>Our team has been doing retrospectives for over a year as a part of our agile process. Some of the retrospectives were good, but they were inconsistent. Recently, our team went through the process of resetting how we run our retrospectives.</p>
 
-<div><script src='https://gist.github.com/965715.js?file='></script>
-<noscript><pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
-    &lt;title&gt;jQuery cross domain ajax example&lt;/title&gt;
-    &lt;script type=&quot;text/javascript&quot; 
-            src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js&quot;&gt;
-    &lt;/script&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-        $(document).ready(function() {
-                $.getJSON('http://api.twitter.com/1/trends/1.json?callback=?',
-                    function(json){      
-                        $('#mydiv').text(json[0].trends[0].name); 
-                    }
-                );
-            });
-    &lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h3&gt;Top Twitter Trend:&lt;/h3&gt;
-    &lt;div id=&quot;mydiv&quot;&gt;Loading...&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre></noscript></div>
+<h3>Our goals were:</h3>
 
+<blockquote><ul>
+<li>Celebrate our successes</li>
+<li>Make the retrospectives consistent</li>
+<li>Focus on actionable results</li>
+</ul>
+</blockquote>
 
+<p>With these goals in mind, we decided to use the plus/delta method for all four of our retrospectives within our last release. The plus delta method is a very straight forward way of sharing things that went well (pluses) and things that the team can change (deltas). Here is an outline of what a typical plus/delta retrospective looks like:</p>
 
+<h3>Plus/Delta Retrospective Format</h3>
+
+<blockquote><ol>
+<li>Discuss the action items from the last sprint</li>
+<li>Each person on the team writes 2 pluses and 2 deltas on the board</li>
+<li>The team discusses</li>
+<li>Each person gets to vote for 2 deltas that they think are important</li>
+<li>The top two deltas are assigned an owner</li>
+</ol>
+</blockquote>
+
+<p>This is a fairly common agile retrospective pattern. Here is a more complete description of a plus/delta retrospective from the <a href="http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta">Agile Retrospective Wiki</a>.</p>
+
+<p>Overall, this style of retrospective worked really well for our team. The consistency of knowing that the retrospective would be the same each sprint helped team members plan subjects to talk about and helped to track progress and link the action items of one retrospective to the next. The plus delta method helped us celebrate success and focus on process improvement.</p>
+
+<p>I can&#8217;t say that this format always works and you can&#8217;t do the same retrospective meeting forever, but using this method has really helped our team to improve our process for developing software.</p>
 </div>
 
 
@@ -143,12 +142,12 @@
   
 
 
-<time datetime="2011-06-15T00:44:00-05:00" pubdate data-updated="true">Jun 15<span>th</span>, 2011</time>
+<time datetime="2013-08-26T21:05:00-05:00" pubdate data-updated="true">Aug 26<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/code-sample/'>code sample</a>
+    <a class='category' href='/blog/categories/agile/'>agile</a>
   
 </span>
 
@@ -157,7 +156,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request/" data-via="andrewrlind" data-counturl="http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2013/08/26/focusing-retrospectives-on-actionable-results/" data-via="andrewrlind" data-counturl="http://andylind.github.com/blog/2013/08/26/focusing-retrospectives-on-actionable-results/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -168,8 +167,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/04/18/combining-multiple-git-commits/" title="Previous Post: Combining Multiple Git Commits">&laquo; Combining Multiple Git Commits</a>
       
-        <a class="basic-alignment right" href="/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/" title="Next Post: Creating an Octopress Site on Github Pages">Creating an Octopress Site on Github Pages &raquo;</a>
       
     </p>
   </footer>

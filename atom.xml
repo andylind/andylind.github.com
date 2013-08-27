@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-04-19T17:08:04-05:00</updated>
+  <updated>2013-08-26T21:17:08-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Focusing Retrospectives on Actionable Results]]></title>
+    <link href="http://andylind.github.com/blog/2013/08/26/focusing-retrospectives-on-actionable-results/"/>
+    <updated>2013-08-26T21:05:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2013/08/26/focusing-retrospectives-on-actionable-results</id>
+    <content type="html"><![CDATA[<p>Retrospectives are hard. It can be difficult to generate actionable feedback. Often times retrospective meetings can seem like directionless complaints about things that are outside of the team&#8217;s control. When you leave your retrospectives without knowing what your team can do to improve, it might be time to consider changing things up.</p>
+
+<p>Our team has been doing retrospectives for over a year as a part of our agile process. Some of the retrospectives were good, but they were inconsistent. Recently, our team went through the process of resetting how we run our retrospectives.</p>
+
+<h3>Our goals were:</h3>
+
+<blockquote><ul>
+<li>Celebrate our successes</li>
+<li>Make the retrospectives consistent</li>
+<li>Focus on actionable results</li>
+</ul>
+</blockquote>
+
+<p>With these goals in mind, we decided to use the plus/delta method for all four of our retrospectives within our last release. The plus delta method is a very straight forward way of sharing things that went well (pluses) and things that the team can change (deltas). Here is an outline of what a typical plus/delta retrospective looks like:</p>
+
+<h3>Plus/Delta Retrospective Format</h3>
+
+<blockquote><ol>
+<li>Discuss the action items from the last sprint</li>
+<li>Each person on the team writes 2 pluses and 2 deltas on the board</li>
+<li>The team discusses</li>
+<li>Each person gets to vote for 2 deltas that they think are important</li>
+<li>The top two deltas are assigned an owner</li>
+</ol>
+</blockquote>
+
+<p>This is a fairly common agile retrospective pattern. Here is a more complete description of a plus/delta retrospective from the <a href="http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta">Agile Retrospective Wiki</a>.</p>
+
+<p>Overall, this style of retrospective worked really well for our team. The consistency of knowing that the retrospective would be the same each sprint helped team members plan subjects to talk about and helped to track progress and link the action items of one retrospective to the next. The plus delta method helped us celebrate success and focus on process improvement.</p>
+
+<p>I can&#8217;t say that this format always works and you can&#8217;t do the same retrospective meeting forever, but using this method has really helped our team to improve our process for developing software.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Combining Multiple Git Commits]]></title>
