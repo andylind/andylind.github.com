@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-08-26T22:54:20-05:00</updated>
+  <updated>2013-08-26T23:03:34-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -14,15 +14,15 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Using Git with SVN]]></title>
-    <link href="http://andylind.github.com/blog/2013/08/26/using-git-with-svn/"/>
+    <title type="html"><![CDATA[Into to git-svn]]></title>
+    <link href="http://andylind.github.com/blog/2013/08/26/intro-to-git-svn/"/>
     <updated>2013-08-26T22:40:00-05:00</updated>
-    <id>http://andylind.github.com/blog/2013/08/26/using-git-with-svn</id>
+    <id>http://andylind.github.com/blog/2013/08/26/intro-to-git-svn</id>
     <content type="html"><![CDATA[<p>This is a presentation that I recently gave on the distributed version control system <a href="http://www.git-scm.com">Git</a> and how it can be used with SVN. In the presentation, I introduce the concepts behind Git, some of the main Git commands, and how to use git-svn.</p>
 
 <p><a href="https://www.kernel.org/pub/software/scm/git/docs/git-svn.html">Git-svn</a> is a feature that ships with Git that allows Git to connect to a subversion repository and share changes. Using git-svn is one way to learn how to use Git while still maintaining a Subversion repository.</p>
 
-<p>You can see more of my git-svn work flow in <a href="http://andylind.github.io/blog/2012/05/11/Using-Git-With-SVN/">this post</a></p>
+<p>You can see more of my git-svn workflow in <a href="http://andylind.github.io/blog/2012/05/11/Using-Git-With-SVN/">this post</a></p>
 
 <script async class="speakerdeck-embed" data-id="0576e7c0f92c0130bb2576ac50ee3936" data-ratio="1.33333333333333" src="http://andylind.github.com//speakerdeck.com/assets/embed.js"></script>
 
