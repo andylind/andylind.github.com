@@ -2,7 +2,7 @@
 // Add styles here to make changes without digging in too much
 
 
-html { background: #f2f2f2; }
+html { background: none; }
 
 body { font-size: 1em; }
 
@@ -11,68 +11,51 @@ body { font-size: 1em; }
 
 
 body > header{
-  background: none;
-  padding: 5px;
-  position: absolute;
-  top: 5px;
-  right: 20px;
-  z-index: 1000;
+  background: #ebebeb url('/images/noise.png');
+  padding-top: 40px;
+  padding-bottom: 50px;
 }
 
+body > header div{
+  width:100%;
+  background: none;
+}
 
 body > header a:visited,
 body > header a:hover,
 body > header a{
-  color: #AAAAAA;
+  color: #333;
   text-decoration: none;
-  font-size: 0.7em;
-  font-style: italic;
+  font-style: none;
+  font-size:1.7em;
+  font-weight:bold;
+  text-align: center;
+  width:100%;
 }
 
 body > header a:hover{
-  color: #AAAAAA;
-  text-decoration: underline;
-  font-size: 0.7em;
-  font-style: italic;
+  color: #666;
 }
 
-body > header h1{
+body > header div img{
   font-weight: bold;
-}
-
-#title-img{
-  float: left;
-}
-
-#title-text{
-  margin-left: 110px;
-  margin-top: 10px;
-  font-size: 1.1em;
-}
-
-
-body > header h1 a, body > header h1 a:visited, body > header h1 a:hover {
-    color: #333333;
-    text-decoration: none;
-    height: 100px;
-}
-
-body > header h1 a:hover {
-    color: #666666;
-    text-decoration: none;
-    height: 100px;
-}
-
-body > header h2{
-  font-size: 1.0em;
-  letter-spacing: 1px;
-  margin-top: -1.4em;
-  color: #333333;
-  padding-left: 120px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 15px;
 }
 
 #content > div, body > div > div, body.sidebar-footer aside.sidebar {
-    background: #FEFEFE;
+    background: #ffffff;
+}
+
+body > div, body > div > div {
+    background: #ffffff;
+    border-right: none;
+}
+
+#content > div, body > div > div, body.sidebar-footer aside.sidebar {
+  background: none;
 }
 
 .entry-title a {
