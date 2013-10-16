@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: code sample | Andy Lind]]></title>
+  <link href="http://andylind.github.com/blog/categories/code-sample/atom.xml" rel="self"/>
+  <link href="http://andylind.github.com/"/>
+  <updated>2013-10-15T19:04:53-05:00</updated>
+  <id>http://andylind.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Lind]]></name>
+    <email><![CDATA[andy.lind.dev+contact@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Combining Multiple Git Commits]]></title>
+    <link href="http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits/"/>
+    <updated>2013-04-18T18:35:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits</id>
+    <content type="html"><![CDATA[<p>Using Git, it is possible to combine multiple commits into a single commit with interactive rebasing.</p>
+
+<p>The first step is to select the commits that you want to combine. Here is an example of selecting the last 3 commits:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git rebase -i HEAD~3
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This will open your text editor and display:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pick e520ab4 example commit message
+</span><span class='line'>pick 937b3bb another example commit message
+</span><span class='line'>pick 2ab71fc and another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Rebase e520ab4 ..2ab71fc onto 19ac48b&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Commands:c&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;p, <span class="nv">pick</span> <span class="o">=</span> use commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;e, <span class="nv">edit</span> <span class="o">=</span> use commit, but stop <span class="k">for </span>amending&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;s, <span class="nv">squash</span> <span class="o">=</span> use commit, but meld into previous commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Changing all of the items below the top one to "squash" will combine the commits:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pick e520ab4 example commit message
+</span><span class='line'>squash 937b3bb another example commit message
+</span><span class='line'>squash 2ab71fc and another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Rebase e520ab4 ..2ab71fc onto 19ac48b&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;#&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;Commands:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;p, <span class="nv">pick</span> <span class="o">=</span> use commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;e, <span class="nv">edit</span> <span class="o">=</span> use commit, but stop <span class="k">for </span>amending&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;s, <span class="nv">squash</span> <span class="o">=</span> use commit, but meld into previous commit&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>After you save and close that text editor, another text editor will open. This will allow you to re-write the commit message:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is a combination of 3 commits.&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;The first commit<span class="err">&#39;</span>s message is:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is the 2nd commit message:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;another example commit message&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;This is the 3rd commit message:&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;and another example commit message
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Write your new commit message, save, and close. Your three commits are now combined into one single commit.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Viewing Jenkins Status from the Command Line via the Jenkins API]]></title>
+    <link href="http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/"/>
+    <updated>2013-03-06T21:57:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api</id>
+    <content type="html"><![CDATA[<p>This is a python script that I created to print out the status of a set of Jenkins jobs in color on the command line. Right now the coloring for this script works on windows only.</p>
+
+<p>github gist: <a href="https://gist.github.com/andylind/5057436">build_status.py</a>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="k">def</span> <span class="nf">set_text_color</span><span class="p">(</span><span class="n">color</span><span class="p">):</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="c">#This method works on windows only</span>
+</span><span class='line'><span class="n">color_codes</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;BLUE&quot;</span> <span class="p">:</span> <span class="mh">0x0001</span><span class="p">,</span> <span class="s">&quot;GREEN&quot;</span> <span class="p">:</span> <span class="mh">0x0002</span><span class="p">,</span> <span class="s">&quot;RED&quot;</span> <span class="p">:</span> <span class="mh">0x0004</span><span class="p">,</span> <span class="s">&quot;MAGENTA&quot;</span> <span class="p">:</span> <span class="mh">0x0005</span><span class="p">,</span> <span class="s">&quot;YELLOW&quot;</span> <span class="p">:</span> <span class="mh">0x0006</span><span class="p">,</span> <span class="s">&quot;GRAY&quot;</span> <span class="p">:</span> <span class="mh">0x0007</span><span class="p">}</span>
+</span><span class='line'><span class="n">STD_OUTPUT_HANDLE</span> <span class="o">=</span> <span class="o">-</span><span class="mi">11</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="n">windll</span><span class="p">,</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">c_short</span><span class="p">,</span> <span class="n">c_ushort</span><span class="p">,</span> <span class="n">byref</span>
+</span><span class='line'><span class="n">stdout_handle</span> <span class="o">=</span> <span class="n">windll</span><span class="o">.</span><span class="n">kernel32</span><span class="o">.</span><span class="n">GetStdHandle</span><span class="p">(</span><span class="n">STD_OUTPUT_HANDLE</span><span class="p">)</span>
+</span><span class='line'><span class="n">SetConsoleTextAttribute</span> <span class="o">=</span> <span class="n">windll</span><span class="o">.</span><span class="n">kernel32</span><span class="o">.</span><span class="n">SetConsoleTextAttribute</span>
+</span><span class='line'><span class="n">SetConsoleTextAttribute</span><span class="p">(</span><span class="n">stdout_handle</span><span class="p">,</span> <span class="n">color_codes</span><span class="p">[</span><span class="n">color</span><span class="p">])</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">print_build_status</span><span class="p">(</span><span class="n">jenkins_url</span><span class="p">):</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">urllib.request</span>
+</span><span class='line'><span class="n">request</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">jenkins_url</span><span class="p">)</span>
+</span><span class='line'><span class="n">encoding</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get_content_charset</span><span class="p">()</span>
+</span><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="p">))</span>
+</span><span class='line'><span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;jobs&#39;</span><span class="p">]:</span>
+</span><span class='line'>    <span class="k">if</span> <span class="s">&#39;anime&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>         <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39; Running...&#39;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="s">&#39;blue&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;GREEN&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;+ &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;yellow&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;YELLOW&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;red&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;RED&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;aborted&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;GRAY&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;MAGENTA&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">sys</span>
+</span><span class='line'><span class="n">print_build_status</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Here is an example showing the status of a set of jobs from the Jenkins public CI server:</p>
+
+<p>"C:\Python33\python.exe" build_status.py  https://ci.jenkins-ci.org/view/Jenkins%20core/api/json
+<img src="/images/build-status-example.png"></p>
+
+<p>Normally I use this script with an alias so that I can just type something like "jobs" and see a list of the Jenkins jobs that I care about. You can replace "http://your-jenkins-url/api/json" with any Jenkins api resource that lists Jenkins Jobs. For example, I have two custom views, one for projects being built and one for test jobs that I am interested in. I use this script so that I can quickly see from the command line the status of those Jenkins jobs without switching context to a web browser.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Stash Workflow]]></title>
+    <link href="http://andylind.github.com/blog/2013/02/18/git-stash-workflow/"/>
+    <updated>2013-02-18T20:14:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/02/18/git-stash-workflow</id>
+    <content type="html"><![CDATA[<p>I often find that while I am coding I need to have more than one stream of work going on. One scenario that often occurs is that I am working on a feature and then a bug report comes in that needs to be fixed right away. If the change becomes large, I will create a local branch for the bug fix, but most of the time I just want to save my unfinished feature changes somewhere while I quickly fix the bug.</p>
+
+<p><a href="http://git-scm.com/book/en/Git-Tools-Stashing">Git stash</a> allows me to save my current workspace without having to commit unfinished work. The stash command takes all uncommitted changes in the workspace and saves them on a stack so that you can change branches or pull in commits. This is a great way to save a set of changes that you are not quite finished with so that you can switch to working on something else. The changes can be saved with a description so that you can see what you saved later.</p>
+
+<p>Simple git stash workflow that I use most of the time:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;save changes in the workspace to the stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash save <span class="s1">&#39;some name for what is saved&#39;</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;do some work&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;then decide to go back to what is in the stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;apply the top stash’s changes to the workspace&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash pop
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>When I need to know more about what is in the stash:
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;check to see what stashes exist&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash list&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;see what files are changed in the top stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash show&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;clear all items from the stash&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;git stash clear
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Changing a Git Commit Message]]></title>
+    <link href="http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message/"/>
+    <updated>2013-02-09T20:10:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message</id>
+    <content type="html"><![CDATA[<p>If you accidentally write the wrong thing in a Git commit message or think of something you forgot to comment on, it is possible to re-write your git commit message. Just make sure you have not already pushed the commit to others, or it may cause problems.</p>
+
+<p>This command will let you change the commit message of your last Git commit:</p>
+
+<pre>
+git commit --amend -m "New commit message"
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Simple vi Tutorial]]></title>
+    <link href="http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial/"/>
+    <updated>2012-10-12T14:27:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial</id>
+    <content type="html"><![CDATA[<p>I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most convenient to use a command window for text editing. Understanding the most basic vi commands can be really helpful when you need to edit text from the terminal.</p>
+
+<p>The first step for me to learn vi was to master just a few basic commands so that I would have enough knowledge to edit files. Below is the most minimal set of commands that you need to know to operate vi.</p>
+
+<p>The key concept you have to learn is that vi has two modes. Insert mode and command mode. When vi is opened, it will start in command mode by default. This mode allows you to do things like run complex editing commands, save the file, and exit. Pressing "i" will take you to inset mode. Insert mode allows you to edit text that is in the file. Pressing esc will return to command mode.</p>
+
+<p>It can be confusing at first to understand which mode you are in. If you want to be safe, you can always press "esc" and guarantee that you are in command mode.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;open vi&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;vi filename.txt&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;switch to insert mode&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;i&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;switch to <span class="nb">command </span>mode&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;esc&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;save a file&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;:w&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;exit vi&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;:q
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

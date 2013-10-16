@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>My Most Used Linux Commands - Andy Lind</title>
+  <meta name="author" content="Andy Lind">
+
+  
+  <meta name="description" content="The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh&#8217;ing into a server, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Andy Lind" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36186979-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body  class="collapse-sidebar sidebar-footer">
+  <header role="banner"><div>
+<a title="Home" rel="Home" href="/"><img src="/images/dinocomp65.png"><div>ANDY LIND</div></a>
+</div>
+
+
+</header>
+
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">My Most Used Linux Commands</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2012-09-07T13:28:00-05:00" pubdate data-updated="true">Sep 7<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh&#8217;ing into a server, searching through log files, checking on processes, and editing configuration files. Since I am not doing most of my development work directly on a Linux box, I often find myself forgetting how to do certain tasks, or not knowing how to do something on a specific server. I put together the small guide below with commands that are available on almost any Linux system. By learning these few commands, I have been able to navigate around and get what I need done in almost any Linux environment.</p>
+
+<pre>
+#Login to a remote server
+ssh [-p port] [username@hostname]
+</pre>
+
+
+
+
+<pre>
+#List files in a directory with file information
+ls -l
+</pre>
+
+
+
+
+<pre>
+#See every process running on a system
+ps aux
+</pre>
+
+
+
+
+<pre>
+#Print the last 100 lines of a file
+tail -100 [filename]
+</pre>
+
+
+
+
+<pre>
+#Watch a log file as it grows
+tail -f [filename]
+</pre>
+
+
+
+
+<pre>
+#Look for a pattern in a file
+grep [pattern] [file]
+</pre>
+
+
+
+
+<pre>
+#Run an HTTP GET request to a url
+curl [url]
+</pre>
+
+
+
+
+<pre>
+#Change file permissions to read/write for all
+chmod a+rw [filename]
+</pre>
+
+
+<p>Here is an example of a common way that I might chain commands together:</p>
+
+<pre>
+#Look in the last 1000 lines of a file for lines starting with ERROR
+#and print out the matching lines and the 5 lines above and below
+tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
+</pre>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <a class="name-link" href="/">Andy Lind</a></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2012-09-07T13:28:00-05:00" pubdate data-updated="true">Sep 7<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/code-sample/'>code sample</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands/" data-via="" data-counturl="http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/28/my-setup-for-using-git-on-windows/" title="Previous Post: My Setup for Using Git on Windows">&laquo; My Setup for Using Git on Windows</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/10/12/simple-vi-tutorial/" title="Next Post: Simple vi Tutorial">Simple vi Tutorial &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>
+      I'm a software engineer writing code in many different languages. These are my thoughts on programming and agile software development.
+  </p>
+  <a title="Blog Archives" rel="blog-archives" href="/">All Posts</a>
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/11/intro-to-git-svn/">Intro to git-svn</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/26/focusing-retrospectives-on-actionable-results/">Focusing Retrospectives on Actionable Results</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/18/combining-multiple-git-commits/">Combining Multiple Git Commits</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/">Viewing Jenkins Status from the Command Line via the Jenkins API</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/18/git-stash-workflow/">Git Stash Workflow</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/09/changing-a-git-commit-message/">Changing a Git Commit Message</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Contact</h1>
+  <p>
+    <a title="@andylind" rel="@andylind" href="https://github.com/andylind">@andylind</a> on GitHub
+  </p>
+  <p>
+    <span>Email:</span>
+    <span style="color:#666666">andy.lind.dev+contact@gmail.com</span>
+  </p>
+  <p>
+    <a title="Subscribe via RSS" rel="subscribe-rss" href="/atom.xml">Subscribe via RSS</a>
+  </p>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

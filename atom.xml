@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Andy Lind]]></title>
+  <link href="http://andylind.github.com/atom.xml" rel="self"/>
+  <link href="http://andylind.github.com/"/>
+  <updated>2013-10-15T19:04:53-05:00</updated>
+  <id>http://andylind.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Lind]]></name>
+    <email><![CDATA[andy.lind.dev+contact@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Intro to git-svn]]></title>
+    <link href="http://andylind.github.com/blog/2013/09/11/intro-to-git-svn/"/>
+    <updated>2013-09-11T22:40:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2013/09/11/intro-to-git-svn</id>
+    <content type="html"><![CDATA[<p>This is a presentation that I recently gave on the distributed version control system <a href="http://www.git-scm.com">Git</a> and how it can be used with SVN. In the presentation, I introduce the concepts behind Git, some of the main Git commands, and how to use git-svn.</p>
+
+<p><a href="https://www.kernel.org/pub/software/scm/git/docs/git-svn.html">Git-svn</a> is a feature that ships with Git that allows Git to connect to a subversion repository and share changes. Using git-svn is one way to learn how to use Git while still maintaining a Subversion repository.</p>
+
+<p>You can see more of my git-svn workflow in <a href="http://andylind.github.io/blog/2012/05/11/Using-Git-With-SVN/">this post</a></p>
+
+<script async class="speakerdeck-embed" data-id="0576e7c0f92c0130bb2576ac50ee3936" data-ratio="1.33333333333333" src="http://andylind.github.com//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Focusing Retrospectives on Actionable Results]]></title>
+    <link href="http://andylind.github.com/blog/2013/08/26/focusing-retrospectives-on-actionable-results/"/>
+    <updated>2013-08-26T21:05:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2013/08/26/focusing-retrospectives-on-actionable-results</id>
+    <content type="html"><![CDATA[<p>Retrospectives are hard. It can be difficult to generate actionable feedback. Often times retrospective meetings can seem like directionless complaints about things that are outside of the team&#8217;s control. When you leave your retrospectives without knowing what your team can do to improve, it might be time to consider changing things up.</p>
+
+<p>Our team has been doing retrospectives for over a year as a part of our agile process. Some of the retrospectives were good, but they were inconsistent. Recently, our team went through the process of resetting how we run our retrospectives.</p>
+
+<h3>Our goals were:</h3>
+
+<blockquote><ul>
+<li>Celebrate our successes</li>
+<li>Make the retrospectives consistent</li>
+<li>Focus on actionable results</li>
+</ul>
+</blockquote>
+
+<p>With these goals in mind, we decided to use the plus/delta method for all four of our retrospectives within our last release. The plus delta method is a very straight forward way of sharing things that went well (pluses) and things that the team can change (deltas). Here is an outline of what a typical plus/delta retrospective looks like:</p>
+
+<h3>Plus/Delta Retrospective Format</h3>
+
+<blockquote><ol>
+<li>Discuss the action items from the last sprint</li>
+<li>Each person on the team writes 2 pluses and 2 deltas on the board</li>
+<li>The team discusses</li>
+<li>Each person gets to vote for 2 deltas that they think are important</li>
+<li>The top two deltas are assigned an owner</li>
+</ol>
+</blockquote>
+
+<p>This is a fairly common agile retrospective pattern. Here is a more complete description of a plus/delta retrospective from the <a href="http://agileretrospectivewiki.org/index.php?title=Weekly_Retrospective_Simple_%2B_delta">Agile Retrospective Wiki</a>.</p>
+
+<p>Overall, this style of retrospective worked really well for our team. The consistency of knowing that the retrospective would be the same each sprint helped team members plan subjects to talk about and helped to track progress and link the action items of one retrospective to the next. The plus delta method helped us celebrate success and focus on process improvement.</p>
+
+<p>I can&#8217;t say that this format always works and you can&#8217;t do the same retrospective meeting forever, but using this method has really helped our team to improve our process for developing software.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Combining Multiple Git Commits]]></title>
+    <link href="http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits/"/>
+    <updated>2013-04-18T18:35:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits</id>
+    <content type="html"><![CDATA[<p>Using Git, it is possible to combine multiple commits into a single commit with interactive rebasing.</p>
+
+<p>The first step is to select the commits that you want to combine. Here is an example of selecting the last 3 commits:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git rebase -i HEAD~3
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will open your text editor and display:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pick e520ab4 example commit message
+</span><span class='line'>pick 937b3bb another example commit message
+</span><span class='line'>pick 2ab71fc and another example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># Rebase e520ab4 ..2ab71fc onto 19ac48b</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c"># Commands:c</span>
+</span><span class='line'><span class="c">#  p, pick = use commit</span>
+</span><span class='line'><span class="c">#  e, edit = use commit, but stop for amending</span>
+</span><span class='line'><span class="c">#  s, squash = use commit, but meld into previous commit</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Changing all of the items below the top one to &#8220;squash&#8221; will combine the commits:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pick e520ab4 example commit message
+</span><span class='line'>squash 937b3bb another example commit message
+</span><span class='line'>squash 2ab71fc and another example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># Rebase e520ab4 ..2ab71fc onto 19ac48b</span>
+</span><span class='line'><span class="c">#</span>
+</span><span class='line'><span class="c"># Commands:</span>
+</span><span class='line'><span class="c">#  p, pick = use commit</span>
+</span><span class='line'><span class="c">#  e, edit = use commit, but stop for amending</span>
+</span><span class='line'><span class="c">#  s, squash = use commit, but meld into previous commit</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After you save and close that text editor, another text editor will open. This will allow you to re-write the commit message:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># This is a combination of 3 commits.</span>
+</span><span class='line'><span class="c"># The first commit&#39;s message is:</span>
+</span><span class='line'>example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># This is the 2nd commit message:</span>
+</span><span class='line'>another example commit message
+</span><span class='line'>
+</span><span class='line'><span class="c"># This is the 3rd commit message:</span>
+</span><span class='line'>and another example commit message
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Write your new commit message, save, and close. Your three commits are now combined into one single commit.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Viewing Jenkins Status from the Command Line via the Jenkins API]]></title>
+    <link href="http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/"/>
+    <updated>2013-03-06T21:57:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api</id>
+    <content type="html"><![CDATA[<p>This is a python script that I created to print out the status of a set of Jenkins jobs in color on the command line. Right now the coloring for this script works on windows only.</p>
+
+<p>github gist: <a href="https://gist.github.com/andylind/5057436">build_status.py</a></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="k">def</span> <span class="nf">set_text_color</span><span class="p">(</span><span class="n">color</span><span class="p">):</span>
+</span><span class='line'>    <span class="c">#This method works on windows only</span>
+</span><span class='line'>    <span class="n">color_codes</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;BLUE&quot;</span> <span class="p">:</span> <span class="mh">0x0001</span><span class="p">,</span> <span class="s">&quot;GREEN&quot;</span> <span class="p">:</span> <span class="mh">0x0002</span><span class="p">,</span> <span class="s">&quot;RED&quot;</span> <span class="p">:</span> <span class="mh">0x0004</span><span class="p">,</span> <span class="s">&quot;MAGENTA&quot;</span> <span class="p">:</span> <span class="mh">0x0005</span><span class="p">,</span> <span class="s">&quot;YELLOW&quot;</span> <span class="p">:</span> <span class="mh">0x0006</span><span class="p">,</span> <span class="s">&quot;GRAY&quot;</span> <span class="p">:</span> <span class="mh">0x0007</span><span class="p">}</span>
+</span><span class='line'>    <span class="n">STD_OUTPUT_HANDLE</span> <span class="o">=</span> <span class="o">-</span><span class="mi">11</span>
+</span><span class='line'>    <span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="n">windll</span><span class="p">,</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">c_short</span><span class="p">,</span> <span class="n">c_ushort</span><span class="p">,</span> <span class="n">byref</span>
+</span><span class='line'>    <span class="n">stdout_handle</span> <span class="o">=</span> <span class="n">windll</span><span class="o">.</span><span class="n">kernel32</span><span class="o">.</span><span class="n">GetStdHandle</span><span class="p">(</span><span class="n">STD_OUTPUT_HANDLE</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">SetConsoleTextAttribute</span> <span class="o">=</span> <span class="n">windll</span><span class="o">.</span><span class="n">kernel32</span><span class="o">.</span><span class="n">SetConsoleTextAttribute</span>
+</span><span class='line'>    <span class="n">SetConsoleTextAttribute</span><span class="p">(</span><span class="n">stdout_handle</span><span class="p">,</span> <span class="n">color_codes</span><span class="p">[</span><span class="n">color</span><span class="p">])</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">def</span> <span class="nf">print_build_status</span><span class="p">(</span><span class="n">jenkins_url</span><span class="p">):</span>
+</span><span class='line'>    <span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">urllib.request</span>
+</span><span class='line'>    <span class="n">request</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">jenkins_url</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">encoding</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get_content_charset</span><span class="p">()</span>
+</span><span class='line'>    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="p">))</span>
+</span><span class='line'>    <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;jobs&#39;</span><span class="p">]:</span>
+</span><span class='line'>        <span class="k">if</span> <span class="s">&#39;anime&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>             <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39; Running...&#39;</span>
+</span><span class='line'>        <span class="k">if</span> <span class="s">&#39;blue&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>            <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;GREEN&quot;</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&quot;+ &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="s">&#39;yellow&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>            <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;YELLOW&quot;</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="s">&#39;red&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>            <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;RED&quot;</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">elif</span> <span class="s">&#39;aborted&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>            <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;GRAY&quot;</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>        <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>            <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;MAGENTA&quot;</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">sys</span>
+</span><span class='line'><span class="n">print_build_status</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here is an example showing the status of a set of jobs from the Jenkins public CI server:</p>
+
+<p>&#8220;C:\Python33\python.exe&#8221; build_status.py  https://ci.jenkins-ci.org/view/Jenkins%20core/api/json
+<img src="http://andylind.github.com/images/build-status-example.png"></p>
+
+<p>Normally I use this script with an alias so that I can just type something like &#8220;jobs&#8221; and see a list of the Jenkins jobs that I care about. You can replace &#8220;http://your-jenkins-url/api/json&#8221; with any Jenkins api resource that lists Jenkins Jobs. For example, I have two custom views, one for projects being built and one for test jobs that I am interested in. I use this script so that I can quickly see from the command line the status of those Jenkins jobs without switching context to a web browser.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git Stash Workflow]]></title>
+    <link href="http://andylind.github.com/blog/2013/02/18/git-stash-workflow/"/>
+    <updated>2013-02-18T20:14:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/02/18/git-stash-workflow</id>
+    <content type="html"><![CDATA[<p>I often find that while I am coding I need to have more than one stream of work going on. One scenario that often occurs is that I am working on a feature and then a bug report comes in that needs to be fixed right away. If the change becomes large, I will create a local branch for the bug fix, but most of the time I just want to save my unfinished feature changes somewhere while I quickly fix the bug.</p>
+
+<p><a href="http://git-scm.com/book/en/Git-Tools-Stashing">Git stash</a> allows me to save my current workspace without having to commit unfinished work. The stash command takes all uncommitted changes in the workspace and saves them on a stack so that you can change branches or pull in commits. This is a great way to save a set of changes that you are not quite finished with so that you can switch to working on something else. The changes can be saved with a description so that you can see what you saved later.</p>
+
+<p>Simple git stash workflow that I use most of the time:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># save changes in the workspace to the stash</span>
+</span><span class='line'>git stash save <span class="s1">&#39;some name for what is saved&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># do some work </span>
+</span><span class='line'><span class="c"># then decide to go back to what is in the stash</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># apply the top stash’s changes to the workspace</span>
+</span><span class='line'>git stash pop
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When I need to know more about what is in the stash:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># check to see what stashes exist</span>
+</span><span class='line'>git stash list
+</span><span class='line'>
+</span><span class='line'><span class="c"># see what files are changed in the top stash</span>
+</span><span class='line'>git stash show
+</span><span class='line'>
+</span><span class='line'><span class="c"># clear all items from the stash</span>
+</span><span class='line'>git stash clear
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Changing a Git Commit Message]]></title>
+    <link href="http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message/"/>
+    <updated>2013-02-09T20:10:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message</id>
+    <content type="html"><![CDATA[<p>If you accidentally write the wrong thing in a Git commit message or think of something you forgot to comment on, it is possible to re-write your git commit message. Just make sure you have not already pushed the commit to others, or it may cause problems.</p>
+
+<p>This command will let you change the commit message of your last Git commit:</p>
+
+<pre>
+git commit --amend -m "New commit message"
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learning to Code]]></title>
+    <link href="http://andylind.github.com/blog/2013/01/22/learning-to-code/"/>
+    <updated>2013-01-22T20:44:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/01/22/learning-to-code</id>
+    <content type="html"><![CDATA[<p>I have been asked recently by a few different people, “What would you do if you wanted to learn to code”.</p>
+
+<p>My answer has been to learn JavaScript, Python, or Ruby. It is easier than ever to get started learning one of those languages because of the large number of amazingly user friendly tutorials online. One of the most pain-free ways to get started with JavaScript, Python, or Ruby is by following the interactive tutorials offered by <a href="http://www.codecademy.com/learn">Code Academy</a>. Code Academy lets you write code and do tutorials right inside your web browser. This is awesome for beginners because they do not have to struggle through hours of local setup on their machine to get a runtime environment installed.</p>
+
+<p>I think the next step after learning a little bit from tutorials is to read a programming book. One of the best ones to get started with would be <a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> (free online).</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Intro to Git]]></title>
+    <link href="http://andylind.github.com/blog/2012/11/07/intro-to-git/"/>
+    <updated>2012-11-07T16:00:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2012/11/07/intro-to-git</id>
+    <content type="html"><![CDATA[<p>This is a presentation that I recently gave on the distributed version control system <a href="http://www.git-scm.com">Git</a>. In the presentation, I introduce the concepts behind Git and some of the main Git commands. Then I walkthrough how Git can change your workflow as a developer.</p>
+
+<script async class="speakerdeck-embed" data-id="5099d54eecc0de0002015138" data-ratio="1.3333333333333333" src="http://andylind.github.com//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Agile Day Twin Cities 2012]]></title>
+    <link href="http://andylind.github.com/blog/2012/11/03/agile-day-twin-cities-2012/"/>
+    <updated>2012-11-03T15:35:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/11/03/agile-day-twin-cities-2012</id>
+    <content type="html"><![CDATA[<p>Last Friday, I attended the <a href="https://sites.google.com/site/twincitiespracticalagility/agile-day-twin-cities-2012">Agile Day Twin Cities</a> conference. The conference was centered around building a discussion about agile software practices and the main theme this year was learning.</p>
+
+<p>I want to share some of the most interesting and thought provoking statements that I heard from the day. Each of these could probably be an entire post on their own, but I think that these anecdotes and insights really give a picture of the discussion at Agile Day and the focus on questioning the status quo.</p>
+
+<p>The first speaker was <a href="https://twitter.com/davidhussman/">David Hussman</a>, who did a great job at getting everyone to question why they are doing things. Here are some of my favorite quotes from his presentations:</p>
+
+<blockquote><p>&#8220;Ask why. Why are you changing the process? Could you be doing something more valuable?&#8221; <br/>&#8220;Minimize output, Maximize impact&#8221;<br/>&#8220;Transition from thinking about how big something is to thinking if something is too big.&#8221; <br/>&#8220;One sign of a maturing agile team is that they stop talking about the code and they start talking about the tests that they need&#8221;</p></blockquote>
+
+
+<p>Stemming from David&#8217;s talk, there was a lot of discussion on why we work in iterations and what life would be like if we moved beyond iterations.</p>
+
+<blockquote><p>&#8220;Why does it matter if you don&#8217;t get done what you committed to in the sprint?&#8221;</p></blockquote>
+
+
+<p>Another session that I attended was focused on pair-programming practices. During that session the speaker made a really good point about testing:</p>
+
+<blockquote><p>&#8220;What is the next test that you should write? The test that tells you the most about the system.&#8221;</p></blockquote>
+
+
+<p>This point really hit home for me. I have been trying to transition to using more Test Driven Development (TDD) practices, and I think this could really help guide me in choosing the next test to write.</p>
+
+<p>Throughout the day, I heard a lot of controversial statements about process and tools such as:</p>
+
+<blockquote><p>&#8220;JIRA is where stories go to die&#8221;, and &#8220;Project Management is a symptom, not a solution&#8221;</p></blockquote>
+
+
+<p>There was a lot of support at the conference for sticky-note driven workflow, and a lot of backlash against project management tools. I think that was one of the things that I most disagreed with. I have really seen a huge benefit when using a tracking tool to share info about stories among a large team.</p>
+
+<p>The last quote that I found really interesting was from one of the open-space sessions. The speakers described a really great technique that runs counter to a lot of teaching for gathering requirements (e.g. 5 whys):</p>
+
+<blockquote><p>People do not respond well to being asked, &#8220;Why?&#8221;. Instead, ask &#8220;If that happened, then what?&#8221; or &#8220;Pretend you had that, then what would you do?&#8221;</p></blockquote>
+
+
+<p>Overall, I thought the conference was really good, and I appreciated the focus on continuous improvement throughout the agile process.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Simple vi Tutorial]]></title>
+    <link href="http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial/"/>
+    <updated>2012-10-12T14:27:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial</id>
+    <content type="html"><![CDATA[<p>I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most convenient to use a command window for text editing. Understanding the most basic vi commands can be really helpful when you need to edit text from the terminal.</p>
+
+<p>The first step for me to learn vi was to master just a few basic commands so that I would have enough knowledge to edit files. Below is the most minimal set of commands that you need to know to operate vi.</p>
+
+<p>The key concept you have to learn is that vi has two modes. Insert mode and command mode. When vi is opened, it will start in command mode by default. This mode allows you to do things like run complex editing commands, save the file, and exit. Pressing &#8220;i&#8221; will take you to inset mode. Insert mode allows you to edit text that is in the file. Pressing esc will return to command mode.</p>
+
+<p>It can be confusing at first to understand which mode you are in. If you want to be safe, you can always press &#8220;esc&#8221; and guarantee that you are in command mode.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># open vi</span>
+</span><span class='line'>vi filename.txt
+</span><span class='line'>
+</span><span class='line'><span class="c"># switch to insert mode</span>
+</span><span class='line'>i
+</span><span class='line'>
+</span><span class='line'><span class="c"># switch to command mode</span>
+</span><span class='line'>esc
+</span><span class='line'>
+</span><span class='line'><span class="c"># save a file</span>
+</span><span class='line'>:w
+</span><span class='line'>
+</span><span class='line'><span class="c"># exit vi</span>
+</span><span class='line'>:q
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My Most Used Linux Commands]]></title>
+    <link href="http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands/"/>
+    <updated>2012-09-07T13:28:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands</id>
+    <content type="html"><![CDATA[<p>The commands below make up about 90% of what I do on a Linux system. Most of what I do from the command line involves ssh&#8217;ing into a server, searching through log files, checking on processes, and editing configuration files. Since I am not doing most of my development work directly on a Linux box, I often find myself forgetting how to do certain tasks, or not knowing how to do something on a specific server. I put together the small guide below with commands that are available on almost any Linux system. By learning these few commands, I have been able to navigate around and get what I need done in almost any Linux environment.</p>
+
+<pre>
+#Login to a remote server
+ssh [-p port] [username@hostname]
+</pre>
+
+
+
+
+<pre>
+#List files in a directory with file information
+ls -l
+</pre>
+
+
+
+
+<pre>
+#See every process running on a system
+ps aux
+</pre>
+
+
+
+
+<pre>
+#Print the last 100 lines of a file
+tail -100 [filename]
+</pre>
+
+
+
+
+<pre>
+#Watch a log file as it grows
+tail -f [filename]
+</pre>
+
+
+
+
+<pre>
+#Look for a pattern in a file
+grep [pattern] [file]
+</pre>
+
+
+
+
+<pre>
+#Run an HTTP GET request to a url
+curl [url]
+</pre>
+
+
+
+
+<pre>
+#Change file permissions to read/write for all
+chmod a+rw [filename]
+</pre>
+
+
+<p>Here is an example of a common way that I might chain commands together:</p>
+
+<pre>
+#Look in the last 1000 lines of a file for lines starting with ERROR
+#and print out the matching lines and the 5 lines above and below
+tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My Setup for Using Git on Windows]]></title>
+    <link href="http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows/"/>
+    <updated>2012-08-28T00:38:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows</id>
+    <content type="html"><![CDATA[<p>For developing on Windows with Git, I have been using Console2 and MINGW. MINGW (which ships with the Git installer for Windows) is a minial dev environment with many common unix tool re-written for windows. Console2 provides an improved console ui to make things like font/color customization and copy/paste easier.</p>
+
+<p>Here are <a href="https://gist.github.com/andylind/2875034/">my settings for Console2</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Using Git with SVN]]></title>
+    <link href="http://andylind.github.com/blog/2012/05/11/Using-Git-With-SVN/"/>
+    <updated>2012-05-11T11:38:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/05/11/Using-Git-With-SVN</id>
+    <content type="html"><![CDATA[<p>Here is my workflow for using Git with SVN:</p>
+
+<div><script src='https://gist.github.com/2655799.js?file='></script>
+<noscript><pre><code>//create local repo
+git svn init -s http://url-of-repo
+git svn fetch
+git svn rebase
+
+//work on a local branch or branches
+git checkout -b myfeature
+
+//make some changes and commit
+git commit -a -m &quot;made some changes&quot;
+
+//switch to master and rebase changes 
+git checkout master
+git rebase myfeature
+git svn rebase
+
+//see differences between local and svn trunk
+git diff remotes/trunk
+
+//commit changes to svn
+git svn dcommit</code></pre></noscript></div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Creating an Octopress Site on Github Pages]]></title>
+    <link href="http://andylind.github.com/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/"/>
+    <updated>2012-03-12T11:51:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2012/03/12/creating-an-octopress-site-on-github-Pages</id>
+    <content type="html"><![CDATA[<p><img src="http://andylind.github.com/images/octopress-logo.png"></p>
+
+<p>Here are some of the resources that I used to create this site:<br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/deploying/">Deploying Octopress</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://pages.github.com/">Github Pages</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://code.dblock.org/octopress-setting-up-a-blog-and-contributing-to-an-existing-one">Github Pages Setup Guide</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://www.yodi.me/blog/2011/10/24/github-custom-domain-with-octopress-in-ubuntu-oneiric-11-dot-10/">Octopress in Ubuntu Oneiric 11.10</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://octopress.org/docs/setup/rvm/">Installing rvm (make sure you use the correct ruby version)</a><br/>
+&nbsp;&nbsp;&nbsp; - <a href="http://melandri.net/2012/02/14/octopress-theme-customization/">Octopress Theme Customization</a></p>
+
+<p>Simple way to run an HTTP server locally for testing:<br/>
+&nbsp;&nbsp;&nbsp; - Open a command window<br/>
+&nbsp;&nbsp;&nbsp; - Change to the octopress/public directory<br/>
+&nbsp;&nbsp;&nbsp; - Run: python -m SimpleHTTPServer</p>
+
+<p>The three most important commands when using octopress:<br/>
+&nbsp;&nbsp;&nbsp; - rake new_post[&#8220;title&#8221;]<br/>
+&nbsp;&nbsp;&nbsp; - rake generate<br/>
+&nbsp;&nbsp;&nbsp; - rake deploy</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[An Example Cross Domain AJAX Request]]></title>
+    <link href="http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request/"/>
+    <updated>2011-06-15T00:44:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request</id>
+    <content type="html"><![CDATA[<p>Cross Domain AJAX calls can be made by using JSONP.</p>
+
+<p>Here is an example using the Twitter api:</p>
+
+<div><script src='https://gist.github.com/965715.js?file='></script>
+<noscript><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=iso-8859-1&quot; /&gt;
+    &lt;title&gt;jQuery cross domain ajax example&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; 
+            src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js&quot;&gt;
+    &lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        $(document).ready(function() {
+                $.getJSON('http://api.twitter.com/1/trends/1.json?callback=?',
+                    function(json){      
+                        $('#mydiv').text(json[0].trends[0].name); 
+                    }
+                );
+            });
+    &lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h3&gt;Top Twitter Trend:&lt;/h3&gt;
+    &lt;div id=&quot;mydiv&quot;&gt;Loading...&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre></noscript></div>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

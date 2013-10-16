@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: python | Andy Lind]]></title>
+  <link href="http://andylind.github.com/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://andylind.github.com/"/>
+  <updated>2013-10-15T19:04:53-05:00</updated>
+  <id>http://andylind.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Lind]]></name>
+    <email><![CDATA[andy.lind.dev+contact@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Viewing Jenkins Status from the Command Line via the Jenkins API]]></title>
+    <link href="http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/"/>
+    <updated>2013-03-06T21:57:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api</id>
+    <content type="html"><![CDATA[<p>This is a python script that I created to print out the status of a set of Jenkins jobs in color on the command line. Right now the coloring for this script works on windows only.</p>
+
+<p>github gist: <a href="https://gist.github.com/andylind/5057436">build_status.py</a>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class='py'><span class='line'><span class="k">def</span> <span class="nf">set_text_color</span><span class="p">(</span><span class="n">color</span><span class="p">):</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="c">#This method works on windows only</span>
+</span><span class='line'><span class="n">color_codes</span> <span class="o">=</span> <span class="p">{</span><span class="s">&quot;BLUE&quot;</span> <span class="p">:</span> <span class="mh">0x0001</span><span class="p">,</span> <span class="s">&quot;GREEN&quot;</span> <span class="p">:</span> <span class="mh">0x0002</span><span class="p">,</span> <span class="s">&quot;RED&quot;</span> <span class="p">:</span> <span class="mh">0x0004</span><span class="p">,</span> <span class="s">&quot;MAGENTA&quot;</span> <span class="p">:</span> <span class="mh">0x0005</span><span class="p">,</span> <span class="s">&quot;YELLOW&quot;</span> <span class="p">:</span> <span class="mh">0x0006</span><span class="p">,</span> <span class="s">&quot;GRAY&quot;</span> <span class="p">:</span> <span class="mh">0x0007</span><span class="p">}</span>
+</span><span class='line'><span class="n">STD_OUTPUT_HANDLE</span> <span class="o">=</span> <span class="o">-</span><span class="mi">11</span>
+</span><span class='line'><span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="n">windll</span><span class="p">,</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">c_short</span><span class="p">,</span> <span class="n">c_ushort</span><span class="p">,</span> <span class="n">byref</span>
+</span><span class='line'><span class="n">stdout_handle</span> <span class="o">=</span> <span class="n">windll</span><span class="o">.</span><span class="n">kernel32</span><span class="o">.</span><span class="n">GetStdHandle</span><span class="p">(</span><span class="n">STD_OUTPUT_HANDLE</span><span class="p">)</span>
+</span><span class='line'><span class="n">SetConsoleTextAttribute</span> <span class="o">=</span> <span class="n">windll</span><span class="o">.</span><span class="n">kernel32</span><span class="o">.</span><span class="n">SetConsoleTextAttribute</span>
+</span><span class='line'><span class="n">SetConsoleTextAttribute</span><span class="p">(</span><span class="n">stdout_handle</span><span class="p">,</span> <span class="n">color_codes</span><span class="p">[</span><span class="n">color</span><span class="p">])</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">def</span> <span class="nf">print_build_status</span><span class="p">(</span><span class="n">jenkins_url</span><span class="p">):</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">json</span><span class="o">,</span> <span class="nn">urllib.request</span>
+</span><span class='line'><span class="n">request</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">jenkins_url</span><span class="p">)</span>
+</span><span class='line'><span class="n">encoding</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get_content_charset</span><span class="p">()</span>
+</span><span class='line'><span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">encoding</span><span class="p">))</span>
+</span><span class='line'><span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s">&#39;jobs&#39;</span><span class="p">]:</span>
+</span><span class='line'>    <span class="k">if</span> <span class="s">&#39;anime&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>         <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s">&#39; Running...&#39;</span>
+</span><span class='line'>    <span class="k">if</span> <span class="s">&#39;blue&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;GREEN&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;+ &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;yellow&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;YELLOW&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;red&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;RED&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>    <span class="k">elif</span> <span class="s">&#39;aborted&#39;</span> <span class="ow">in</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;color&#39;</span><span class="p">]:</span>
+</span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;GRAY&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'>    <span class="k">else</span><span class="p">:</span>
+</span><span class='line'>        <span class="n">set_text_color</span><span class="p">(</span><span class="s">&quot;MAGENTA&quot;</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">print</span><span class="p">(</span><span class="s">&quot;- &quot;</span> <span class="o">+</span> <span class="n">job</span><span class="p">[</span><span class="s">&#39;name&#39;</span><span class="p">])</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">sys</span>
+</span><span class='line'><span class="n">print_build_status</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Here is an example showing the status of a set of jobs from the Jenkins public CI server:</p>
+
+<p>"C:\Python33\python.exe" build_status.py  https://ci.jenkins-ci.org/view/Jenkins%20core/api/json
+<img src="/images/build-status-example.png"></p>
+
+<p>Normally I use this script with an alias so that I can just type something like "jobs" and see a list of the Jenkins jobs that I care about. You can replace "http://your-jenkins-url/api/json" with any Jenkins api resource that lists Jenkins Jobs. For example, I have two custom views, one for projects being built and one for test jobs that I am interested in. I use this script so that I can quickly see from the command line the status of those Jenkins jobs without switching context to a web browser.</p>
+]]></content>
+  </entry>
+  
+</feed>
