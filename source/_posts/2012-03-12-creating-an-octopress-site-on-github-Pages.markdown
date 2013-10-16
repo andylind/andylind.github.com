@@ -21,7 +21,7 @@ Simple way to run an HTTP server locally for testing:
 &nbsp;&nbsp;&nbsp; - Change to the octopress/public directory  
 &nbsp;&nbsp;&nbsp; - Run: python -m SimpleHTTPServer  
 
-The Three most important commands when using octopress:  
+The three most important commands when using octopress:  
 &nbsp;&nbsp;&nbsp; - rake new_post["title"]  
 &nbsp;&nbsp;&nbsp; - rake generate  
 &nbsp;&nbsp;&nbsp; - rake deploy  
