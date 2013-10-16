@@ -4,7 +4,7 @@
   <title><![CDATA[Category: blogging | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/blogging/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-10-15T18:56:51-05:00</updated>
+  <updated>2013-10-15T19:04:53-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -33,7 +33,7 @@
 &nbsp;&nbsp;&nbsp; - Change to the octopress/public directory<br/>
 &nbsp;&nbsp;&nbsp; - Run: python -m SimpleHTTPServer</p>
 
-<p>The Three most important commands when using octopress:<br/>
+<p>The three most important commands when using octopress:<br/>
 &nbsp;&nbsp;&nbsp; - rake new_post["title"]<br/>
 &nbsp;&nbsp;&nbsp; - rake generate<br/>
 &nbsp;&nbsp;&nbsp; - rake deploy</p>
