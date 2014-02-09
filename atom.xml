@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-10-29T19:29:20-05:00</updated>
+  <updated>2014-02-08T21:22:10-06:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Building for the Mobile Web]]></title>
+    <link href="http://andylind.github.com/blog/2014/02/08/building-for-the-mobile-web/"/>
+    <updated>2014-02-08T20:54:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2014/02/08/building-for-the-mobile-web</id>
+    <content type="html"><![CDATA[<p>In the last few years, a number of really cool new technologies have started to enable more complex and interactive mobile apps. Offline applications, device APIs, local storage, and cross platform UI frameworks are enabling developers to build applications that previously could never have been created on the web.</p>
+
+<p>This presentation is from a talk I gave recently on &#8220;Building for the mobile web&#8221;. It&#8217;s a high level overview of the mobile web and some interesting technologies that are behind mobile apps.</p>
+
+<script async class="speakerdeck-embed" data-id="665d214031fb0131904b529dfbcfdd99" data-ratio="1.77777777777778" src="http://andylind.github.com//speakerdeck.com/assets/embed.js"></script>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Intro to git-svn]]></title>
@@ -326,11 +340,12 @@ git commit --amend -m "New commit message"
     <link href="http://andylind.github.com/blog/2013/01/22/learning-to-code/"/>
     <updated>2013-01-22T20:44:00-06:00</updated>
     <id>http://andylind.github.com/blog/2013/01/22/learning-to-code</id>
-    <content type="html"><![CDATA[<p>I have been asked recently by a few different people, “What would you do if you wanted to learn to code”.</p>
+    <content type="html"><![CDATA[<blockquote><p>“What would you do if you wanted to learn to code?”</p></blockquote>
 
-<p>My answer has been to learn JavaScript, Python, or Ruby. It is easier than ever to get started learning one of those languages because of the large number of amazingly user friendly tutorials online. One of the most pain-free ways to get started with JavaScript, Python, or Ruby is by following the interactive tutorials offered by <a href="http://www.codecademy.com/learn">Code Academy</a>. Code Academy lets you write code and do tutorials right inside your web browser. This is awesome for beginners because they do not have to struggle through hours of local setup on their machine to get a runtime environment installed.</p>
 
-<p>I think the next step after learning a little bit from tutorials is to read a programming book. One of the best ones to get started with would be <a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> (free online).</p>
+<p>My answer to this question has been to learn JavaScript, Python, or Ruby. It is easier than ever to get started learning one of those languages because of the large number of amazingly user friendly tutorials online. One of the most pain-free ways to get started with JavaScript, Python, or Ruby is by following the interactive tutorials offered by <a href="http://www.codecademy.com/learn">Code Academy</a>. Code Academy lets you write code and do tutorials right inside your web browser. This is awesome for beginners because they do not have to struggle through hours of local setup on their machine to get a runtime environment installed.</p>
+
+<p>The next step after learning a little bit from tutorials is to read a programming book. One of the best ones to get started with would be <a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> (free online).</p>
 ]]></content>
   </entry>
   

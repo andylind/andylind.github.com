@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tutorial | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/tutorial/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2013-10-29T19:29:20-05:00</updated>
+  <updated>2014-02-08T21:22:10-06:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -18,11 +18,11 @@
     <link href="http://andylind.github.com/blog/2013/01/22/learning-to-code/"/>
     <updated>2013-01-22T20:44:00-06:00</updated>
     <id>http://andylind.github.com/blog/2013/01/22/learning-to-code</id>
-    <content type="html"><![CDATA[<p>I have been asked recently by a few different people, “What would you do if you wanted to learn to code”.</p>
+    <content type="html"><![CDATA[<p><blockquote><p>“What would you do if you wanted to learn to code?”</p></blockquote></p>
 
-<p>My answer has been to learn JavaScript, Python, or Ruby. It is easier than ever to get started learning one of those languages because of the large number of amazingly user friendly tutorials online. One of the most pain-free ways to get started with JavaScript, Python, or Ruby is by following the interactive tutorials offered by <a href="http://www.codecademy.com/learn">Code Academy</a>. Code Academy lets you write code and do tutorials right inside your web browser. This is awesome for beginners because they do not have to struggle through hours of local setup on their machine to get a runtime environment installed.</p>
+<p>My answer to this question has been to learn JavaScript, Python, or Ruby. It is easier than ever to get started learning one of those languages because of the large number of amazingly user friendly tutorials online. One of the most pain-free ways to get started with JavaScript, Python, or Ruby is by following the interactive tutorials offered by <a href="http://www.codecademy.com/learn">Code Academy</a>. Code Academy lets you write code and do tutorials right inside your web browser. This is awesome for beginners because they do not have to struggle through hours of local setup on their machine to get a runtime environment installed.</p>
 
-<p>I think the next step after learning a little bit from tutorials is to read a programming book. One of the best ones to get started with would be <a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> (free online).</p>
+<p>The next step after learning a little bit from tutorials is to read a programming book. One of the best ones to get started with would be <a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> (free online).</p>
 ]]></content>
   </entry>
   
