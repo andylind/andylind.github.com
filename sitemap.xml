@@ -2,92 +2,92 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://andylind.github.com/blog/2010/10/18/using-the-google-visualization-api/</loc>
-        <lastmod>2014-02-22T17:56:26-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>
             http://andylind.github.com/blog/2011/04/23/building-a-mobile-web-app-with-google-app-engine-and-jquery-mobile/
         </loc>
-        <lastmod>2014-02-22T18:07:12-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>
             http://andylind.github.com/blog/2011/06/15/an-example-cross-domain-ajax-request/
         </loc>
-        <lastmod>2013-04-19T14:09:59-05:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>
             http://andylind.github.com/blog/2012/03/12/creating-an-octopress-site-on-github-Pages/
         </loc>
-        <lastmod>2013-10-15T19:04:48-05:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2012/05/11/Using-Git-With-SVN/</loc>
-        <lastmod>2013-04-19T14:09:59-05:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows/</loc>
-        <lastmod>2014-02-08T21:13:28-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2012/09/07/my-most-used-linux-commands/</loc>
-        <lastmod>2013-04-19T14:09:59-05:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial/</loc>
-        <lastmod>2014-02-22T17:42:16-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2012/11/03/agile-day-twin-cities-2012/</loc>
-        <lastmod>2013-04-19T14:09:59-05:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2012/11/07/intro-to-git/</loc>
-        <lastmod>2014-02-08T21:12:56-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2013/01/22/helping-others-learn-to-code/</loc>
-        <lastmod>2014-02-22T17:40:56-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message/</loc>
-        <lastmod>2014-02-08T21:13:16-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2013/02/18/git-stash-workflow/</loc>
-        <lastmod>2014-02-08T21:17:09-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>
             http://andylind.github.com/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/
         </loc>
-        <lastmod>2013-04-19T14:09:59-05:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2013/04/18/combining-multiple-git-commits/</loc>
-        <lastmod>2014-02-08T21:13:09-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>
             http://andylind.github.com/blog/2013/08/26/focusing-retrospectives-on-actionable-results/
         </loc>
-        <lastmod>2013-08-26T21:16:02-05:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2013/09/11/intro-to-git-svn/</loc>
-        <lastmod>2014-02-08T21:14:59-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/2014/02/08/building-for-the-mobile-web/</loc>
-        <lastmod>2014-02-08T21:16:18-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/</loc>
-        <lastmod>2014-02-22T18:07:12-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
     <url>
         <loc>http://andylind.github.com/blog/archives/</loc>
-        <lastmod>2014-02-22T18:07:12-06:00</lastmod>
+        <lastmod>2014-02-22T18:58:21-06:00</lastmod>
     </url>
 </urlset>
