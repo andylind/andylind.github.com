@@ -4,11 +4,11 @@
   <title><![CDATA[Category: mobile web | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/mobile-web/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2014-02-08T23:03:47-06:00</updated>
+  <updated>2014-02-22T18:07:17-06:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
-    <email><![CDATA[contact@andylind.com]]></email>
+    <email><![CDATA[contact@andylind.net]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -24,6 +24,19 @@
 
 <script async class="speakerdeck-embed" data-id="665d214031fb0131904b529dfbcfdd99" data-ratio="1.77777777777778" src="http://andylind.github.com//speakerdeck.com/assets/embed.js"></script>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Building a Mobile Web App with Google App Engine and jQuery Mobile]]></title>
+    <link href="http://andylind.github.com/blog/2011/04/23/building-a-mobile-web-app-with-google-app-engine-and-jquery-mobile/"/>
+    <updated>2011-04-23T18:05:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2011/04/23/building-a-mobile-web-app-with-google-app-engine-and-jquery-mobile</id>
+    <content type="html"><![CDATA[<p><a href="https://github.com/andylind/mileagedemo">This project</a> is an example mobile web application that I built using Google App Engine and jQuery Mobile. The project is an example application to track your car's gas mileage.</p>
+
+<p>Using jQuery mobile allowed for rapid development of a cross platform mobile web application. The framework uses simple html attributes to control the styling of the application. This allows the developer to use standard web development tools and techniques to build a mobile application.</p>
+
+<p>Here is my <a href="https://github.com/andylind/mileagedemo">Github project for the Mileage Demo application</a></p>
 ]]></content>
   </entry>
   

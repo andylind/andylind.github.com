@@ -4,11 +4,11 @@
   <title><![CDATA[Category: code sample | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/code-sample/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2014-02-08T23:03:47-06:00</updated>
+  <updated>2014-02-22T18:07:17-06:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
-    <email><![CDATA[contact@andylind.com]]></email>
+    <email><![CDATA[contact@andylind.net]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
@@ -356,6 +356,10 @@ git commit --amend -m "New commit message"
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;/p&gt;
 </span><span class='line'>
 </span><span class='line'>&lt;h1&gt;open vi&lt;/h1&gt;
@@ -376,7 +380,11 @@ git commit --amend -m "New commit message"
 </span><span class='line'>
 </span><span class='line'>&lt;h1&gt;exit vi&lt;/h1&gt;
 </span><span class='line'>
-</span><span class='line'>&lt;p&gt;:q
+</span><span class='line'>&lt;p&gt;:q&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;h1&gt;save and <span class="nb">exit </span>vi&lt;/h1&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;:x
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
