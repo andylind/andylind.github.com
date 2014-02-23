@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: git-scm | Andy Lind]]></title>
+  <link href="http://andylind.github.com/blog/categories/git-scm/atom.xml" rel="self"/>
+  <link href="http://andylind.github.com/"/>
+  <updated>2014-02-22T20:29:00-06:00</updated>
+  <id>http://andylind.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Lind]]></name>
+    <email><![CDATA[contact@andylind.net]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Changing a Git Commit Message]]></title>
+    <link href="http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message/"/>
+    <updated>2013-02-09T20:10:00-06:00</updated>
+    <id>http://andylind.github.com/blog/2013/02/09/changing-a-git-commit-message</id>
+    <content type="html"><![CDATA[<p>If you accidentally write the wrong thing in a Git commit message or think of something you forgot to comment on, it is possible to re-write your git commit message. Just make sure you have not already pushed the commit to others, or it may cause problems.</p>
+
+<p>This command will let you change the commit message of your last Git commit:</p>
+
+<pre>
+git commit --amend -m "New commit message"
+</pre>
+
+]]></content>
+  </entry>
+  
+</feed>
