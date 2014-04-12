@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>My Current Git Workflow - Andy Lind</title>
+  <meta name="author" content="Andy Lind">
+
+  
+  <meta name="description" content="The flexibility of git is one of the main reasons that git is such a powerful tool. That flexibility also makes it difficult to pick a development &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://andylind.github.com/blog/2014/04/12/my-current-git-workflow">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Andy Lind" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36186979-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body  class="">
+  <header role="banner"><div>
+<a title="Home" rel="Home" href="/"><img src="/images/dinocomp65.png"><div class="title-text">ANDY LIND</div></a>
+</div>
+
+
+</header>
+
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">My Current Git Workflow</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2014-04-12T12:21:00-05:00" pubdate data-updated="true">Apr 12<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The flexibility of git is one of the main reasons that git is such a powerful tool. That flexibility also makes it difficult to pick a development workflow. With so many options for how to do any task, it is tough to know where to start.</p>
+
+<p>Below are some recommendations from my experience using git on Windows over the last few years. In each case, there are many different options that you could choose. Not all of these ideas will work for everyone.</p>
+
+<h2>Git Tools</h2>
+
+<p>In the last year, I moved from using the command line only for git on Windows to integrating <a href="https://www.atlassian.com/software/sourcetree/overview">SourceTree</a> into my daily workflow. I still use the command line for complex commands such as interactive rebasing, but I am finding that I go to the command line much less often now.</p>
+
+<p>SourceTree is an excellent user interface for git. Of all the git UIs I have used, it currently seems to be the most polished. The last few updates to SourceTree have moved it to support a number of the features that it was missing a few months ago. SourceTree is not perfect though. The application has frozen on me a few times, but a restart of the application always fixed the issue.</p>
+
+<p><img src="/images/logoSourceTree.png"></p>
+
+<p>In addition to SourceTree, I am using the VisualStudio git plugin and the IntelliJ git plugin. Both make it easy to see the git status context right inside of the IDE. I find that I mostly use the IDE plugins for viewing the status of file and checking history. I usually run most of the other git commands from SourceTree.</p>
+
+<h2>Basic Principals</h2>
+
+<p>These are basic principals that I follow whenever I am using git.<br>
+&nbsp;&nbsp;&nbsp; - Do all work on local branches<br>
+&nbsp;&nbsp;&nbsp; - Always keep the master branch clean to use for pulling from remotes<br>
+&nbsp;&nbsp;&nbsp; - Use <a href="http://stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting">50/72 formatting</a> for commit messages<br>
+&nbsp;&nbsp;&nbsp; - Commit changes often<br>
+&nbsp;&nbsp;&nbsp; - Rebase changes that are not shared remotely<br>
+&nbsp;&nbsp;&nbsp; - Merge changes that have been shared remotely<br></p>
+
+<h2>Working on New Features</h2>
+
+<p>This is the default workflow that I use when working on new features that will take me more than a few hours to complete. I do not use this workflow for every change that I make. If a change is really simple, I might just make it on master.</p>
+
+<h4>Making changes:</h4>
+
+<p>&nbsp;&nbsp;&nbsp; - Make sure the working directory is clean<br>
+&nbsp;&nbsp;&nbsp; - Pull the latest version of the code from master<br>
+&nbsp;&nbsp;&nbsp; - Create and switch to a new branch named &#8220;work&#8221; (or &#8220;name-of-feature&#8221;)<br>
+&nbsp;&nbsp;&nbsp; - Make changes on the work branch<br>
+&nbsp;&nbsp;&nbsp; - Commit changes often</p>
+
+<h4>Sharing changes:</h4>
+
+<p>&nbsp;&nbsp;&nbsp; - <a href="/blog/2013/04/18/combining-multiple-git-commits/">Interactive rebase</a> complex changes into a single commit if needed<br>
+&nbsp;&nbsp;&nbsp; - Switch to master and pull changes<br>
+&nbsp;&nbsp;&nbsp; - Switch to the work branch<br>
+&nbsp;&nbsp;&nbsp; - Rebase the work branch to master and resolve any conflicts<br>
+&nbsp;&nbsp;&nbsp; - Run tests to make sure the changes are ready to push<br>
+&nbsp;&nbsp;&nbsp; - Switch to master and rebase to the work branch (Should be no changes)<br>
+&nbsp;&nbsp;&nbsp; - Push commits<br></p>
+
+<p><strong>Summary:</strong> Use a local branch to make changes, then rebase back to master.</p>
+
+<p><strong>Note:</strong> I use a generic local branch named &#8220;work&#8221; when I do not have a name for the feature I am working on.</p>
+
+<p>This workflow is how I have been using git for the last few years. The overall goal is to make sure all work is independently captured in source control and to make it easy to switch between working on different features and bugs as needed.</p>
+
+<p>These recommendations are for how to work with git on a medium sized team of developers. For code bases where I am the only developer, I use a more relaxed workflow and do not worry as much about local branches. For code bases with dozens or more developers, I would use a more strict process.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <a class="name-link" href="/">Andy Lind</a></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+<time datetime="2014-04-12T12:21:00-05:00" pubdate data-updated="true">Apr 12<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/git/'>git</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://andylind.github.com/blog/2014/04/12/my-current-git-workflow/" data-via="" data-counturl="http://andylind.github.com/blog/2014/04/12/my-current-git-workflow/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/02/08/building-for-the-mobile-web/" title="Previous Post: Building for the Mobile Web">&laquo; Building for the Mobile Web</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <p>
+      I'm a software engineer building products on a number of different platforms. These are my thoughts on programming and agile software development.
+  </p>
+  <a title="Blog Archives" rel="blog-archives" href="/blog/archives/">All Posts</a>
+  <br/><br/>
+  <a title="Presentations" rel="Presentations" href="/blog/categories/presentations/">Presentations</a>
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/04/12/my-current-git-workflow/">My Current Git Workflow</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/02/08/building-for-the-mobile-web/">Building for the Mobile Web</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/11/intro-to-git-svn/">Intro to git-svn</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/26/focusing-retrospectives-on-actionable-results/">Focusing Retrospectives on Actionable Results</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/18/combining-multiple-git-commits/">Combining Multiple Git Commits</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/06/viewing-jenkins-status-from-the-command-line-via-the-jenkins-api/">Viewing Jenkins Status from the Command Line via the Jenkins API</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Contact</h1>
+  <p>
+    <a title="@andylind" rel="@andylind" href="https://github.com/andylind">@andylind</a> on GitHub
+  </p>
+  <p>
+    <span>Email:</span>
+    <span style="color:#666666">contact@andylind.net</span>
+  </p>
+  <p>
+    <a title="Subscribe via RSS" rel="subscribe-rss" href="/atom.xml">Subscribe via RSS</a>
+  </p>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

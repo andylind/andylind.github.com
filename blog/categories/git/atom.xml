@@ -4,7 +4,7 @@
   <title><![CDATA[Category: git | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/git/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2014-02-22T20:29:00-06:00</updated>
+  <updated>2014-04-12T12:52:37-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -12,6 +12,67 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My Current Git Workflow]]></title>
+    <link href="http://andylind.github.com/blog/2014/04/12/my-current-git-workflow/"/>
+    <updated>2014-04-12T12:21:00-05:00</updated>
+    <id>http://andylind.github.com/blog/2014/04/12/my-current-git-workflow</id>
+    <content type="html"><![CDATA[<p>The flexibility of git is one of the main reasons that git is such a powerful tool. That flexibility also makes it difficult to pick a development workflow. With so many options for how to do any task, it is tough to know where to start.</p>
+
+<p>Below are some recommendations from my experience using git on Windows over the last few years. In each case, there are many different options that you could choose. Not all of these ideas will work for everyone.</p>
+
+<h2>Git Tools</h2>
+
+<p>In the last year, I moved from using the command line only for git on Windows to integrating <a href="https://www.atlassian.com/software/sourcetree/overview">SourceTree</a> into my daily workflow. I still use the command line for complex commands such as interactive rebasing, but I am finding that I go to the command line much less often now.</p>
+
+<p>SourceTree is an excellent user interface for git. Of all the git UIs I have used, it currently seems to be the most polished. The last few updates to SourceTree have moved it to support a number of the features that it was missing a few months ago. SourceTree is not perfect though. The application has frozen on me a few times, but a restart of the application always fixed the issue.</p>
+
+<p><img src="/images/logoSourceTree.png"></p>
+
+<p>In addition to SourceTree, I am using the VisualStudio git plugin and the IntelliJ git plugin. Both make it easy to see the git status context right inside of the IDE. I find that I mostly use the IDE plugins for viewing the status of file and checking history. I usually run most of the other git commands from SourceTree.</p>
+
+<h2>Basic Principals</h2>
+
+<p>These are basic principals that I follow whenever I am using git.<br>
+&nbsp;&nbsp;&nbsp; - Do all work on local branches<br>
+&nbsp;&nbsp;&nbsp; - Always keep the master branch clean to use for pulling from remotes<br>
+&nbsp;&nbsp;&nbsp; - Use <a href="http://stackoverflow.com/questions/2290016/git-commit-messages-50-72-formatting">50/72 formatting</a> for commit messages<br>
+&nbsp;&nbsp;&nbsp; - Commit changes often<br>
+&nbsp;&nbsp;&nbsp; - Rebase changes that are not shared remotely<br>
+&nbsp;&nbsp;&nbsp; - Merge changes that have been shared remotely<br></p>
+
+<h2>Working on New Features</h2>
+
+<p>This is the default workflow that I use when working on new features that will take me more than a few hours to complete. I do not use this workflow for every change that I make. If a change is really simple, I might just make it on master.</p>
+
+<h4>Making changes:</h4>
+
+<p>&nbsp;&nbsp;&nbsp; - Make sure the working directory is clean<br>
+&nbsp;&nbsp;&nbsp; - Pull the latest version of the code from master<br>
+&nbsp;&nbsp;&nbsp; - Create and switch to a new branch named "work" (or "name-of-feature")<br>
+&nbsp;&nbsp;&nbsp; - Make changes on the work branch<br>
+&nbsp;&nbsp;&nbsp; - Commit changes often</p>
+
+<h4>Sharing changes:</h4>
+
+<p>&nbsp;&nbsp;&nbsp; - <a href="/blog/2013/04/18/combining-multiple-git-commits/">Interactive rebase</a> complex changes into a single commit if needed<br>
+&nbsp;&nbsp;&nbsp; - Switch to master and pull changes<br>
+&nbsp;&nbsp;&nbsp; - Switch to the work branch<br>
+&nbsp;&nbsp;&nbsp; - Rebase the work branch to master and resolve any conflicts<br>
+&nbsp;&nbsp;&nbsp; - Run tests to make sure the changes are ready to push<br>
+&nbsp;&nbsp;&nbsp; - Switch to master and rebase to the work branch (Should be no changes)<br>
+&nbsp;&nbsp;&nbsp; - Push commits<br></p>
+
+<p><strong>Summary:</strong> Use a local branch to make changes, then rebase back to master.</p>
+
+<p><strong>Note:</strong> I use a generic local branch named "work" when I do not have a name for the feature I am working on.</p>
+
+<p>This workflow is how I have been using git for the last few years. The overall goal is to make sure all work is independently captured in source control and to make it easy to switch between working on different features and bugs as needed.</p>
+
+<p>These recommendations are for how to work with git on a medium sized team of developers. For code bases where I am the only developer, I use a more relaxed workflow and do not worry as much about local branches. For code bases with dozens or more developers, I would use a more strict process.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Intro to git-svn]]></title>
@@ -234,17 +295,6 @@
 
 <script async class="speakerdeck-embed" data-id="5099d54eecc0de0002015138" data-ratio="1.3333333333333333" src="http://andylind.github.com//speakerdeck.com/assets/embed.js"></script>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My Setup for Using Git on Windows]]></title>
-    <link href="http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows/"/>
-    <updated>2012-08-28T00:38:00-05:00</updated>
-    <id>http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows</id>
-    <content type="html"><![CDATA[<p>For developing on Windows with Git, I have been using Console2 and MINGW. MINGW (which ships with the Git installer for Windows) is a minial dev environment with many common unix tool re-written for windows. Console2 provides an improved console ui to make things like font/color customization and copy/paste easier.</p>
-
-<p>Here are <a href="https://gist.github.com/andylind/2875034/">my settings for Console2</a></p>
 ]]></content>
   </entry>
   
