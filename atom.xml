@@ -4,7 +4,7 @@
   <title><![CDATA[Andy Lind]]></title>
   <link href="http://andylind.github.com/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2014-04-12T12:52:37-05:00</updated>
+  <updated>2014-08-15T09:29:02-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -397,22 +397,6 @@ git commit --amend -m "New commit message"
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Helping Others Learn to Code]]></title>
-    <link href="http://andylind.github.com/blog/2013/01/22/helping-others-learn-to-code/"/>
-    <updated>2013-01-22T20:44:00-06:00</updated>
-    <id>http://andylind.github.com/blog/2013/01/22/helping-others-learn-to-code</id>
-    <content type="html"><![CDATA[<blockquote><p>“What would you do if you wanted to learn to code?”</p></blockquote>
-
-
-<p>My answer to this question lately has been to learn JavaScript, Python, or Ruby. It is easier than ever to get started learning one of those languages because of the large number of amazingly user friendly tutorials online.</p>
-
-<p>One of the most pain-free ways to get started with JavaScript, Python, or Ruby is by following the interactive tutorials offered by <a href="http://www.codecademy.com/learn">Code Academy</a>. Code Academy lets you write code and do tutorials right inside your web browser. This is awesome for beginners because they do not have to struggle through hours of local setup on their machine to get a runtime environment installed.</p>
-
-<p>The next step after learning a little bit from tutorials is to read a programming book. One of the best ones to get started with would be <a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way</a> (free online).</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Intro to Git]]></title>
     <link href="http://andylind.github.com/blog/2012/11/07/intro-to-git/"/>
     <updated>2012-11-07T16:00:00-06:00</updated>
@@ -473,7 +457,7 @@ git commit --amend -m "New commit message"
     <id>http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial</id>
     <content type="html"><![CDATA[<p>I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most convenient to use a command window for text editing. Understanding the most basic vi commands can be really helpful when you need to edit text from the terminal.</p>
 
-<p>The first step for me to learn vi was to master just a few basic commands so that I would have enough knowledge to edit files. Below is the most minimal set of commands that you need to know to operate vi.</p>
+<p>The first step for me to learn vi was to understand just a few basic commands so that I would have enough knowledge to edit files. Below is a minimal set of commands that you can use to operate vi.</p>
 
 <p>The key concept you have to learn is that vi has two modes. Insert mode and command mode. When vi is opened, it will start in command mode by default. This mode allows you to do things like run complex editing commands, save the file, and exit. Pressing &#8220;i&#8221; will take you to inset mode. Insert mode allows you to edit text that is in the file. Pressing esc will return to command mode.</p>
 
@@ -597,17 +581,6 @@ chmod a+rw [filename]
 tail -1000 logs/logfile.txt | grep ^ERROR -A 5 -B 5
 </pre>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[My Setup for Using Git on Windows]]></title>
-    <link href="http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows/"/>
-    <updated>2012-08-28T00:38:00-05:00</updated>
-    <id>http://andylind.github.com/blog/2012/08/28/my-setup-for-using-git-on-windows</id>
-    <content type="html"><![CDATA[<p>For developing on Windows with Git, I have been using Console2 and MINGW. MINGW (which ships with the Git installer for Windows) is a minial dev environment with many common unix tool re-written for windows. Console2 provides an improved console ui to make things like font/color customization and copy/paste easier.</p>
-
-<p>Here are <a href="https://gist.github.com/andylind/2875034/">my settings for Console2</a></p>
 ]]></content>
   </entry>
   

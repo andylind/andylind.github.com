@@ -4,7 +4,7 @@
   <title><![CDATA[Category: vi | Andy Lind]]></title>
   <link href="http://andylind.github.com/blog/categories/vi/atom.xml" rel="self"/>
   <link href="http://andylind.github.com/"/>
-  <updated>2014-04-12T12:52:37-05:00</updated>
+  <updated>2014-08-15T09:29:02-05:00</updated>
   <id>http://andylind.github.com/</id>
   <author>
     <name><![CDATA[Andy Lind]]></name>
@@ -20,7 +20,7 @@
     <id>http://andylind.github.com/blog/2012/10/12/simple-vi-tutorial</id>
     <content type="html"><![CDATA[<p>I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most convenient to use a command window for text editing. Understanding the most basic vi commands can be really helpful when you need to edit text from the terminal.</p>
 
-<p>The first step for me to learn vi was to master just a few basic commands so that I would have enough knowledge to edit files. Below is the most minimal set of commands that you need to know to operate vi.</p>
+<p>The first step for me to learn vi was to understand just a few basic commands so that I would have enough knowledge to edit files. Below is a minimal set of commands that you can use to operate vi.</p>
 
 <p>The key concept you have to learn is that vi has two modes. Insert mode and command mode. When vi is opened, it will start in command mode by default. This mode allows you to do things like run complex editing commands, save the file, and exit. Pressing "i" will take you to inset mode. Insert mode allows you to edit text that is in the file. Pressing esc will return to command mode.</p>
 
