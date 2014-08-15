@@ -10,14 +10,21 @@ body { font-size: 1em; }
 /* ----- header ----- */
 
 body > header{
-  background: #ebebeb url('/images/noise.png');
-  padding-top: 30px;
-  padding-bottom: 40px;
+  background: #ffffff;
+  padding-top: 25px; 
 }
 
 body > header div{
   width:100%;
   background: none;
+}
+
+body > header div.title-text{
+  border-bottom: 1px solid #ECECEC;
+  padding-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 body > header a:visited,
@@ -26,8 +33,8 @@ body > header a{
   color: #333;
   text-decoration: none;
   font-style: none;
-  font-size:1.7em;
-  font-weight:bold;
+  font-size:1.6em;
+  font-weight:normal;
   text-align: center;
   width:100%;
 }
@@ -81,5 +88,9 @@ h1.entry-title {
 
 .name-link:visited {
   color: #AAAAAA;
+}
+
+#content aside.sidebar {
+  border-top: 0px;
 }
 

@@ -3,7 +3,7 @@ layout: post
 title: "Git Stash Workflow"
 date: 2013-02-18 20:14
 comments: true
-categories: [Git, code sample, dev tools] 
+categories: [git, code sample, dev tools] 
 ---
 
 I often find that while I am coding I need to have more than one stream of work going on. One scenario that often occurs is that I am working on a feature and then a bug report comes in that needs to be fixed right away. If the change becomes large, I will create a local branch for the bug fix, but most of the time I just want to save my unfinished feature changes somewhere while I quickly fix the bug. 

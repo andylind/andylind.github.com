@@ -4,7 +4,7 @@ title:
 footer: false
 ---
 
-<div id="blog-archives" class="archive-list">
+<div id="blog-archives">
 {% for post in site.posts reverse %}
 {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
 {% unless year == this_year %}
@@ -16,4 +16,3 @@ footer: false
 </article>
 {% endfor %}
 </div>
-

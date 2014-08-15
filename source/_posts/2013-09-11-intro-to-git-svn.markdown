@@ -3,7 +3,7 @@ layout: post
 title: "Intro to git-svn"
 date: 2013-09-11 22:40
 comments: true
-categories: git
+categories: [git, presentations]
 ---
 
 This is a presentation that I recently gave on the distributed version control system [Git](http://www.git-scm.com) and how it can be used with SVN. In the presentation, I introduce the concepts behind Git, some of the main Git commands, and how to use git-svn. 

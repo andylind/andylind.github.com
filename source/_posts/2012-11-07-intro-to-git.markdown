@@ -3,7 +3,7 @@ layout: post
 title: "Intro to Git"
 date: 2012-11-07 16:00
 comments: true
-categories: [Git]
+categories: [git, presentations]
 ---
 
 This is a presentation that I recently gave on the distributed version control system [Git](http://www.git-scm.com). In the presentation, I introduce the concepts behind Git and some of the main Git commands. Then I walkthrough how Git can change your workflow as a developer.

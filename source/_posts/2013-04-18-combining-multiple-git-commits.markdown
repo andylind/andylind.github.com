@@ -3,7 +3,7 @@ layout: post
 title: "Combining Multiple Git Commits"
 date: 2013-04-18 18:35
 comments: true
-categories: [Git, code sample, dev tools] 
+categories: [git, code sample, dev tools] 
 ---
 
 Using Git, it is possible to combine multiple commits into a single commit with interactive rebasing.

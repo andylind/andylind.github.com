@@ -8,7 +8,7 @@ categories: [vi, code sample]
 
 I spend most of my time programming in an IDE or in a text editor like notepad++ or gedit. When I ssh into a machine though, it is usually most convenient to use a command window for text editing. Understanding the most basic vi commands can be really helpful when you need to edit text from the terminal.
 
-The first step for me to learn vi was to master just a few basic commands so that I would have enough knowledge to edit files. Below is the most minimal set of commands that you need to know to operate vi. 
+The first step for me to learn vi was to understand just a few basic commands so that I would have enough knowledge to edit files. Below is a minimal set of commands that you can use to operate vi. 
 
 The key concept you have to learn is that vi has two modes. Insert mode and command mode. When vi is opened, it will start in command mode by default. This mode allows you to do things like run complex editing commands, save the file, and exit. Pressing "i" will take you to inset mode. Insert mode allows you to edit text that is in the file. Pressing esc will return to command mode. 
 
@@ -29,5 +29,8 @@ esc
 
 # exit vi
 :q
+
+# save and exit vi
+:x
 {% endcodeblock %}
 
