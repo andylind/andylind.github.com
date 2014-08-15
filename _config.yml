@@ -59,21 +59,21 @@ default_asides: [custom/asides/about.html, asides/recent_posts.html, custom/asid
 # ----------------------- #
 
 # Twitter
-#twitter_user: andrewrlind
-#twitter_tweet_count: 4
-#twitter_show_replies: false
-#twitter_follow_button: true
+#twitter_user: 
+#twitter_tweet_count: 
+#twitter_show_replies: 
+#twitter_follow_button: false
 #twitter_show_follower_count: false
-twitter_tweet_button: true
+twitter_tweet_button: false
 
 # Github repositories
-#github_user: andylind
-#github_repo_count: 10
-#github_show_profile_link: true
+#github_user: 
+#github_repo_count: 
+#github_show_profile_link: false
 #github_skip_forks: true
 
 # Google +1
-google_plus_one: true
+google_plus_one: false
 google_plus_one_size: medium
 
 # Google Plus Profile
